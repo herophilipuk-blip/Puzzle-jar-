@@ -599,8 +599,8 @@ function dailyCard(){const c=document.createElement('div'),done=lastDay===dayIdx
 /* ===== More chapters ===== */
 ZONES.push({n:'Volcano Rim',a:'#ffd0a0',b:'#c0392b',d:['🌋','🔥','🪨','🦎']},{n:'Starlight Harbour',a:'#bfe6ff',b:'#1f4e9a',d:['⛵','⭐','🌊','🐋']},{n:'Cherry Blossom Hill',a:'#ffe0ec',b:'#e75480',d:['🌸','🏯','🎎','🦢']},{n:'Crystal Caverns',a:'#e0d4ff',b:'#5b3fb5',d:['💎','🔮','🦇','✨']},{n:'Lantern Night Market',a:'#ffd9a0',b:'#7a3b1d',d:['🏮','🍜','🥮','🎑']},{n:'Aurora Fields',a:'#c9ffe9',b:'#1a6a6a',d:['🌌','🦌','❄️','🐺']});
 /* ===== Username editor ===== */
-function nameEditor(){let e=$('nedit');if(!e){e=document.createElement('div');e.id='nedit';e.innerHTML='<input id="nin" maxlength="16" autocomplete="off" aria-label="Username"><button class="opt" id="nsv">Save name</button>';$('nick').before(e);
-  $('nsv').onclick=()=>{const v=$('nin').value.trim();if(!/^[A-Za-z0-9_]{3,16}$/.test(v))return toast('3–16 letters, numbers or _');nick=v;save();post();openProf();toast('Name saved')}}$('nin').value=nick}
+function nameEditor(){let e=$('nedit');if(!e){e=document.createElement('div');e.id='nedit';e.innerHTML='<input id="nin" maxlength="20" autocomplete="off" aria-label="Username"><button class="opt" id="nsv">Save name</button>';$('nick').before(e);
+  $('nsv').onclick=()=>{const v=$('nin').value.trim();const cl=v.replace(/[\u0000-\u001f<>]/g,'').slice(0,20).trim();if(cl.length<2)return toast('Pick a name of 2–20 characters');nick=cl;save();post();openProf();toast('Name saved')}}$('nin').value=nick}
 function openProf(){openProfV3();nameEditor()}
 
 /* ===== CORE: solver (IDA* + transposition table) and pure level function ===== */
@@ -703,12 +703,12 @@ const _sv8=save;save=function(){if(PRACTICE)return;_sv8()};
 const _win7=win;win=function(){const P=PRACTICE;_win7();if(P){endPractice();PRACTICE=P;$('wmsg').textContent+=' · Practice: progress not counted'}};
 const _nx7=$('next').onclick;$('next').onclick=()=>{if(PRACTICE){endPractice();start()}else _nx7()};
 $('flip').onclick=()=>{if(won||!(level>=801||PRACTICE))return;if(coins<15)return toast('Flip costs 15 coins');FLIPMODE=!FLIPMODE;$('flip').classList.toggle('on',FLIPMODE);toast(FLIPMODE?'Tap a jar to peek under its top card':'Flip cancelled')};
-$('lvl').onclick=$('backBtn').onclick=()=>{if(maxLv>=5)openMap();else toast('The map opens at level 5. Keep going!')};
+$('lvl').onclick=$('backBtn').onclick=()=>{openMap();if(maxLv<5)toast('🗺 Map preview — levels unlock as you play. Reach level 5 to open the Daily puzzle and more.')};
 
 /* ===== v10: shop, ghost race, jackpot, adaptive difficulty, challenge links, combo chest ===== */
 const NEONS={neon:['Neon Pink','#ff4fd8'],neonblue:['Neon Blue','#3cc8ff'],neonpurple:['Neon Purple','#a65bff'],neongreen:['Neon Green','#3dff7a'],neonorange:['Neon Orange','#ff9d2e']};
 const SKINS=[['jar','glass','Glass',0,'Clean classic glass jars.','jar'],['jar','crystal','Crystal',150,'Icy blue shine on every jar.','jar'],['jar','frosted','Frosted',200,'Soft white frosted glass.','jar'],['jar','rosegold','Rose Gold',250,'Warm metallic rose edges.','jar'],['jar','aurora','Aurora',400,'Gently flowing northern lights.','jar'],['jar','galaxy','Galaxy',500,'A slowly drifting starry sky.','jar'],['jar','electric','Electric',450,'Subtle electric pulses.','jar']].concat(Object.entries(NEONS).map(([id,[n,c]])=>['jar',id,n,id==='neon'?300:350,'Glowing '+n.split(' ')[1].toLowerCase()+' edges.','neon'])).concat([['fin','glossy','Glossy',0,'Shiny rounded cards.','fin'],['fin','matte','Matte',100,'Flat, soft, no shine.','fin'],['fin','foil','Foil',250,'Metallic foil cards.','fin'],['fin','candy','Candy',200,'Sweet, bright candy cards.','fin']]);
-const BOOSTS=[['t','⏱','+30 Seconds',35,'Adds 30 seconds to the clock of your next level.'],['T','⏳','+60 Seconds',60,'Adds a full extra minute to your next level.'],['h','💡','+3 Hints',40,'Starts your next level with 3 extra hints.'],['H','🔦','+10 Hints',120,'Hint pack: 10 extra hints, best value.'],['j','🫙','Extra Jar',60,'Your next level starts with a free empty jar.']];
+const BOOSTS=[['t','⏱','+30 Seconds',35,'Adds 30s. Up to 2 are used per level; extras are saved.'],['T','⏳','+60 Seconds',60,'Adds a full minute. 1 used per level; extras are saved.'],['h','💡','+3 Hints',40,'+3 hints per use. Up to 2 are used per level; extras are saved.'],['H','🔦','+10 Hints',120,'Hint pack: 10 extra hints. 1 used per level; extras are saved.'],['j','🫙','Extra Jar',60,'A free empty jar. 1 used per level; extras are saved.']];
 let BST;try{BST=JSON.parse(localStorage.getItem('pf_bst')||'{}')}catch(e){BST={}}
 (function(){let c='';for(const[id,[n,col]]of Object.entries(NEONS))if(id!=='neon')c+='.sk-'+id+' .jar{border-color:'+col+';box-shadow:0 0 10px '+col+',inset 0 0 8px '+col+'59}';
 c+='.sk-rosegold .jar{border-color:#e8a598;background:linear-gradient(160deg,rgba(232,165,152,.35),rgba(255,255,255,.06));box-shadow:inset 0 0 10px rgba(232,165,152,.5)}'+
@@ -725,8 +725,8 @@ c+='.sk-rosegold .jar{border-color:#e8a598;background:linear-gradient(160deg,rgb
 const st=document.createElement('style');st.textContent=c;document.head.appendChild(st)})();
 let OWN,EQ;try{OWN=JSON.parse(localStorage.getItem('pf_own')||'["glass","glossy"]');EQ=JSON.parse(localStorage.getItem('pf_eq')||'{"jar":"glass","fin":"glossy"}')}catch(e){OWN=['glass','glossy'];EQ={jar:'glass',fin:'glossy'}}
 function applySkin(){const b=document.body;[...b.classList].filter(c=>/^(sk|fin)-/.test(c)).forEach(c=>b.classList.remove(c));b.classList.add('sk-'+EQ.jar,'fin-'+EQ.fin)}applySkin();
-let SHT='jar',SSEL=null;
-function closeShop(){const m=$('shop');if(m)m.classList.remove('on');applySkin()}
+let SHT='jar',SSEL=null,SHKEEP=0;
+function closeShop(){SHKEEP=0;const m=$('shop');if(m)m.classList.remove('on');applySkin()}
 function openShop(){let m=$('shop');if(!m){m=document.createElement('div');m.id='shop';m.onclick=e=>{if(e.target===m)closeShop()};document.body.appendChild(m)}
   [...document.body.classList].filter(c=>/^(sk|fin)-/.test(c)).forEach(c=>document.body.classList.remove(c));
   const tabs=[['jar','Jars'],['neon','Neon'],['fin','Finishes'],['bst','Boosts']];
@@ -738,17 +738,20 @@ function openShop(){let m=$('shop');if(!m){m=document.createElement('div');m.id=
   const sw=i=>{const o=i.t==='bst'?(BST[i.id]?'×'+BST[i.id]:''):OWN.includes(i.id)?(EQ[i.t]===i.id?'✓ Equipped':'Owned'):'🪙 '+i.pr;return '<div class="si'+(i.id===SSEL?' sel':'')+'" data-id="'+i.id+'"><div class="sp '+(i.t==='jar'?'sk-'+i.id:i.t==='fin'?'fin-'+i.id+' sk-'+EQ.jar:'')+'">'+(i.t==='bst'?'<span style="font-size:34px">'+i.ic+'</span>':'<div class="jar"><div class="layer" style="background:'+COLORS[0]+'"></div><div class="layer" style="background:'+COLORS[5]+'"></div></div>')+'</div><b>'+i.nm+'</b><span class="tag">'+o+'</span></div>'};
   const lab=it.t==='bst'?(coins>=it.pr?'Buy · 🪙 '+it.pr:'Need 🪙 '+it.pr):eq?'Equipped':own?'Equip':(coins>=it.pr?'Buy · 🪙 '+it.pr:'Need 🪙 '+it.pr);
   const dis=eq||(!own&&coins<it.pr);
+  const _g=m.querySelector('.sgrid'),_sg=_g?_g.scrollTop:0,_mc=m.querySelector('.mc'),_sm=_mc?_mc.scrollTop:0;
   m.innerHTML='<div class="mc"><button id="shx" aria-label="Close shop">✕</button><h2 style="margin:0">🛍 Shop <span class="rp" style="font-size:15px">🪙 '+coins+'</span></h2><div class="stabs">'+tabs.map(([k,n])=>'<button data-k="'+k+'" class="'+(k===SHT?'on':'')+'">'+n+'</button>').join('')+'</div>'+
    (it.t==='bst'?'<div class="pv" style="font-size:54px;align-items:center">'+it.ic+'</div>':'<div class="pv sk-'+pj+' fin-'+pf+'">'+jr+jr+jr+'</div>')+
    '<div class="sact"><div><b>'+it.nm+'</b><br>'+it.ds+(own&&!eq?'<br>Owned — tap Equip to use it.':'')+'</div><button id="sact"'+(dis?' disabled':'')+'>'+lab+'</button></div><div class="sgrid">'+items.map(sw).join('')+'</div></div>';
-  m.querySelectorAll('.stabs button').forEach(b=>b.onclick=()=>{SHT=b.dataset.k;SSEL=null;openShop()});
+  {const g=m.querySelector('.sgrid'),c=m.querySelector('.mc');if(SHKEEP){if(g)g.scrollTop=_sg;if(c)c.scrollTop=_sm}SHKEEP=1}
+  m.querySelectorAll('.stabs button').forEach(b=>b.onclick=()=>{SHT=b.dataset.k;SSEL=null;SHKEEP=0;openShop()});
   m.querySelectorAll('.sgrid .si').forEach(e=>e.onclick=()=>{SSEL=e.dataset.id;openShop()});
   $('sact').onclick=()=>{if(dis)return;const sv=()=>{try{localStorage.setItem('pf_own',JSON.stringify(OWN));localStorage.setItem('pf_eq',JSON.stringify(EQ));localStorage.setItem('pf_bst',JSON.stringify(BST))}catch(e){}save()};
-    if(it.t==='bst'){coins-=it.pr;BST[it.id]=(BST[it.id]||0)+1;tone(880,.1,'sine');sv();render();toast(it.nm+' ready for your next level');return openShop()}
+    if(it.t==='bst'){if((BST[it.id]||0)>=9)return toast('You can hold up to 9 of each boost');coins-=it.pr;BST[it.id]=(BST[it.id]||0)+1;tone(880,.1,'sine');sv();render();toast(it.nm+' ready for your next level');return openShop()}
     if(!own){coins-=it.pr;OWN.push(it.id);tone(880,.1,'sine');tone(1320,.12,'sine',.1);sv();render();toast('Bought '+it.nm+' — tap Equip to use it');return openShop()}
     EQ[it.t]=it.id;sv();applySkin();render();openShop()};
   $('shx').onclick=closeShop;m.classList.add('on')}
-const _st11=start;start=function(){_st11();hints+=3*(BST.h||0)+10*(BST.H||0);BST.h=BST.H=0;{const sec=30*(BST.t||0)+60*(BST.T||0);if(sec){tLeft+=sec;tTot+=sec;clkDraw()}BST.t=BST.T=0}if(BST.j){for(let i=0;i<BST.j;i++)jars.push([]);BST.j=0;render()}try{localStorage.setItem('pf_bst',JSON.stringify(BST))}catch(e){}};
+const _st11=start;start=function(){_st11();const use=(k,cap)=>{const n=Math.min(cap,BST[k]||0);BST[k]=(BST[k]||0)-n;return n};
+  {const h=use('h',2),H=use('H',1),t=use('t',2),T=use('T',1),j=use('j',1);hints+=3*h+10*H;const sec=30*t+60*T;if(sec&&typeof tLeft==='number'){tLeft+=sec;tTot+=sec;clkDraw()}for(let i=0;i<j;i++)jars.push([]);if(j)render();if(h+H+t+T+j)toast('Boosts used: '+[h&&'+'+3*h+' hints',H&&'+10 hints',t&&'+'+30*t+'s',T&&'+60s',j&&'extra jar'].filter(Boolean).join(', ')+'. The rest are saved for later levels.')}try{localStorage.setItem('pf_bst',JSON.stringify(BST))}catch(e){}};
 $('mshop').onclick=openShop;
 /* ghost race: your best run on each level */
 let GREC=[],GT0=Date.now(),GH=null,CHEST=0,CHAL=null;
