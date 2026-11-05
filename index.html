@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pourfect</title>
+<title>Puzzle Jar</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap">
 <style>
 :root{--bg1:#d9ecff;--bg2:#bff2e8;--fg:#15324d;--glass:rgba(255,255,255,.55);--edge:rgba(21,50,77,.5);--btn:rgba(21,50,77,.1);--card:#fff;--accent:#d9480f;--cols:5;--jw:clamp(40px,calc((min(100vw,520px) - 32px - (var(--cols) - 1)*12px) / var(--cols)),76px);--lh:calc(var(--jw)*.6);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -69,7 +69,7 @@ body{background-size:220% 220%;animation:drift 22s ease-in-out infinite}@keyfram
 .ch{margin:14px 12px;border-radius:24px;padding:14px 10px 16px;color:#10204a;box-shadow:0 8px 0 rgba(0,0,0,.15)}.chh{display:flex;justify-content:space-between;align-items:center;font-weight:800;padding:0 6px 10px;text-align:left}.chh b{font-size:19px}.chh small{opacity:.8;display:block;font-size:12px}.chg{display:grid;grid-template-columns:repeat(5,1fr);gap:14px 6px;justify-items:center}
 .sjw{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:800;min-height:90px}.sj{position:relative;width:52px;height:70px;border:3px solid rgba(255,255,255,.9);border-top:0;border-radius:5px 5px 22px 22px;background:rgba(255,255,255,.28);overflow:hidden;font:800 18px Nunito,system-ui,sans-serif;color:#fff;cursor:pointer;padding:0}.sj i{position:absolute;left:0;right:0;bottom:0;height:var(--f);background:var(--c);transition:height .6s}.sj span{position:relative;z-index:1;text-shadow:0 1px 2px rgba(0,0,0,.55)}.sj.lock{opacity:.45;filter:grayscale(.6)}.sj.cur{animation:sjp 1.4s ease-in-out infinite;box-shadow:0 0 0 3px #ffd93d,0 0 18px #ffd93d}.sj.boss{width:58px;border-color:#ffd93d}@keyframes sjp{50%{transform:translateY(-5px)}}
 #clk{display:inline-flex;align-items:center;gap:5px;border:0;border-radius:999px;padding:6px 10px;font:800 15px Nunito,system-ui,sans-serif;background:var(--btn);color:var(--fg);cursor:pointer}#clk.low{background:#ff5a5a;color:#fff}#clk.shake{animation:clkshake .35s infinite}@keyframes clkshake{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg) scale(1.08)}75%{transform:rotate(8deg) scale(1.08)}}
-</style><meta name="description" content="Pourfect: sort the colours, beat the clock, and play Caller & Mover with a friend."><meta property="og:title" content="Pourfect - colour sorting puzzle"><meta property="og:description" content="Beat the clock, climb the shelves, and play Caller & Mover with a friend."><meta property="og:type" content="website"><meta property="og:image" content="preview.png"><meta name="twitter:card" content="summary_large_image"><style>header{padding:10px 8px 4px}header .meta{display:flex;flex-wrap:nowrap;gap:6px;justify-content:center;max-width:100%}header .chip,#clk{padding:6px 9px;font-size:14px;white-space:nowrap}#pbtn,#trophy{display:none!important}body{animation:none!important}.bub{display:none!important}
+</style><meta name="description" content="Puzzle Jar: sort the colours, beat the clock, and play Caller & Mover with a friend."><meta property="og:title" content="Puzzle Jar - colour sorting puzzle"><meta property="og:description" content="Beat the clock, climb the shelves, and play Caller & Mover with a friend."><meta property="og:type" content="website"><meta property="og:image" content="preview.png"><meta name="twitter:card" content="summary_large_image"><style>header{padding:10px 8px 4px}header .meta{display:flex;flex-wrap:nowrap;gap:6px;justify-content:center;max-width:100%}header .chip,#clk{padding:6px 9px;font-size:14px;white-space:nowrap}#pbtn,#trophy{display:none!important}body{animation:none!important}.bub{display:none!important}
 .dly{margin:12px;padding:14px;border-radius:20px;background:linear-gradient(135deg,#ff9a3c,#ff5e7e);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;box-shadow:0 0 0 3px #ffd93d,0 8px 0 rgba(0,0,0,.2)}.dly:not(.dn){animation:sjp 1.6s ease-in-out infinite}.dly.dn{background:linear-gradient(135deg,#3b8f6b,#2a6a8a);box-shadow:none}.dly small{display:block;opacity:.92;font-weight:700;font-size:12px}.dly button{border:0;border-radius:14px;padding:12px 16px;font:800 16px Nunito,system-ui,sans-serif;background:#ffd93d;color:#12203a}.dts{display:flex;gap:4px;margin:6px 0}.dts u{width:14px;height:14px;border-radius:50%;background:#ffffff55}.dts u.on{background:#ffd93d}
 #nedit{display:flex;gap:6px;margin:6px 0}#nin{flex:1;min-width:0;font:800 16px Nunito,system-ui,sans-serif;border-radius:12px;border:0;padding:12px;text-align:center}#nedit .opt{flex:none;width:auto;margin:0;padding:0 14px}
 </style><style>[data-ph=a] #hint,[data-ph=a] #extra,[data-ph=a] #clk,[data-ph=b] #clk{display:none!important}.early #toMap{display:none}
@@ -100,7 +100,7 @@ body:not(.flipok) #flip{display:none}#flip{background:linear-gradient(#b983ff,#7
 </head>
 <body>
 <header>
-  <h1>Pourfect</h1>
+  <h1>Puzzle Jar</h1>
   <div class="meta">
     <button class="icon" id="backBtn" aria-label="Back to map">←</button><span class="chip" id="lvl">Level 1</span>
     <span class="chip" id="coins">🪙 0</span>
@@ -119,7 +119,7 @@ body:not(.flipok) #flip{display:none}#flip{background:linear-gradient(#b983ff,#7
 <div id="map" class="off"><div id="mapTop"><span class="chip" id="mcoins"></span><button class="chip" id="mdaily"></button><button class="icon" id="mshop" aria-label="Shop">🛍</button><button class="icon" id="mgear" aria-label="Settings">⚙</button></div><div id="mapScroll"><div id="mapInner"></div></div><div id="plaza"><div id="pz"></div></div><div id="pinfo"></div><nav id="nav"><button data-t="map" class="on"><i>🫙</i>Levels</button><button data-t="plaza"><i>🤝</i>Duo</button><button data-t="ranks"><i>🏆</i>Ranks</button><button data-t="me"><i>👤</i>Me</button></nav></div>
 <div id="room"><button id="rback">‹ Back</button><div id="rbody" style="width:100%;display:flex;flex-direction:column;align-items:center"></div></div><div id="toast"></div>
 <div id="set"><div class="card"><h2>Settings</h2><button class="opt" id="snd"></button><button class="opt" id="cbm"></button><button class="opt" id="sng"></button><button class="opt" id="mus"></button><button class="opt" id="cvdb"></button><button class="opt" id="sty"></button><button class="opt" id="thm"></button><button id="closeSet">Done</button></div></div>
-<div id="lb"><div class="card"><h2>Pourfect Ranks</h2><div id="lbme"></div><div id="lbtab"><button data-s="g" class="on">🌍 Global</button><button data-s="c">My country</button></div><select id="cty" aria-label="Your country"></select><div id="lbmsg"></div><ol id="lbl"></ol><button id="closeLb">Done</button></div></div>
+<div id="lb"><div class="card"><h2>Puzzle Jar Ranks</h2><div id="lbme"></div><div id="lbtab"><button data-s="g" class="on">🌍 Global</button><button data-s="c">My country</button></div><select id="cty" aria-label="Your country"></select><div id="lbmsg"></div><ol id="lbl"></ol><button id="closeLb">Done</button></div></div>
 <div id="pick"><div class="card"><h2>Pick a level</h2><button class="opt" id="dailyBtn"></button><div id="pk"></div><button id="closePk">Close</button></div></div>
 <div id="prof"><div class="card"><div id="pframe"><h2 id="pn"></h2><div id="rk"></div></div><div id="px"></div><div id="bd"></div><p id="bt"></p><button class="opt" id="nick">🎲 New nickname</button><button id="closeProf">Done</button></div></div>
 <div id="win"><div class="card"><h2>Level complete</h2><div id="stars">★★★</div><p id="wmsg"></p><button class="opt" id="shareWin">Share result</button><button class="opt" id="toMap">Back to map</button><button id="next">Next level</button></div></div>
@@ -147,7 +147,7 @@ function solvable(s){return !!solveBoard(s,60)}
 const uniform=j=>j.length>0&&j.every(x=>x%100===j[0]%100);
 const full=j=>j.length===CAP&&uniform(j);
 function gen(){const L=daily?100000+dayIdx():level,b=(!daily&&contractLevel(L))?contractForLevel(L):(!daily&&lockedLevel(L))?lockedForLevel(L):boardForLevel(L,daily?5:plainTier(L));jars=b.jars;LOCKS=b.locks||[];CONTRACT=b.contract||[];rnd=mul(L*7919+13);let hid=0;
-  if(level>=2||daily){const p=(!daily&&fogLevel(L))?1:daily?.3:Math.min(.6,.1+(level-2)*.025);jars.forEach(j=>{for(let k=0;k<j.length-1;k++)if(rnd()<p){j[k]+=100;hid++}})}
+  if(level>=2||daily){const p=(!daily&&fogLevel(L))?1:daily?.3:Math.min(.8,.1+(level-2)*.025+({tense:.08,hard:.15,boss:.15}[moodOf(L)]||0));jars.forEach(j=>{for(let k=0;k<j.length-1;k++)if(rnd()<p){j[k]+=100;hid++}})}
   par=b.par+Math.floor(hid/4);limit=(!daily&&level%10===0)?Math.ceil(par*2):0}
 function chunk(j){let k=1;while(k<j.length&&j[j.length-1-k]===j[j.length-1])k++;return k}
 function can(a,b){return !sealedNow(a)&&!sealedNow(b)&&canBase(a,b)&&!contractMsg(a,b)}
@@ -252,7 +252,7 @@ $('cbm').onclick=()=>{cb=!cb;save();render()};$('sng').onclick=()=>{single=!sing
 const THEMES=[{n:'Auto'},{n:'Sunset',cost:100,a:'#3b1c5a',b:'#d9576b'},{n:'Forest',cost:150,a:'#0b3d2e',b:'#2f8f5b'},{n:'Midnight',cost:200,a:'#05060f',b:'#1c2a5a'}];let thmMsg='';
 function applyTheme(){const r=document.documentElement.style,t=THEMES[theme]||THEMES[0];['--bg1','--bg2','--fg','--glass','--edge','--btn','--card','--accent'].forEach(k=>r.removeProperty(k));if(!t.a||!owned.includes(theme))return;r.setProperty('--bg1',t.a);r.setProperty('--bg2',t.b);r.setProperty('--fg','#fff');r.setProperty('--glass','rgba(255,255,255,.13)');r.setProperty('--edge','rgba(255,255,255,.55)');r.setProperty('--btn','rgba(255,255,255,.15)');r.setProperty('--card','#22306a');r.setProperty('--accent','#ffd93d')}
 $('thm').onclick=()=>{theme=(theme+1)%THEMES.length;const t=THEMES[theme];thmMsg='';if(t.cost&&!owned.includes(theme)){if(coins>=t.cost){coins-=t.cost;owned.push(theme)}else thmMsg='need '+t.cost+' coins'}save();applyTheme();render()};
-function openPick(){const pk=$('pk');pk.innerHTML='';$('dailyBtn').textContent='📅 Daily Pourfect'+(lastDay===dayIdx()?' ✔':'')+(streak?' · 🔥'+streak:'');for(let i=1;i<=maxLv;i++){const b=document.createElement('button');b.textContent=i;if(i===level)b.className='cur';b.onclick=()=>{daily=false;level=i;save();$('pick').classList.remove('on');start()};pk.appendChild(b)}$('pick').classList.add('on')}
+function openPick(){const pk=$('pk');pk.innerHTML='';$('dailyBtn').textContent='📅 Daily Puzzle Jar'+(lastDay===dayIdx()?' ✔':'')+(streak?' · 🔥'+streak:'');for(let i=1;i<=maxLv;i++){const b=document.createElement('button');b.textContent=i;if(i===level)b.className='cur';b.onclick=()=>{daily=false;level=i;save();$('pick').classList.remove('on');start()};pk.appendChild(b)}$('pick').classList.add('on')}
 $('lvl').onclick=openMap;$('closePk').onclick=()=>$('pick').classList.remove('on');
 const CTY={US:'United States',GB:'United Kingdom',NG:'Nigeria',GH:'Ghana',KE:'Kenya',ZA:'South Africa',EG:'Egypt',IN:'India',PK:'Pakistan',BD:'Bangladesh',PH:'Philippines',ID:'Indonesia',BR:'Brazil',MX:'Mexico',CA:'Canada',DE:'Germany',FR:'France',ES:'Spain',IT:'Italy',TR:'Turkey',SA:'Saudi Arabia',AE:'UAE',CN:'China',JP:'Japan',KR:'South Korea',AU:'Australia',RU:'Russia',UA:'Ukraine',PL:'Poland',NL:'Netherlands'};
 const flag=c=>/^[A-Z]{2}$/.test(c)?String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))):'🌍';
@@ -262,7 +262,7 @@ async function postOld(){if(!DB||!MYID)return;try{await DB.doc('leaderboard/'+MY
 function openLbOld(){$('lb').classList.add('on');fillMe();const m=$('lbmsg'),s=$('cty');if(!s.options.length)s.innerHTML='<option value="">Choose your country</option>'+Object.entries(CTY).map(([k,v])=>`<option value="${k}">${flag(k)} ${v}</option>`).join('');s.value=country;
 if(!DB||!MYID){m.textContent='Connecting…';$('lbl').innerHTML='';return}
 m.textContent='Loading…';post();if(unsub){try{unsub()}catch(e){}}
-try{unsub=DB.collection('leaderboard').onSnapshot(async snap=>{const rows=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>b.score-a.score).slice(0,20);let ps={};try{ps=await USER.profiles(rows.map(r=>r.id))}catch(e){}const ol=$('lbl');ol.innerHTML='';m.textContent=rows.length?'':'No scores yet. Win a level to post yours.';rows.forEach((r,i)=>{const li=document.createElement('li');li.className=(i<3?'r'+(i+1):'')+(r.id===MYID?' me':'');const rk=document.createElement('span'),fl=document.createElement('span'),nm=document.createElement('span'),sc=document.createElement('span');rk.textContent=['🥇','🥈','🥉'][i]||(i+1)+'.';fl.textContent=flag(r.country);nm.className='nm';nm.textContent=(ps[r.id]&&ps[r.id].name)||'Player';sc.textContent='Lv '+r.level;li.append(rk,fl,nm,sc);ol.appendChild(li)})},e=>{m.textContent='Could not load scores.'})}catch(e){m.textContent='Could not load scores.'}}
+try{unsub=DB.collection('leaderboard').onSnapshot(async snap=>{const rows=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>b.score-a.score).slice(0,20);let ps={};try{ps=await USER.profiles(rows.map(r=>r.id))}catch(e){}const ol=$('lbl');ol.innerHTML='';m.textContent=rows.length?'':'No scores yet. Win a level to post yours.';rows.forEach((r,i)=>{const li=document.createElement('li');li.className=(i<3?'r'+(i+1):'')+(r.id===MYID?' me':'');const rk=document.createElement('span'),fl=document.createElement('span'),nm=document.createElement('span'),sc=document.createElement('span');rk.textContent=['🥇','🥈','🥉'][i]||(i+1)+'.';fl.textContent=flag(r.country);nm.className='nm';nm.textContent=(ps[r.id]&&ps[r.id].name)||'Player';sc.textContent='Lv '+r.level;li.append(rk,fl,nm,sc);li.style.cursor='pointer';li.onclick=()=>openCard({id:r.id,name:(ps[r.id]&&ps[r.id].name)||'Player',country:r.country,level:r.level,stars:r.stars,rank:i+1});ol.appendChild(li)})},e=>{m.textContent='Could not load scores.'})}catch(e){m.textContent='Could not load scores.'}}
 $('trophy').onclick=openLb;
 /* music */
 const CH=[[220,261.63,329.63],[174.61,220,261.63],[196,261.63,329.63],[196,246.94,293.66]],SC=[523.25,587.33,659.25,783.99,880,1046.5];let mTimer=null,mStep=0,mg=null;
@@ -292,7 +292,7 @@ function openProfBase(){if(!nick){nick=mkNick();save()}const {t,n}=tier();$('pn'
 $('pbtn').onclick=openProf;$('closeProf').onclick=()=>$('prof').classList.remove('on');$('nick').onclick=()=>{nick=mkNick();save();openProf()};
 /* win extras */
 function confetti(){for(let i=0;i<46;i++){const d=document.createElement('div');d.className='cf';d.style.left=Math.random()*100+'vw';d.style.background=COLORS[i%COLORS.length];d.style.animationDelay=Math.random()*.5+'s';d.style.animationDuration=1.4+Math.random()*1.2+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),3400)}}
-$('shareWin').onclick=async()=>{const s=($('stars').textContent.match(/★/g)||[]).length,t='I cleared '+(daily?'the Daily Pourfect':'Level '+level)+' in '+moves+' moves ('+s+'/3 stars) 🔥'+streak+'. Beat me!';try{if(navigator.share)await navigator.share({text:t});else{await navigator.clipboard.writeText(t);$('wmsg').textContent='Copied to clipboard'}}catch(e){try{await navigator.clipboard.writeText(t);$('wmsg').textContent='Copied to clipboard'}catch(_){$('wmsg').textContent=t}}};$('closeLb').onclick=()=>{$('lb').classList.remove('on');if(unsub){try{unsub()}catch(e){}unsub=null}};$('cty').onchange=()=>{country=$('cty').value;save();post()};
+$('shareWin').onclick=async()=>{const s=($('stars').textContent.match(/★/g)||[]).length,t='I cleared '+(daily?'the Daily Puzzle Jar':'Level '+level)+' in '+moves+' moves ('+s+'/3 stars) 🔥'+streak+'. Beat me!';try{if(navigator.share)await navigator.share({text:t});else{await navigator.clipboard.writeText(t);$('wmsg').textContent='Copied to clipboard'}}catch(e){try{await navigator.clipboard.writeText(t);$('wmsg').textContent='Copied to clipboard'}catch(_){$('wmsg').textContent=t}}};$('closeLb').onclick=()=>{$('lb').classList.remove('on');if(unsub){try{unsub()}catch(e){}unsub=null}};$('cty').onchange=()=>{country=$('cty').value;save();post()};
 /* map and plaza */
 const ZONES=[{n:'Candy Meadow',a:'#ffe3f0',b:'#ff8fbf',d:['🍭','🧁','🌸','🍬']},{n:'Coral Reef',a:'#c8f3ff',b:'#2fa8d0',d:['🐚','🐠','🪸','🐙']},{n:'Sunset Dunes',a:'#ffe9b8',b:'#ff9650',d:['🏜️','🐪','🌵','☀️']},{n:'Neon City',a:'#4a2a9a',b:'#1a1048',d:['🏙️','🌃','🚕','🎆']},{n:'Frost Peak',a:'#eaf6ff',b:'#7fb8f0',d:['🏔️','⛄','❄️','🐧']},{n:'Jade Forest',a:'#d4f5d0',b:'#2f9a5e',d:['🌲','🦌','🍄','🦋']},{n:'Golden Valley',a:'#fff6c4',b:'#eaa71c',d:['🏛️','🌾','🦁','👑']}];
 {const g=n=>ZONES.find(z=>z.n===n);ZONES.splice(0,ZONES.length,g('Sunset Dunes'),g('Coral Reef'),g('Jade Forest'),g('Candy Meadow'),{n:'Haunted Hollow',a:'#6a45a0',b:'#1a0f2e',d:['🎃','👻','🦇','🕸️']},g('Frost Peak'),g('Neon City'),g('Golden Valley'))}
@@ -312,7 +312,7 @@ $('mgear').onclick=()=>$('set').classList.add('on');$('mdaily').onclick=()=>{dai
 for(let i=0;i<10;i++){const b=document.createElement('div');b.className='bub';const s=10+Math.random()*26;b.style.cssText='width:'+s+'px;height:'+s+'px;left:'+Math.random()*100+'vw;animation-duration:'+(14+Math.random()*14)+'s;animation-delay:-'+Math.random()*20+'s';document.body.appendChild(b)}
 function fillMe(){const {t,n}=tier(),pr=n?Math.min(100,Math.round((totalStars-t[1])/(n[1]-t[1])*100)):100;if(!nick){nick=mkNick();save()}$('lbme').style.borderColor=t[2];$('lbme').innerHTML='<i>🦊</i><div style="flex:1"><b>'+nick+'</b>'+t[0]+(country?' · '+flag(country):'')+' · Player Lv '+plvl()+'<div class="bar"><u style="width:'+pr+'%"></u></div></div>'}
 const ROOMS={arena:{n:'Duel Arena',e:'🏟️',a:'#8a1f45',b:'#ff6b6b',m:'arena',t:'Two players, one puzzle, first to finish wins. Every finished jar drops fog on your rival.',f:['Live 1v1 duels with a skill rating','Fog and clear-window power-ups','Rematch in one tap'],x:22,y:200},cafe:{n:'Caller & Mover Café',e:'☕',a:'#6b4226',b:'#e0a96d',m:'cafe',t:'One player sees the colors and calls them out. The other moves the tiles and cannot see. Talk to win.',f:['Needs two phones online','Voice and quick reactions','Swap roles each round'],x:78,y:330},club:{n:'Club House',e:'🏠',a:'#1f5a3a',b:'#6fcf6a',m:'club',t:'Your friends, your chat, your weekly goal. Clubs climb their own ranking.',f:['Club chat and goals','Shared hard board','Club rank and badge'],x:20,y:740},shop:{n:'Shop',e:'🛍️',a:'#6a2a9a',b:'#ff7ad9',m:'shop',t:'Themes and liquid styles you can see in every game.',f:[],x:80,y:930},ghost:{n:'Ghost Track',e:'👻',a:'#1a0f3a',b:'#6a4cff',m:'ghost',t:'Race a recording of your best run. Beat your ghost to earn spooky badges.',f:[],x:24,y:1120}};
-function buildPlaza(){const z=$('pz'),D='M200 1440 C60 1340 60 1240 190 1180 S330 1020 190 940 S40 800 180 720 S320 560 190 480 S60 340 180 270';z.innerHTML='<svg viewBox="0 0 360 1500" preserveAspectRatio="none" width="100%" height="1500"><ellipse cx="60" cy="230" rx="140" ry="60" fill="#7ccc68"/><ellipse cx="320" cy="260" rx="150" ry="70" fill="#6dc05d"/><path d="'+D+'" fill="none" stroke="#b79a62" stroke-width="52" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="'+D+'" fill="none" stroke="#efdcab" stroke-width="40" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="'+D+'" fill="none" stroke="#fff6dc" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><div class="fog"></div><span class="cld" style="top:40px">☁️</span><span class="cld" style="top:100px;animation-delay:-16s">☁️</span><h3 style="position:absolute;left:0;right:0;top:0;margin:14px 0">Pourfect Plaza</h3>';
+function buildPlaza(){const z=$('pz'),D='M200 1440 C60 1340 60 1240 190 1180 S330 1020 190 940 S40 800 180 720 S320 560 190 480 S60 340 180 270';z.innerHTML='<svg viewBox="0 0 360 1500" preserveAspectRatio="none" width="100%" height="1500"><ellipse cx="60" cy="230" rx="140" ry="60" fill="#7ccc68"/><ellipse cx="320" cy="260" rx="150" ry="70" fill="#6dc05d"/><path d="'+D+'" fill="none" stroke="#b79a62" stroke-width="52" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="'+D+'" fill="none" stroke="#efdcab" stroke-width="40" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="'+D+'" fill="none" stroke="#fff6dc" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><div class="fog"></div><span class="cld" style="top:40px">☁️</span><span class="cld" style="top:100px;animation-delay:-16s">☁️</span><h3 style="position:absolute;left:0;right:0;top:0;margin:14px 0">Puzzle Jar Plaza</h3>';
 [['🌳',6,380],['🌲',88,470],['🌳',90,650],['🌲',4,880],['🌳',92,1040],['🌲',46,1230],['🌳',8,1370],['🌸',60,420],['🌷',30,600],['🍄',70,1160]].forEach(([e,x,y])=>{const s=document.createElement('span');s.className='tree';s.style.left=x+'%';s.style.top=y+'px';s.textContent=e;z.appendChild(s)});
 [['🚶‍♀️',420,26,0],['🧑‍🦱',760,30,-9],['🚶',1190,34,-15],['🐕',1330,24,-5],['🕊️',70,20,0],['🐦',130,26,-9],['🦋',560,30,-4]].forEach(([e,y,d,dl],i)=>{const s=document.createElement('span');s.className='wk'+(i%2?' rv':'');s.style.top=y+'px';s.style.animationDuration=d+'s';s.style.animationDelay=dl+'s';s.textContent=e;z.appendChild(s)});
 const fo=document.createElement('div');fo.className='fnt';fo.style.top='540px';fo.textContent='⛲';z.appendChild(fo);
@@ -348,32 +348,42 @@ const mpWon=J=>J.every(j=>!j.length||(j.length===CAP&&j.every(v=>v===j[0])));
 function mpGen(){let J,t=0;const n=5;do{const p=[];for(let c=0;c<n;c++)for(let i=0;i<CAP;i++)p.push(c);rnd=mul(Date.now()+t);shuffle(p);J=[];for(let j=0;j<n;j++)J.push(p.slice(j*CAP,j*CAP+CAP));J.push([],[]);t++}while((J.some(full)||!solvable(J))&&t<40);return J}
 const mpCode=()=>{const A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let s='';for(let i=0;i<5;i++)s+=A[Math.floor(Math.random()*A.length)];return s};
 function mpScreen(){let s=$('mp');if(!s){s=document.createElement('div');s.id='mp';s.innerHTML='<div id="mph"><button id="mpx">‹ Leave</button><b id="mpt"></b><span id="mps"></span></div><div id="mpm"></div><div id="mpboard"></div>';document.body.appendChild(s);$('mpx').onclick=mpLeave}return s}
+function pStatus(){if(M.net==='re')return '🟠 You are reconnecting…';if(M.pst==='left')return '⚪ Partner left the game';
+  if(M.pst==='re')return Date.now()-(M.goneAt||0)>25000?'🔴 Partner disconnected — room held':'🟠 Partner reconnecting…';
+  if(M.pst==='away')return '🟡 Partner is away';if(M.pst==='online')return Date.now()-(M.pSeen||0)>45000?'🟠 Partner network issues':'🟢 Partner online';
+  if(M.pub&&!M.partner)return '🔎 Searching for a player… '+Math.floor((Date.now()-(M.scanT0||Date.now()))/1000)+'s';return '○ waiting for partner…'}
 function mpDraw(){if(!$('mpboard'))return;if(M.mode==='tt')return ttDraw();
-  const J=M.role==='caller'?M.jars:M.lens.map(n=>Array(n).fill(-1));
+  const J=M.role==='caller'?M.jars:(M.won&&M.reveal?M.reveal:M.lens.map(n=>Array(n).fill(-1)));
   const bd=$('mpboard');bd.innerHTML='';document.documentElement.style.setProperty('--cols',J.length<=5?J.length:Math.ceil(J.length/2));
   J.forEach((j,i)=>{const d=document.createElement('div');d.className='jar'+(i===M.sel?' sel':'');d.setAttribute('aria-label',M.role==='mover'?'Jar '+(i+1)+': '+j.length+' hidden cards. Colours are hidden.':jarLabel(j,i));
     j.forEach(c=>{const l=document.createElement('div');l.className='layer';l.style.background=c<0?'#6b7a99':COLORS[c];l.textContent=c<0?'?':((cb||cvd!=='off')?SYM[c]:'');if(c>=0&&cvd!=='off')l.style.backgroundImage=TEX[c];d.appendChild(l)});
-    if(M.role==='mover')d.onclick=()=>mpTap(i);else d.style.cursor='default';bd.appendChild(d)});
+    if(M.role==='mover'&&!M.won)d.onclick=()=>mpTap(i);else d.style.cursor='default';{const n=document.createElement('span');n.className='jn';n.textContent=i+1;d.appendChild(n)}bd.appendChild(d)});
   $('mpt').textContent=(M.role==='caller'?'📣 Caller':'🖐 Mover')+' · '+M.code;
-  {const st=M.net==='re'?'🟠 You are reconnecting…':M.pst==='left'?'⚪ Partner left the game':M.pst==='gone'?'🔴 Partner disconnected — room held':M.pst==='away'?'🟡 Partner is away':M.pst==='online'?(Date.now()-(M.pSeen||0)>30000?'🟠 Partner network issues':'🟢 Partner online'):'○ waiting for partner…';$('mps').textContent=st}
-  $('mpm').textContent=M.won?'🎉 Solved together in '+M.moves+' moves!':(M.msg||(M.role==='caller'?'Call the moves. You cannot touch the jars.':'You cannot see the colours. Listen to your Caller.'));
+  $('mps').textContent=pStatus()
+  if(M.won){$('mpm').innerHTML='<b>🎉 Solved together in '+M.moves+' moves!</b><div>The real colours are revealed for both of you.</div><button class="mpb" id="cmr">Play again</button> <button class="mpb" id="cmt">Switch to Trust Test</button>';$('cmr').onclick=()=>mpNext('cm');$('cmt').onclick=()=>mpNext('tt')}
+  else $('mpm').textContent=M.msg||(M.role==='caller'?'Call the moves. You cannot touch the jars.':'You cannot see the colours. Listen to your Caller.');
 }
 function mpTap(i){if(M.won)return;if(M.sel<0){if(M.lens[i]){M.sel=i}}else{if(M.sel!==i)M.mref.child('moves').push({from:M.sel,to:i,t:Date.now()});M.sel=-1}tone(520,.08,'sine');mpDraw()}
 function mpListen(){
-  const R=FDB.ref('rooms/'+M.code);
+  const R=FDB.ref('rooms/'+M.code),_ch=R.child.bind(R);R.child=p=>{const r=_ch(p),_on=r.on.bind(r);r.on=(e,f)=>{(M.offs=M.offs||[]).push([r,f,e]);return _on(e,f)};return r};
   const PR=FDB.ref('rooms/'+M.code+'/presence/'+FUID),TS=firebase.database.ServerValue.TIMESTAMP,setP=st=>PR.set({s:st,t:TS});M.PR=PR;M.net='ok';
   M.cH=sn=>{if(!M)return;if(sn.val()){M.net='ok';PR.onDisconnect().remove().then(()=>setP(document.hidden?'away':'online'))}else M.net='re';if($('mp'))mpDraw()};FDB.ref('.info/connected').on('value',M.cH);
   M.hb=setInterval(()=>{if(M&&!document.hidden&&M.net==='ok')PR.update({t:TS}).catch(()=>{});if(M&&$('mp'))mpDraw()},8000);
   M.vis=()=>{if(M&&M.net==='ok')PR.update({s:document.hidden?'away':'online',t:TS}).catch(()=>{})};document.addEventListener('visibilitychange',M.vis);
   M.mref=R;
-  R.child('presence').on('value',s=>{if(!M)return;const v=s.val()||{},o=Object.keys(v).find(u=>u!==FUID),pv=o?v[o]:null,st=pv===true?'online':pv&&pv.s;M.partner=!!o&&st!=='left';if(M.role==='caller'&&M.pub&&o&&!M.lobbyGone){M.lobbyGone=1;FDB.ref('lobby/'+M.code).remove().catch(()=>{});toast('🎉 Match found!')}M.pSeen=Date.now();if(o){M.had=1;M.pst=st==='left'?'left':st==='away'?'away':'online'}else M.pst=M.had?'gone':'wait';if(M.role&&$('mp'))mpDraw()});
+  R.child('presence').on('value',s=>{if(!M)return;const v=s.val()||{},o=Object.keys(v).find(u=>u!==FUID),pv=o?v[o]:null,st=pv===true?'online':pv&&pv.s;M.partner=!!o&&st!=='left';if(M.role==='caller'&&M.pub&&o&&!M.lobbyGone){M.lobbyGone=1;FDB.ref('lobby/'+M.code).remove().catch(()=>{});toast('🎉 Match found!')}M.pSeen=Date.now();if(o){M.had=1;M.goneAt=0;M.pst=st==='left'?'left':st==='away'?'away':'online'}else if(M.had){M.pst='re';M.goneAt=M.goneAt||Date.now()}else M.pst='wait';if(M.role&&$('mp'))mpDraw()});
+  R.child('gm').on('value',sn=>{const g=sn.val();if(!g||!M)return;if(M.gmN===undefined){M.gmN=g.n;if(g.mode!==(M.mode||'cm'))mpSwitch(g.mode);return}if(g.n!==M.gmN){M.gmN=g.n;mpSwitch(g.mode)}});
+  if(M.role==='caller')R.child('next').on('value',async sn=>{const v=sn.val();if(!v||M.nbusy)return;M.nbusy=1;try{const md=v.mode==='tt'?'tt':'cm',n=(M.gmN||0)+1;
+    if(md==='tt'){await R.child('tt/state').set(ttNew(M.code,(M.S&&M.S.turn==='caller')?'mover':'caller'));await R.child('tt/prop').remove();await R.child('tt/ans').remove()}
+    else{M.jars=mpGen();M.moves=0;M.won=false;M.msg='';await R.child('moves').remove();await mpPush()}
+    await R.child('gm').set({mode:md,n});await R.child('next').remove()}catch(e){toast('Error: '+e.message)}M.nbusy=0});
   if(M.mode==='tt'){ttListen(R);return}
   if(M.role==='caller'){
     R.child('moves').orderByKey().on('child_added',async s=>{
       const m=s.val();s.ref.remove();if(!m||M.won)return;
       if(!mpCanMove(M.jars,m.from,m.to)){M.msg='That move is not allowed.';await mpPush();return}
       mpPour(M.jars,m.from,m.to);M.moves++;M.msg='';if(mpWon(M.jars))M.won=true;await mpPush();tone(300,.2,'sine')});
-  }else R.child('view').on('value',s=>{const v=s.val();if(!v)return;M.lens=v.lens;M.moves=v.moves||0;M.won=!!v.won;M.msg=v.msg||'';M.sel=-1;mpDraw();if(M.won)confetti()});
+  }else R.child('view').on('value',s=>{const v=s.val();if(!v)return;M.lens=v.lens;M.moves=v.moves||0;M.won=!!v.won;M.reveal=v.reveal?JSON.parse(v.reveal):null;M.msg=v.msg||'';M.sel=-1;mpDraw();if(M.won)confetti()});
 }
 
 /* ===== v11 Trust Test: same board, different colour views, shared trust chances ===== */
@@ -399,29 +409,90 @@ function ttTap(i){const S=M.S;if(!S||S.won||S.lost||S.turn!==M.role||M.prop)retu
 function ttDraw(){const S=M.S;if(!S||!$('mpboard'))return;const J=JSON.parse(S.jars),bd=$('mpboard'),me=M.role,mine=S.turn===me;
   bd.innerHTML='';document.documentElement.style.setProperty('--cols',J.length<=5?J.length:Math.ceil(J.length/2));
   J.forEach((j,i)=>{const d=document.createElement('div');d.className='jar'+(i===M.sel?' sel':'');d.setAttribute('aria-label','Jar '+(i+1));
-    j.forEach(c=>{const v=ttView(c,S.K,me),l=document.createElement('div');l.className='layer';l.style.background=COLORS[v];l.textContent=(cb||cvd!=='off')?SYM[v]:'';if(cvd!=='off')l.style.backgroundImage=TEX[v];d.appendChild(l)});
+    j.forEach(c=>{const v=S.won?c:ttView(c,S.K,me),l=document.createElement('div');l.className='layer';l.style.background=COLORS[v];l.textContent=(cb||cvd!=='off')?SYM[v]:'';if(cvd!=='off')l.style.backgroundImage=TEX[v];d.appendChild(l)});
     d.onclick=()=>ttTap(i);const n=document.createElement('span');n.className='jn';n.textContent=i+1;d.appendChild(n);bd.appendChild(d)});
   $('mpt').textContent='🧪 Trust Test · '+M.code;
-  {const st=M.net==='re'?'🟠 You are reconnecting…':M.pst==='left'?'⚪ Partner left the game':M.pst==='gone'?'🔴 Partner disconnected — room held':M.pst==='away'?'🟡 Partner is away':M.pst==='online'?(Date.now()-(M.pSeen||0)>30000?'🟠 Partner network issues':'🟢 Partner online'):'○ waiting for partner…';$('mps').textContent=st}
+  $('mps').textContent=pStatus()
   const hearts='❤️'.repeat(Math.max(0,S.chances))+'🖤'.repeat(Math.max(0,S.max-S.chances)),p=M.prop;let h='<div style="font-size:20px">'+hearts+'</div><div>'+S.chances+' TRUST CHANCE'+(S.chances===1?'':'S')+' REMAINING · '+S.moves+' moves</div>';
   if(S.msg)h+='<div style="color:#ffb3b3">'+S.msg+'</div>';
-  if(S.won)h+='<b>🎉 You solved it together in '+S.moves+' moves!</b>';else if(S.lost)h+='<b>💔 Out of trust chances.</b>';
+  if(S.won)h+='<b>🎉 You solved it together in '+S.moves+' moves!</b><div>The real colours are revealed for both of you.</div>';else if(S.lost)h+='<b>💔 Out of trust chances.</b>';
   else if(p){if(p.by===FUID)h+='<div>Waiting for your partner to confirm Jar '+(p.from+1)+' → Jar '+(p.to+1)+'…</div><button class="mpb" id="ttw">Withdraw</button>';
     else h+='<div>Partner proposes: <b>Jar '+(p.from+1)+' → Jar '+(p.to+1)+'</b>. Do the colours match what you see?</div><button class="mpb" id="tty">✔ Confirm</button> <button class="mpb" id="ttn">✖ Reject</button>'}
   else h+='<div>'+(mine?'👉 Your turn: tap the jar to move FROM, then the jar to move TO. Your colours differ from your partner\'s — talk it through!':'⏳ Partner is choosing a move…')+'</div>';
-  if(S.won||S.lost)h+='<button class="mpb" id="ttr">Play again</button>';
+  if(S.won||S.lost)h+='<button class="mpb" id="ttr">Play again</button> <button class="mpb" id="ttsw">Switch to Caller &amp; Mover</button>';
   h+='<div style="margin-top:6px">'+['Wait!','Your turn','I disagree','Good move!','Try another jar'].map(t=>'<button class="gh ttq">'+t+'</button>').join(' ')+'</div>';
   $('mpm').innerHTML=h;const w=(id,fn)=>{const e=$(id);if(e)e.onclick=fn};
-  w('ttw',()=>M.mref.child('tt/prop').remove());w('tty',()=>M.mref.child('tt/ans').set({ok:true,by:FUID}));w('ttn',()=>M.mref.child('tt/ans').set({ok:false,by:FUID}));w('ttr',()=>M.mref.child('tt/rematch').set({by:FUID,t:Date.now()}));
+  w('ttw',()=>M.mref.child('tt/prop').remove());w('tty',()=>M.mref.child('tt/ans').set({ok:true,by:FUID}));w('ttn',()=>M.mref.child('tt/ans').set({ok:false,by:FUID}));w('ttsw',()=>mpNext('cm'));w('ttr',()=>M.mref.child('tt/rematch').set({by:FUID,t:Date.now()}));
   $('mpm').querySelectorAll('.ttq').forEach(b=>b.onclick=()=>M.mref.child('tt/say').set({by:FUID,txt:b.textContent,t:Date.now()}))}
-async function mpPush(){M.seq=(Number(M.seq)||0)+1;await FDB.ref('secrets/'+M.code).set({jars:JSON.stringify(M.jars)});await M.mref.child('view').set({lens:M.jars.map(j=>j.length),moves:Number(M.moves)||0,won:!!M.won,msg:String(M.msg||''),seq:Number(M.seq)||0});mpDraw()}
+function mpNext(mode){M.mref.child('next').set({mode,by:FUID,t:Date.now()})}
+function mpDetach(){clearInterval(M.hb);clearInterval(M.scan);document.removeEventListener('visibilitychange',M.vis);(M.offs||[]).forEach(([r,f,e])=>r.off(e||'value',f));M.offs=[];try{FDB.ref('.info/connected').off('value',M.cH);M.mref.off()}catch(e){}}
+function mpSwitch(mode){const o=M;mpDetach();M={role:o.role,code:o.code,mode:mode==='tt'?'tt':'cm',mref:o.mref,PR:o.PR,sel:-1,had:o.had,pst:o.pst,pSeen:o.pSeen,pub:0,gmN:o.gmN,net:'ok',offs:[],lens:[],moves:0,jars:o.jars};
+  if(M.mode==='cm'&&M.role==='caller'){const R=M.mref;R.child('moves').remove().catch(()=>{})}mpListen();toast(M.mode==='tt'?'🧪 Trust Test — same room':'🧩 Caller & Mover — same room')}
+async function mpGrab(code,r){const t=await FDB.ref('rooms/'+code+'/mover').transaction(v=>v===null?FUID:undefined);if(!t.committed)return false;
+  const old=M;if(old&&old.pub){mpDetach();try{FDB.ref('lobby/'+old.code).remove();FDB.ref('rooms/'+old.code).remove()}catch(e){}}
+  M={role:'mover',code,lens:(r.view||{}).lens||[],moves:0,sel:-1};if(r.tt)M.mode='tt';M.mref=FDB.ref('rooms/'+code);mpListen();mpOpen();toast('🎉 Match found!');return true}
+async function mpScan(){if(!M||!M.pub||M.partner||M.scanBusy)return;if(Date.now()-M.scanT0>120000){mpLeave();return toast('No players found right now. Invite a friend or try again later.')}
+  M.scanBusy=1;try{const sn=await FDB.ref('lobby').orderByChild('t').limitToLast(20).get(),now=Date.now(),md=M.mode==='tt'?'tt':'cm',list=[];sn.forEach(c=>{const v=c.val();if(M&&c.key<M.code&&(v.m||'cm')===md&&(!v.t||now-v.t<300000))list.push(c.key)});
+    for(const code of list){if(!M||M.partner)break;const rs=await FDB.ref('rooms/'+code).get();if(!rs.exists())continue;const r=rs.val();if(r.caller===FUID||r.mover)continue;if(await mpGrab(code,r))break}}catch(e){}if(M){M.scanBusy=0;mpDraw()}}
+
+/* ===== v11 Social: player card, friends, messages, invites, one inbox ===== */
+const sEsc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),TSV=()=>firebase.database.ServerValue.TIMESTAMP,pk=(a,b)=>[a,b].sort().join('_');
+let SOC={inbox:[],friends:{},tab:'in',chat:null,last:0};
+async function socInit(){if(SOC.on)return;SOC.on=1;try{await mpInit();
+  FDB.ref('inbox/'+FUID).limitToLast(50).on('value',s=>{const v=s.val()||{};SOC.inbox=Object.entries(v).map(([k,x])=>Object.assign({k},x)).sort((a,b)=>(b.t||0)-(a.t||0));socBell();socFlow();socDraw()});
+  FDB.ref('friends/'+FUID).on('value',s=>{SOC.friends=s.val()||{};SOC.fl=1;socFlow();socDraw()});
+  const o=FDB.ref('online/'+FUID),beat=()=>{if(!document.hidden)o.set(TSV()).catch(()=>{})};FDB.ref('.info/connected').on('value',s=>{if(s.val())o.onDisconnect().set(0).then(()=>o.set(TSV()))});setInterval(beat,60000);document.addEventListener('visibilitychange',beat)}catch(e){SOC.on=0}}
+function socBell(){const b=$('bell');if(b)b.classList.toggle('dot',SOC.inbox.some(x=>!x.read&&x.type!=='fra'))}
+function socFlow(){if(!SOC.fl)return;SOC.inbox.filter(x=>x.type==='fra').forEach(x=>{const f=SOC.friends[x.from];if(f&&f.state==='pending')FDB.ref('friends/'+FUID+'/'+x.from).update({state:'ok'});FDB.ref('inbox/'+FUID+'/'+x.k).remove()})}
+async function isOnline(id){try{const v=(await FDB.ref('online/'+id).get()).val();return !!v&&Date.now()-v<150000}catch(e){return false}}
+function socModal(){let m=$('soc');if(!m){m=document.createElement('div');m.id='soc';m.className='sovl';m.onclick=e=>{if(e.target===m)closeSoc()};document.body.appendChild(m)}return m}
+function closeSoc(){socChatOff();$('soc')&&$('soc').classList.remove('on')}
+function socChatOff(){if(SOC.cq){SOC.cq.off('child_added',SOC.cl);SOC.cq=null}SOC.chat=null}
+function openSoc(tab){socInit();SOC.tab=tab==='fr'?'fr':'in';socChatOff();socModal().classList.add('on');socDraw();if(SOC.tab==='in'){const u={};SOC.inbox.forEach(x=>{if(!x.read)u[x.k+'/read']=true});if(Object.keys(u).length)FDB.ref('inbox/'+FUID).update(u).catch(()=>{})}}
+function socDraw(){const m=$('soc');if(!m||!m.classList.contains('on')||SOC.chat)return;
+  const row=(ic,t,sub,btns)=>'<div class="srow"><span class="sic">'+ic+'</span><span class="stx"><b>'+sEsc(t)+'</b><small>'+sEsc(sub)+'</small></span>'+btns+'</div>';
+  let h='<div class="mc"><button class="xbtn" id="sx">✕</button><div class="stabs"><button data-t="in" class="'+(SOC.tab==='in'?'on':'')+'">🔔 Inbox</button><button data-t="fr" class="'+(SOC.tab==='fr'?'on':'')+'">👥 Friends</button></div><div class="slist">';
+  if(SOC.tab==='in'){const L=SOC.inbox.filter(x=>x.type!=='fra');h+=L.length?L.map(x=>x.type==='msg'?row('💬',x.name||'Player',x.text||'',`<button class="sb" data-a="chat" data-k="${x.k}">Open</button>`):x.type==='fr'?row('➕',x.name||'Player','sent you a friend request',`<button class="sb" data-a="acc" data-k="${x.k}">Accept</button><button class="sb g" data-a="del" data-k="${x.k}">✕</button>`):row('🎮',x.name||'Player','invited you to play',`<button class="sb" data-a="join" data-k="${x.k}">Join</button><button class="sb g" data-a="del" data-k="${x.k}">✕</button>`)).join(''):'<p class="rp">Nothing yet. Tap a player on the Ranks list to say hi!</p>'}
+  else{const F=Object.entries(SOC.friends);h+='<div class="ssr"><input id="sq" maxlength="20" placeholder="Find a player by name"><button class="sb" id="sgo">Search</button></div><div id="sres"></div>'+(F.length?F.map(([id,f])=>row('🙂',f.name||'Player',f.state==='ok'?'Friend':'Request sent',f.state==='ok'?`<button class="sb" data-a="fm" data-id="${id}">💬</button><button class="sb" data-a="fi" data-id="${id}">🎮</button>`:'')).join(''):'<p class="rp">No friends yet. Search above or tap a player in Ranks.</p>')}
+  m.innerHTML=h+'</div></div>';$('sx').onclick=closeSoc;
+  m.querySelectorAll('.stabs button').forEach(b=>b.onclick=()=>{SOC.tab=b.dataset.t;socDraw()});
+  m.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>socAct(b.dataset.a,b.dataset.k,b.dataset.id));
+  if($('sgo'))$('sgo').onclick=socSearch}
+function socAct(a,k,id){const x=SOC.inbox.find(i=>i.k===k),rm=()=>FDB.ref('inbox/'+FUID+'/'+k).remove();
+  if(a==='del')rm();
+  else if(a==='chat'&&x)socChat(x.from,x.name);
+  else if(a==='acc'&&x){FDB.ref('friends/'+FUID+'/'+x.from).set({name:x.name||'Player',t:TSV(),state:'ok'}).then(()=>FDB.ref('inbox/'+x.from+'/fra_'+FUID).set({type:'fra',from:FUID,name:nick||'Player',t:TSV()})).then(()=>{rm();toast('You are now friends')}).catch(()=>toast('Could not accept — try again'))}
+  else if(a==='join'&&x){rm();closeSoc();mpJoin(x.code)}
+  else if(a==='fm'){const f=SOC.friends[id];socChat(id,f&&f.name)}
+  else if(a==='fi'){const f=SOC.friends[id];closeSoc();socInvite({id,name:f&&f.name})}}
+async function socSearch(){const q=$('sq').value.trim(),r=$('sres');if(q.length<2){r.innerHTML='<p class="rp">Type at least 2 letters.</p>';return}r.textContent='Searching…';
+  try{const sn=await FDB.ref('leaderboard').orderByChild('name').startAt(q).endAt(q+'\uf8ff').limitToFirst(8).get(),L=[];sn.forEach(c=>{if(c.key!==FUID)L.push(Object.assign({id:c.key},c.val()))});
+    r.innerHTML=L.length?'':'<p class="rp">No player found. Names are case-sensitive.</p>';L.forEach(p=>{const d=document.createElement('div');d.className='srow';d.innerHTML='<span class="sic">'+avOf(p.name)+'</span><span class="stx"><b>'+sEsc(p.name)+'</b><small>Level '+(p.level||0)+'</small></span><button class="sb">View</button>';d.onclick=()=>openCard(p);r.appendChild(d)})}catch(e){r.textContent='Search failed. Check your connection.'}}
+function socChat(id,name){socInit();SOC.chat={id,name:name||'Player'};const m=socModal();m.classList.add('on');
+  m.innerHTML='<div class="mc"><button class="xbtn" id="sx">✕</button><div class="chh"><button class="sb g" id="cb">←</button><b>'+sEsc(SOC.chat.name)+'</b></div><div id="chm" class="chm"></div><div class="chq">'+['👍','😂','🎉','🔥','👏','🤝'].map(e=>'<button class="sb g">'+e+'</button>').join('')+'</div><div class="ssr"><input id="cin" maxlength="300" placeholder="Message (text and emoji only)"><button class="sb" id="csd">Send</button></div></div>';
+  $('sx').onclick=closeSoc;$('cb').onclick=()=>{socChatOff();socDraw()};const send=t=>{t=String(t).trim().slice(0,300);if(!t||Date.now()-SOC.last<1500)return;SOC.last=Date.now();$('cin').value='';
+    FDB.ref('dm/'+pk(FUID,id)).push({from:FUID,text:t,t:TSV()}).then(()=>FDB.ref('inbox/'+id+'/msg_'+FUID).set({type:'msg',from:FUID,name:nick||'Player',text:t.slice(0,80),t:TSV()})).catch(()=>toast('Message not sent — check your connection'))};
+  $('csd').onclick=()=>send($('cin').value);$('cin').onkeydown=e=>{if(e.key==='Enter')send($('cin').value)};m.querySelectorAll('.chq .sb').forEach(b=>b.onclick=()=>send(b.textContent));
+  const box=$('chm');SOC.cq=FDB.ref('dm/'+pk(FUID,id)).orderByChild('t').limitToLast(30);SOC.cl=SOC.cq.on('child_added',sn=>{const v=sn.val(),d=document.createElement('div');d.className='cm '+(v.from===FUID?'me':'');d.textContent=v.text;box.appendChild(d);box.scrollTop=box.scrollHeight});
+  FDB.ref('inbox/'+FUID+'/msg_'+id).remove().catch(()=>{})}
+async function socInvite(p){try{await socInit();await mpCreate(false);if(!M||!M.code)return;await FDB.ref('inbox/'+p.id+'/inv_'+FUID).set({type:'inv',from:FUID,name:nick||'Player',code:M.code,mode:MODE,t:TSV()});toast('Invite sent — you are waiting in room '+M.code)}catch(e){toast('Could not send invite: '+e.message)}}
+async function openCard(p){let m=$('pcard');if(!m){m=document.createElement('div');m.id='pcard';m.className='sovl';m.onclick=e=>{if(e.target===m)m.classList.remove('on')};document.body.appendChild(m)}socInit();
+  const me=p.id===FUID,fr=SOC.friends[p.id];
+  m.innerHTML='<div class="mc scard"><button class="xbtn" id="pcx">✕</button><div style="font-size:46px;position:relative;display:inline-block">'+avOf(p.name)+'<span id="pcdot" class="odot"></span></div><h2 style="margin:4px 0">'+sEsc(p.name||'Player')+'</h2><div class="rp">'+(p.country?flag(p.country)+' ':'')+'Level '+(p.level||0)+(p.stars!=null?' · '+p.stars+'★':'')+(p.rank?' · Rank #'+p.rank:'')+'</div><div class="sbtns">'+(me?'<p class="rp">This is you</p>':'<button class="mpb" id="pcm">💬 Message</button><button class="mpb" id="pci">🎮 Invite to play</button><button class="mpb" id="pcf"'+(fr?' disabled':'')+'>'+(fr?(fr.state==='ok'?'✓ Friends':'⏳ Requested'):'➕ Add friend')+'</button>')+'</div></div>';
+  m.classList.add('on');$('pcx').onclick=()=>m.classList.remove('on');
+  if(!me){$('pcm').onclick=()=>{m.classList.remove('on');socChat(p.id,p.name)};$('pci').onclick=()=>{m.classList.remove('on');socInvite(p)};
+    $('pcf').onclick=async()=>{try{await socInit();await FDB.ref('friends/'+FUID+'/'+p.id).set({name:p.name||'Player',t:TSV(),state:'pending'});await FDB.ref('inbox/'+p.id+'/fr_'+FUID).set({type:'fr',from:FUID,name:nick||'Player',t:TSV()});toast('Friend request sent');$('pcf').disabled=true;$('pcf').textContent='⏳ Requested'}catch(e){toast('Could not send request')}}}
+  isOnline(p.id).then(o=>{const d=$('pcdot');if(d)d.classList.toggle('on',o)})}
+(function(){const st=document.createElement('style');st.textContent='.sovl{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:14px}.sovl.on{display:flex}.sovl .mc{position:relative;padding-top:50px;max-height:88vh;display:flex;flex-direction:column;gap:8px;text-align:left}.scard{text-align:center!important;align-items:center}.xbtn{position:absolute;top:8px;right:8px;width:38px;height:38px;border-radius:50%;border:0;background:#ffffff26;color:#fff;font-size:20px;font-weight:800;cursor:pointer}.slist,.chm{overflow:auto;min-height:60px;display:flex;flex-direction:column;gap:6px}.srow{display:flex;align-items:center;gap:8px;background:#ffffff14;border-radius:12px;padding:8px}.sic{font-size:26px}.stx{flex:1;min-width:0;display:flex;flex-direction:column}.stx b,.stx small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.stx small{opacity:.7}.sb{border:0;border-radius:10px;padding:8px 12px;background:#5b8cff;color:#fff;font-weight:800;cursor:pointer}.sb.g{background:#ffffff26}.ssr{display:flex;gap:6px}.ssr input{flex:1;min-width:0;padding:10px;border-radius:10px;border:0;font-size:15px}.chh{display:flex;gap:8px;align-items:center}.chm{height:38vh;background:#0003;border-radius:12px;padding:8px}.cm{background:#ffffff1f;border-radius:12px;padding:6px 10px;max-width:80%;align-self:flex-start;word-break:break-word}.cm.me{background:#5b8cff;align-self:flex-end}.chq{display:flex;gap:6px;justify-content:center}.sbtns{display:flex;flex-direction:column;gap:8px;width:100%}.odot{position:absolute;right:-2px;bottom:2px;width:14px;height:14px;border-radius:50%;background:#6b7a99;border:2px solid #1d2b5a}.odot.on{background:#3fcf7a}#bell{position:relative}#bell.dot::after{content:"";position:absolute;top:4px;right:4px;width:10px;height:10px;border-radius:50%;background:#ff5a5a}';document.head.appendChild(st);
+  const b=document.createElement('button');b.id='bell';b.className='icon';b.setAttribute('aria-label','Inbox');b.textContent='🔔';b.onclick=()=>openSoc('in');const mt=$('mapTop');if(mt)mt.appendChild(b);setTimeout(socInit,2500)})();
+async function mpPush(){M.seq=(Number(M.seq)||0)+1;await FDB.ref('secrets/'+M.code).set({jars:JSON.stringify(M.jars)});await M.mref.child('view').set({lens:M.jars.map(j=>j.length),moves:Number(M.moves)||0,won:!!M.won,reveal:M.won?JSON.stringify(M.jars):'',msg:String(M.msg||''),seq:Number(M.seq)||0});mpDraw()}
 function mpOpen(){const mm=$('mpmod');if(mm)mm.classList.remove('on');mpScreen().classList.add('on');$('room').classList.remove('on');mpDraw()}
 async function mpCreate(pub){pub=pub===true;
   try{await mpInit();let code,ok=false;
     for(let i=0;i<8&&!ok;i++){code=mpCode();const r=await FDB.ref('rooms/'+code+'/caller').transaction(v=>v===null?FUID:undefined);ok=r.committed}
     if(!ok)throw new Error('Could not reserve a room code.');
     M={role:'caller',code,jars:mpGen(),moves:0,seq:0,sel:-1,msg:''};M.mref=FDB.ref('rooms/'+code);
-    if(MODE==='tt'){M.mode='tt';await M.mref.child('tt/state').set(ttNew(code))}else{await FDB.ref('secrets/'+code).set({jars:JSON.stringify(M.jars)});await mpPush()}if(pub){M.pub=1;const L=FDB.ref('lobby/'+code);await L.set({t:firebase.database.ServerValue.TIMESTAMP,m:MODE});L.onDisconnect().remove()}mpListen();mpOpen();toast(pub?'Searching for a player…':'Room '+code+' — share this code')
+    if(MODE==='tt'){M.mode='tt';await M.mref.child('tt/state').set(ttNew(code))}else{await FDB.ref('secrets/'+code).set({jars:JSON.stringify(M.jars)});await mpPush()}if(pub){M.pub=1;const L=FDB.ref('lobby/'+code);await L.set({t:firebase.database.ServerValue.TIMESTAMP,m:MODE});L.onDisconnect().remove()}mpListen();mpOpen();if(pub){M.scanT0=Date.now();M.scan=setInterval(mpScan,3000)}toast(pub?'Searching for a player… (up to 2 minutes)':'Room '+code+' — share this code')
   }catch(e){toast('Error: '+e.message)}}
 async function mpJoin(code){
   try{await mpInit();code=(code||'').trim().toUpperCase();if(code.length!==5)return toast('Enter the 5-character code');
@@ -435,11 +506,10 @@ async function mpQuick(){
   const b=$('mpdo');if(b){b.disabled=true;b.textContent='Searching…'}
   try{await mpInit();const sn=await FDB.ref('lobby').orderByChild('t').limitToLast(10).get(),now=Date.now(),list=[];sn.forEach(c=>{const v=c.val(),t=v.t;if((v.m||'cm')===MODE&&(!t||now-t<300000))list.push(c.key)});
     for(const code of list.reverse()){const rs=await FDB.ref('rooms/'+code).get();if(!rs.exists())continue;const r=rs.val();if(r.caller===FUID||r.mover)continue;
-      const t=await FDB.ref('rooms/'+code+'/mover').transaction(v=>v===null?FUID:undefined);if(!t.committed)continue;
-      M={role:'mover',code,lens:(r.view||{}).lens||[],moves:0,sel:-1};if(r.tt)M.mode='tt';M.mref=FDB.ref('rooms/'+code);mpListen();mpOpen();return toast('🎉 Match found!')}
+      if(await mpGrab(code,r))return}
     await mpCreate(true)
   }catch(e){toast('Error: '+e.message);if(b){b.disabled=false;b.textContent='Quick Match'}}}
-function mpLeave(){if(M&&M.mref){M.mref.off();clearInterval(M.hb);(M.offs||[]).forEach(([r,f])=>r.off('value',f));document.removeEventListener('visibilitychange',M.vis);if(M.pub)FDB.ref('lobby/'+M.code).remove().catch(()=>{});try{FDB.ref('.info/connected').off('value',M.cH);M.PR.onDisconnect().cancel();M.PR.set({s:'left',t:firebase.database.ServerValue.TIMESTAMP})}catch(e){}}M=null;$('mp').classList.remove('on')}
+function mpLeave(){if(M&&M.mref){M.mref.off();clearInterval(M.hb);clearInterval(M.scan);(M.offs||[]).forEach(([r,f,e])=>r.off(e||'value',f));document.removeEventListener('visibilitychange',M.vis);if(M.pub)FDB.ref('lobby/'+M.code).remove().catch(()=>{});try{FDB.ref('.info/connected').off('value',M.cH);M.PR.onDisconnect().cancel();M.PR.set({s:'left',t:firebase.database.ServerValue.TIMESTAMP})}catch(e){}}M=null;$('mp').classList.remove('on')}
 
 const PZIMG='';
 /* ===== Public leaderboard (no sign-in screens; anonymous auth is automatic) ===== */
@@ -452,7 +522,7 @@ async function loadLb(){const m=$('lbmsg'),ol=$('lbl');m.textContent='Loading…
   try{await mpInit();await post();const R=FDB.ref('leaderboard'),pc=lbScope==='c';if(pc&&!country){ol.innerHTML='';m.textContent='Pick your country above to see local ranks.';return}
     const s=await (pc?R.orderByChild('country').equalTo(country):R.orderByChild('score').limitToLast(50)).get(),rows=[];s.forEach(c=>{rows.push({id:c.key,...c.val()})});rows.sort((a,b)=>b.score-a.score);
     ol.innerHTML='';m.textContent=rows.length?'':'No scores yet. Win a level to post yours.';
-    rows.slice(0,50).forEach((r,i)=>{const li=document.createElement('li');li.className=(i<3?'r'+(i+1):'')+(r.id===FUID?' me':'');li.innerHTML='<span class="lbrk">'+(i<3?['🥇','🥈','🥉'][i]:i+1)+'</span><span class="lbav">'+avOf(r.name)+'</span><span class="nm"></span><span>'+flag(r.country)+'</span>';const n=li.querySelector('.nm');n.textContent=r.name||'Player';const sm=document.createElement('small');sm.textContent='Level '+r.level;n.appendChild(sm);ol.appendChild(li)})
+    rows.slice(0,50).forEach((r,i)=>{const li=document.createElement('li');li.className=(i<3?'r'+(i+1):'')+(r.id===FUID?' me':'');li.innerHTML='<span class="lbrk">'+(i<3?['🥇','🥈','🥉'][i]:i+1)+'</span><span class="lbav">'+avOf(r.name)+'</span><span class="nm"></span><span>'+flag(r.country)+'</span>';const n=li.querySelector('.nm');n.textContent=r.name||'Player';const sm=document.createElement('small');sm.textContent='Level '+r.level;n.appendChild(sm);li.style.cursor='pointer';li.onclick=()=>openCard({id:r.id,name:r.name,country:r.country,level:r.level,stars:r.stars,rank:i+1});ol.appendChild(li)})
   }catch(e){m.textContent='Could not load ranks ('+(e.code||e.message||'error')+'). If this says PERMISSION_DENIED, publish the latest firebase_rules.json.'}}
 
 async function mpStatsOld(){let g=$('pst');if(!g){g=document.createElement('div');g.id='pst';$('px').after(g)}
@@ -550,7 +620,7 @@ function buildPlaza(){const z=$('pz');z.className='duo';const live=/^https:/.tes
   z.innerHTML='<div class="dc"><div class="dh">🤝</div><h2>Caller & Mover</h2><p>One of you sees the colours. The other moves blind. Talk to solve it together.</p><button class="mpb" id="duoGo">Play with a friend</button>'+(live?'':'<p class="dn">Online play needs the game opened from its own web address, not inside Claude.</p>')+'</div>';$('duoGo').onclick=mpModal}
 /* ===== Escalating timer ===== */
 let tLeft=0,tTot=1,tLast=Date.now(),tSec=-1,TURG=false,tickOn=localStorage.getItem('pf_tick')!=='0';
-const secsFor=()=>{return Math.round((par+2)*Math.max(4,7.5-(daily?5:level)*.07))};
+const secsFor=()=>{const L=daily?30:level,mood=daily?1:{start:1,easy:1.3,normal:1,tense:.9,hard:.8,boss:.85}[moodOf(L)],spm=Math.max(3.1,5.4-Math.min(L,50)*.046);return Math.max(25,Math.round((par+2)*spm*mood))};
 function start(){startBase();ftueSetup();tTot=secsFor();tLeft=tTot;tLast=Date.now();TURG=false;tSec=-1;clkDraw()}
 function clkDraw(){const k=$('clk');if(!k)return;const s=Math.ceil(tLeft),p=Math.max(0,tLeft/tTot);k.style.setProperty('--p',(p*360)+'deg');k.innerHTML='<b>'+Math.floor(s/60)+':'+String(s%60).padStart(2,'0')+'</b><i>'+(tickOn?'🔔':'🔕')+'</i>';k.classList.toggle('low',tLeft>0&&(p<.25||s<=15));k.classList.toggle('warn',tLeft>0&&p<.5&&!(p<.25||s<=15));k.classList.toggle('shake',tLeft>0&&s<=10)}
 const clk=document.createElement('button');clk.id='clk';clk.setAttribute('aria-label','Timer. Tap to toggle tick sound');$('lvl').after(clk);
@@ -568,7 +638,7 @@ let hapT=0;const _tone=tone;tone=function(f,d,t,dl,sl){const n=Date.now();if(!dl
 const styTxt=()=>{$('sty').textContent='Sound style: '+sty};styTxt();
 $('sty').onclick=()=>{const k=Object.keys(STY);sty=k[(k.indexOf(sty)+1)%k.length];try{localStorage.setItem('pf_sty',sty)}catch(e){}styTxt();[523,659,784].forEach((f,i)=>tone(f,.25,'sine',i*.1))};
 /* ===== Me: only what matters ===== */
-function shareGame(){const u=location.href.split('#')[0];if(!/^https:/.test(location.protocol)||/localhost|127\.|192\.168\.|^10\.|claude/i.test(location.hostname)){toast('Put the game online first so friends can open the link');return}if(navigator.share)navigator.share({title:'Pourfect',text:'Play Pourfect with me!',url:u}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(()=>toast('Link copied'))}
+function shareGame(){const u=location.href.split('#')[0];if(!/^https:/.test(location.protocol)||/localhost|127\.|192\.168\.|^10\.|claude/i.test(location.hostname)){toast('Put the game online first so friends can open the link');return}if(navigator.share)navigator.share({title:'Puzzle Jar',text:'Play Puzzle Jar with me!',url:u}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(()=>toast('Link copied'))}
 function openProfV3(){openProfBase();const {t,n}=tier(),all=BADGES(),got=all.filter(b=>b[2]),nx=all.find(b=>!b[2]),bd=$('bd');
   $('px').textContent=n?(n[1]-totalStars)+' more ⭐ to reach '+n[0]:'Top rank reached';bd.innerHTML='';
   [...got.slice(-4),...(nx?[nx]:[])].forEach(([e,nm,ok])=>{const d=document.createElement('div');d.className='b'+(ok?'':' lock');d.textContent=e;d.onclick=()=>{$('bt').textContent=(ok?'Earned: ':'Next badge: ')+nm};bd.appendChild(d)});
@@ -594,13 +664,18 @@ function coinFly(n){const a=$('wmsg').getBoundingClientRect(),t=$('coins').getBo
 function labCard(){const c=document.createElement('div');c.className='lab';c.innerHTML='<b>🧪 Practice lab</b><small>Try new mechanics. Your progress is never changed.</small><div class="lbt"></div>';const t=c.querySelector('.lbt');
   [['🔒 1 locked jar',101],['🔒🔒 2 locked jars',251],['📜 Colour contract',401],['🔍 Flip power',801]].forEach(([n,L])=>{const b=document.createElement('button');b.textContent=n;b.onclick=()=>{closeMap();practice(L)};t.appendChild(b)});return c}
 function dailyCard(){const c=document.createElement('div'),done=lastDay===dayIdx(),live=lastDay>=dayIdx()-1?streak:0,ms=864e5-((Date.now()-new Date().getTimezoneOffset()*6e4)%864e5),h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4);c.className='dly'+(done?' dn':'');
-  c.innerHTML='<div><b>📅 Daily Pourfect</b><small>'+(done?'Done! New puzzle in '+h+'h '+m+'m':'+50 coins + streak · 💰 Jackpot '+jkPool()+' if you finish fast')+'</small><div class="dts">'+Array.from({length:7},(_,i)=>'<u class="'+(i<Math.min(live,7)?'on':'')+'"></u>').join('')+'</div><small>'+(live?(done?'🔥 '+live+'-day streak':'Play today to keep your 🔥'+live+' streak'):'Start a streak: +10 coins per day, up to +70')+'</small></div>';
+  c.innerHTML='<div><b>📅 Daily Puzzle Jar</b><small>'+(done?'Done! New puzzle in '+h+'h '+m+'m':'+50 coins + streak · 💰 Jackpot '+jkPool()+' if you finish fast')+'</small><div class="dts">'+Array.from({length:7},(_,i)=>'<u class="'+(i<Math.min(live,7)?'on':'')+'"></u>').join('')+'</div><small>'+(live?(done?'🔥 '+live+'-day streak':'Play today to keep your 🔥'+live+' streak'):'Start a streak: +10 coins per day, up to +70')+'</small></div>';
   const b=document.createElement('button');b.textContent=done?'✔':'Play';b.disabled=done;b.onclick=()=>{if(PRACTICE)endPractice();daily=true;closeMap();start()};c.appendChild(b);return c}
 /* ===== More chapters ===== */
 ZONES.push({n:'Volcano Rim',a:'#ffd0a0',b:'#c0392b',d:['🌋','🔥','🪨','🦎']},{n:'Starlight Harbour',a:'#bfe6ff',b:'#1f4e9a',d:['⛵','⭐','🌊','🐋']},{n:'Cherry Blossom Hill',a:'#ffe0ec',b:'#e75480',d:['🌸','🏯','🎎','🦢']},{n:'Crystal Caverns',a:'#e0d4ff',b:'#5b3fb5',d:['💎','🔮','🦇','✨']},{n:'Lantern Night Market',a:'#ffd9a0',b:'#7a3b1d',d:['🏮','🍜','🥮','🎑']},{n:'Aurora Fields',a:'#c9ffe9',b:'#1a6a6a',d:['🌌','🦌','❄️','🐺']});
 /* ===== Username editor ===== */
+const nClean=v=>String(v||'').replace(/[\u0000-\u001f<>]/g,'').trim().slice(0,20).trim();
+async function postStrict(){await mpInit();await FDB.ref('leaderboard/'+FUID).set({level:Math.max(0,maxLv-1),stars:totalStars|0,score:Math.max(0,maxLv-1)*1000+Math.min(999,totalStars|0),country:country||'',name:String(nick).slice(0,20),t:Date.now()})}
 function nameEditor(){let e=$('nedit');if(!e){e=document.createElement('div');e.id='nedit';e.innerHTML='<input id="nin" maxlength="20" autocomplete="off" aria-label="Username"><button class="opt" id="nsv">Save name</button>';$('nick').before(e);
-  $('nsv').onclick=()=>{const v=$('nin').value.trim();const cl=v.replace(/[\u0000-\u001f<>]/g,'').slice(0,20).trim();if(cl.length<2)return toast('Pick a name of 2–20 characters');nick=cl;save();post();openProf();toast('Name saved')}}$('nin').value=nick}
+  const upd=()=>{const ok=nClean($('nin').value).length>=2,b=$('nsv');b.style.background=ok?'#3fcf7a':'';b.style.color=ok?'#fff':'';b.disabled=!ok;if(ok)b.textContent='Save name'};
+  $('nin').oninput=upd;upd();
+  $('nsv').onclick=async()=>{const cl=nClean($('nin').value);if(cl.length<2)return toast('Pick a name of 2–20 characters');const b=$('nsv'),old=nick;b.disabled=true;b.textContent='Saving…';nick=cl;
+    try{await postStrict();save();b.textContent='Saved ✓';toast('Name saved ✓');openProf()}catch(e){nick=old;b.disabled=false;b.textContent='Save name';toast('Not saved — check your connection and try again')}}}$('nin').value=nick}
 function openProf(){openProfV3();nameEditor()}
 
 /* ===== CORE: solver (IDA* + transposition table) and pure level function ===== */
@@ -635,7 +710,7 @@ function contractForLevel(L){const t=4+Math.min(5,Math.floor((L-401)/80));return
 const cdone=c=>jars.some(j=>j.length===CAP&&j.every(v=>v%100===c));
 function contractMsg(a,b){if(!CONTRACT.length)return '';const A=jars[a],B=jars[b];if(!A||!B||!A.length)return '';const c=A[A.length-1]%100,n=Math.min(chunk(A),CAP-B.length);if(B.length+n!==CAP||!B.every(v=>v%100===c))return '';const ix=CONTRACT.indexOf(c);if(ix>0){const m=CONTRACT.slice(0,ix).find(x=>!cdone(x));if(m!==undefined)return 'Contract: finish '+NAMES[m]+' first'}return ''}
 let LOCKS=[],PRACTICE=null,PSC=0;
-const lockedLevel=L=>L>100&&(L<=400?L%2===1:L<=800?L%2===0:L%4===1);
+const lockedLevel=L=>(L>30&&L<=100&&L%10===9)||(L>100&&(L<=400?L%2===1:L<=800?L%2===0:L%4===1));
 const fogLevel=L=>L>800&&L%4===0;
 function lockedForLevel(L){const nl=L<250?1:2,t=6+Math.min(3,Math.floor((L-101)/75));return boardForLevel(L,t,PJLB[nl][t])}
 function sealedNow(i){const l=LOCKS.find(l=>l.j===i);return !!l&&!jars.some(j=>j.length===CAP&&j.every(v=>v%100===l.k))}
@@ -761,7 +836,8 @@ setInterval(ghostTick,500);
 /* jackpot, adaptive difficulty */
 if(!localStorage.getItem('pf_jk'))try{localStorage.setItem('pf_jk',dayIdx())}catch(e){}
 const jkPool=()=>Math.min(1000,100+50*Math.max(0,dayIdx()-(+localStorage.getItem('pf_jk')||dayIdx())-1));
-const plainTier=L=>Math.max(0,Math.min(9,pjTierFor(L)+(+localStorage.getItem('pf_dda')||0)));
+const moodOf=L=>{const m=L%10;return L<5?'start':m===1||m===2?'easy':m>=3&&m<=5?'normal':m>=6&&m<=8?'tense':m===9?'hard':'boss'};
+plainTier=L=>{const base=L<5?Math.floor((L-1)/2):Math.min(9,1+Math.floor((L-1)/3)),off={start:0,easy:-2,normal:0,tense:1,hard:2,boss:2}[moodOf(L)];return Math.max(0,Math.min(9,base+off+(+localStorage.getItem('pf_dda')||0)))};
 const _tap10=tap;
 tap=function(i){const m0=moves,s0=sel;_tap10(i);if(moves>m0&&s0!==-1&&s0!==i)GREC.push([s0,i,Date.now()-GT0]);
   if(combo>0&&combo%5===0&&combo!==CHEST&&Math.random()<.35){CHEST=combo;coins+=10;save();render();toast('🎁 Combo chest +10 coins');tone(1200,.15,'sine')}};
@@ -773,9 +849,9 @@ win=function(){const wasD=daily,d0=lastDay,tot=Date.now()-GT0,P=PRACTICE,fast=tL
       if(H.length===3){if(H.every(r=>r>2)){dd=Math.max(-1,dd-1);H=[]}else if(H.every(r=>r<1.2)){dd=Math.min(1,dd+1);H=[]}}try{localStorage.setItem('pf_dh',JSON.stringify(H));localStorage.setItem('pf_dda',dd)}catch(e){}}}
   if(wasD&&lastDay!==d0&&fast&&!P){coins+=pool;try{localStorage.setItem('pf_jk',dayIdx())}catch(e){}save();render();$('wmsg').textContent+=' · 💰 Jackpot +'+pool}
   if(CHAL&&P&&P.L===CHAL.L)$('wmsg').textContent+=mv<=CHAL.t?' · ⚔ You beat the challenge!':' · ⚔ Challenge was '+CHAL.t+' moves'};
-function shareChallenge(){const u=location.href.split('#')[0],url=u+'#ch='+level+'.'+moves,txt='I cleared Pourfect level '+level+' in '+moves+' moves. Beat me!';
+function shareChallenge(){const u=location.href.split('#')[0],url=u+'#ch='+level+'.'+moves,txt='I cleared Puzzle Jar level '+level+' in '+moves+' moves. Beat me!';
   if(!/^https:/.test(location.protocol)||/localhost|127\.|192\.168\.|^10\.|claude/i.test(location.hostname)){toast('Put the game online first so friends can open the link');return}
-  if(navigator.share)navigator.share({title:'Pourfect challenge',text:txt,url}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(txt+' '+url).then(()=>toast('Challenge copied'))}
+  if(navigator.share)navigator.share({title:'Puzzle Jar challenge',text:txt,url}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(txt+' '+url).then(()=>toast('Challenge copied'))}
 {const a=document.createElement('button');a.className='opt';a.id='chal';a.textContent='⚔ Challenge a friend';a.onclick=shareChallenge;const d=document.createElement('button');d.className='opt';d.id='duow';d.textContent='🤝 Play with a friend';d.onclick=mpModal;$('shareWin').after(a,d)}
 {const m=location.hash.match(/#ch=(\d+)\.(\d+)/);if(m){CHAL={L:+m[1],t:+m[2]};setTimeout(()=>{toast('⚔ Challenge: beat '+CHAL.t+' moves on level '+CHAL.L);practice(CHAL.L)},500)}}
 
