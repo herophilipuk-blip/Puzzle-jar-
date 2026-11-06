@@ -69,7 +69,7 @@ body{background-size:220% 220%;animation:drift 22s ease-in-out infinite}@keyfram
 .ch{margin:14px 12px;border-radius:24px;padding:14px 10px 16px;color:#10204a;box-shadow:0 8px 0 rgba(0,0,0,.15)}.chh{display:flex;justify-content:space-between;align-items:center;font-weight:800;padding:0 6px 10px;text-align:left}.chh b{font-size:19px}.chh small{opacity:.8;display:block;font-size:12px}.chg{display:grid;grid-template-columns:repeat(5,1fr);gap:14px 6px;justify-items:center}
 .sjw{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:800;min-height:90px}.sj{position:relative;width:52px;height:70px;border:3px solid rgba(255,255,255,.9);border-top:0;border-radius:5px 5px 22px 22px;background:rgba(255,255,255,.28);overflow:hidden;font:800 18px Nunito,system-ui,sans-serif;color:#fff;cursor:pointer;padding:0}.sj i{position:absolute;left:0;right:0;bottom:0;height:var(--f);background:var(--c);transition:height .6s}.sj span{position:relative;z-index:1;text-shadow:0 1px 2px rgba(0,0,0,.55)}.sj.lock{opacity:.45;filter:grayscale(.6)}.sj.cur{animation:sjp 1.4s ease-in-out infinite;box-shadow:0 0 0 3px #ffd93d,0 0 18px #ffd93d}.sj.boss{width:58px;border-color:#ffd93d}@keyframes sjp{50%{transform:translateY(-5px)}}
 #clk{display:inline-flex;align-items:center;gap:5px;border:0;border-radius:999px;padding:6px 10px;font:800 15px Nunito,system-ui,sans-serif;background:var(--btn);color:var(--fg);cursor:pointer}#clk.low{background:#ff5a5a;color:#fff}#clk.shake{animation:clkshake .35s infinite}@keyframes clkshake{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg) scale(1.08)}75%{transform:rotate(8deg) scale(1.08)}}
-</style><meta name="description" content="Puzzle Jar: sort the colours, beat the clock, and play Caller & Mover with a friend."><meta property="og:title" content="Puzzle Jar - colour sorting puzzle"><meta property="og:description" content="Beat the clock, climb the shelves, and play Caller & Mover with a friend."><meta property="og:type" content="website"><meta property="og:image" content="preview.png"><meta name="twitter:card" content="summary_large_image"><style>header{padding:10px 8px 4px}header .meta{display:flex;flex-wrap:nowrap;gap:6px;justify-content:center;max-width:100%}header .chip,#clk{padding:6px 9px;font-size:14px;white-space:nowrap}#pbtn,#trophy{display:none!important}body{animation:none!important}.bub{display:none!important}
+</style><meta name="description" content="Puzzle Jar: sort the colours, beat the clock, and race or team up with a friend."><meta property="og:title" content="Puzzle Jar - colour sorting puzzle"><meta property="og:description" content="Beat the clock, climb the shelves, and race or team up with a friend."><meta property="og:type" content="website"><meta property="og:image" content="preview.png"><meta name="twitter:card" content="summary_large_image"><style>header{padding:10px 8px 4px}header .meta{display:flex;flex-wrap:nowrap;gap:6px;justify-content:center;max-width:100%}header .chip,#clk{padding:6px 9px;font-size:14px;white-space:nowrap}#pbtn,#trophy{display:none!important}body{animation:none!important}.bub{display:none!important}
 .dly{margin:12px;padding:14px;border-radius:20px;background:linear-gradient(135deg,#ff9a3c,#ff5e7e);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;box-shadow:0 0 0 3px #ffd93d,0 8px 0 rgba(0,0,0,.2)}.dly:not(.dn){animation:sjp 1.6s ease-in-out infinite}.dly.dn{background:linear-gradient(135deg,#3b8f6b,#2a6a8a);box-shadow:none}.dly small{display:block;opacity:.92;font-weight:700;font-size:12px}.dly button{border:0;border-radius:14px;padding:12px 16px;font:800 16px Nunito,system-ui,sans-serif;background:#ffd93d;color:#12203a}.dts{display:flex;gap:4px;margin:6px 0}.dts u{width:14px;height:14px;border-radius:50%;background:#ffffff55}.dts u.on{background:#ffd93d}
 #nedit{display:flex;gap:6px;margin:6px 0}#nin{flex:1;min-width:0;font:800 16px Nunito,system-ui,sans-serif;border-radius:12px;border:0;padding:12px;text-align:center}#nedit .opt{flex:none;width:auto;margin:0;padding:0 14px}
 </style><style>[data-ph=a] #hint,[data-ph=a] #extra,[data-ph=a] #clk,[data-ph=b] #clk{display:none!important}.early #toMap{display:none}
@@ -166,11 +166,11 @@ body.mood-flow #board{animation:moodflow 48s linear infinite;transition:none}@ke
 <style id="pj-duo-css">
 #pz.duo.hub{display:block!important;overflow-y:auto;padding:14px 14px 28px;background:linear-gradient(180deg,#1b2b63,#0f1a3d);align-items:initial;justify-content:initial}
 .dh2{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 2px 12px;color:#fff}.dh2 h2{margin:0;font-size:24px}.dh2 small{display:block;opacity:.75;font-weight:700;font-size:12px}
-.rec{display:flex;gap:6px}.rec span{background:rgba(255,255,255,.12);border-radius:12px;padding:6px 10px;font:800 12px Nunito,sans-serif;color:#fff;text-align:center;line-height:1.1}.rec b{display:block;font-size:17px}
+.rec{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 12px}.rec span{background:rgba(255,255,255,.1);border-radius:14px;padding:8px 4px;font:800 12px Nunito,sans-serif;color:#fff;text-align:center;line-height:1.2;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.rec b{display:block;font-size:18px}
 .dsz{display:flex;gap:6px;margin:0 0 12px;background:rgba(255,255,255,.08);border-radius:14px;padding:4px}.dsz button{flex:1;border:0;border-radius:11px;min-height:40px;background:transparent;color:#fff;font:800 14px Nunito,sans-serif}.dsz button.on{background:#ffd93d;color:#12203a}
-.dm{border-radius:22px;padding:16px;margin:0 0 12px;color:#fff;text-align:left;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 8px 20px rgba(0,0,0,.25)}
+.dm{border-radius:22px;padding:16px;margin:0 0 12px;color:#fff;text-align:left!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 8px 20px rgba(0,0,0,.25)}
 .dm.race{background:linear-gradient(135deg,#ff7a3c,#d8336f)}.dm.co{background:linear-gradient(135deg,#2bb5a0,#3b6fe0)}
-.dm h3{margin:0 0 2px;font-size:20px}.dm p{margin:0 0 12px;opacity:.95;font-size:14px;line-height:1.35}
+.dm h3{margin:0 0 4px;font-size:20px;color:#fff!important;text-align:left}.dm p{margin:0 0 12px;color:#fff!important;text-align:left;opacity:.95;font-size:14px;line-height:1.35}
 .dm .ro{display:flex;gap:8px}.dm .ro button{flex:1}
 .pb,.gb{border:0;border-radius:14px;min-height:48px;font:800 15px Nunito,system-ui,sans-serif;padding:0 14px;cursor:pointer;transition:transform .12s}.pb:active,.gb:active{transform:scale(.96)}
 .pb{background:linear-gradient(#ffe46b,#ffc93d);color:#12203a;box-shadow:0 3px 0 #c99a14}.gb{background:rgba(255,255,255,.22);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
@@ -406,8 +406,7 @@ let d='';for(let i=1;i<=T;i++)d+=(i===1?'M':'L')+X(i).toFixed(1)+' '+Y(i);inner.
 for(let i=1;i<=T;i++){const n=document.createElement('button'),cur=i===maxLv,done=i<maxLv;n.className='node'+(done?' done':cur?' cur':' lock')+(i%10===0?' boss':'');n.style.left=X(i)+'%';n.style.top=(Y(i)-(cur?31:i%10===0?29:25))+'px';n.textContent=(done||cur)?i:'🔒';n.setAttribute('aria-label','Level '+i);n.onclick=()=>{if(i<=maxLv){if(PRACTICE)endPractice();closeMap();daily=false;level=i;save();start()}else toast('Clear level '+maxLv+' first')};inner.appendChild(n);if(done&&lst[i]){const s=document.createElement('div');s.className='ns';s.style.left=X(i)+'%';s.style.top=(Y(i)+28)+'px';s.textContent='★'.repeat(lst[i])+'☆'.repeat(3-lst[i]);inner.appendChild(s)}if(cur){const u=document.createElement('div');u.className='you';u.style.left=X(i)+'%';u.style.top=(Y(i)-62)+'px';u.textContent='Play ▶';inner.appendChild(u)}}
 $('mcoins').textContent='🪙 '+coins;$('mdaily').textContent='📅 Daily'+(lastDay===dayIdx()?' ✔':'')+(streak?' 🔥'+streak:'');
 requestAnimationFrame(()=>{const s=$('mapScroll');s.scrollTop=Math.max(0,Y(Math.min(maxLv,T))-s.clientHeight/2)})}
-const BL=[['🏟️','Duel Arena',20,38,'Race a friend on the same puzzle. Opens with online play.'],['☕','Caller & Mover Café',80,38,'One player sees the colors, the other moves the tiles. Needs two phones online. Coming soon.'],['🏠','Club House',14,62,'Your club chat, goals and weekly board. Coming soon.'],['👻','Ghost Track',86,62,'Race a recording of your best run. Coming soon.'],['🛍️','Shop',50,24,'']];
-function buildPlazaOld(){const p=$('plaza');p.querySelectorAll('.bld').forEach(e=>e.remove());BL.forEach(([e,nm,x,y,tx])=>{const b=document.createElement('button');b.className='bld';b.style.left=x+'%';b.style.top=y+'%';b.innerHTML='<i>'+e+'</i><span>'+nm+'</span>';b.onclick=()=>{if(nm==='Shop')$('set').classList.add('on');else $('pinfo').textContent=nm+': '+tx};p.appendChild(b)});if(!nick){nick=mkNick();save()}const tr=tier().t;$('avt').innerHTML='<i>🦊</i>'+nick+'<br>'+tr[0]+(country?' '+flag(country):'');$('pinfo').textContent='Welcome, '+nick+'! This is where friends will meet. Tap a building to peek inside.'}
+const BL=[['🏟️','Duel Arena',20,38,'Race a friend on the same puzzle. Opens with online play.'],['☕','Duo Café',80,38,'Race a friend or solve boards together. Needs two phones online.'],['🏠','Club House',14,62,'Your club chat, goals and weekly board. Coming soon.'],['👻','Ghost Track',86,62,'Race a recording of your best run. Coming soon.'],['🛍️','Shop',50,24,'']];
 function setTab(t){const pl=t==='plaza';$('plaza').classList.toggle('on',pl);$('mapScroll').style.display=pl?'none':'';document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));if(pl)buildPlaza()}
 function openMap(){$('map').classList.remove('off');setTab('map');buildMap()}
 function closeMap(){$('map').classList.add('off')}
@@ -415,17 +414,11 @@ document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>{const t=b.dat
 $('mgear').onclick=()=>$('set').classList.add('on');$('mdaily').onclick=()=>{daily=true;closeMap();start()};$('toMap').onclick=()=>{$('win').classList.remove('on');openMap()};
 for(let i=0;i<10;i++){const b=document.createElement('div');b.className='bub';const s=10+Math.random()*26;b.style.cssText='width:'+s+'px;height:'+s+'px;left:'+Math.random()*100+'vw;animation-duration:'+(14+Math.random()*14)+'s;animation-delay:-'+Math.random()*20+'s';document.body.appendChild(b)}
 function fillMe(){const {t,n}=tier(),pr=n?Math.min(100,Math.round((totalStars-t[1])/(n[1]-t[1])*100)):100;if(!nick){nick=mkNick();save()}$('lbme').style.borderColor=t[2];$('lbme').innerHTML='<i>🦊</i><div style="flex:1"><b>'+nick+'</b>'+t[0]+(country?' · '+flag(country):'')+' · Player Lv '+plvl()+'<div class="bar"><u style="width:'+pr+'%"></u></div></div>'}
-const ROOMS={arena:{n:'Duel Arena',e:'🏟️',a:'#8a1f45',b:'#ff6b6b',m:'arena',t:'Two players, one puzzle, first to finish wins. Every finished jar drops fog on your rival.',f:['Live 1v1 duels with a skill rating','Fog and clear-window power-ups','Rematch in one tap'],x:22,y:200},cafe:{n:'Caller & Mover Café',e:'☕',a:'#6b4226',b:'#e0a96d',m:'cafe',t:'One player sees the colors and calls them out. The other moves the tiles and cannot see. Talk to win.',f:['Needs two phones online','Voice and quick reactions','Swap roles each round'],x:78,y:330},club:{n:'Club House',e:'🏠',a:'#1f5a3a',b:'#6fcf6a',m:'club',t:'Your friends, your chat, your weekly goal. Clubs climb their own ranking.',f:['Club chat and goals','Shared hard board','Club rank and badge'],x:20,y:740},shop:{n:'Shop',e:'🛍️',a:'#6a2a9a',b:'#ff7ad9',m:'shop',t:'Themes and liquid styles you can see in every game.',f:[],x:80,y:930},ghost:{n:'Ghost Track',e:'👻',a:'#1a0f3a',b:'#6a4cff',m:'ghost',t:'Race a recording of your best run. Beat your ghost to earn spooky badges.',f:[],x:24,y:1120}};
-function buildPlaza(){const z=$('pz'),D='M200 1440 C60 1340 60 1240 190 1180 S330 1020 190 940 S40 800 180 720 S320 560 190 480 S60 340 180 270';z.innerHTML='<svg viewBox="0 0 360 1500" preserveAspectRatio="none" width="100%" height="1500"><ellipse cx="60" cy="230" rx="140" ry="60" fill="#7ccc68"/><ellipse cx="320" cy="260" rx="150" ry="70" fill="#6dc05d"/><path d="'+D+'" fill="none" stroke="#b79a62" stroke-width="52" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="'+D+'" fill="none" stroke="#efdcab" stroke-width="40" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="'+D+'" fill="none" stroke="#fff6dc" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><div class="fog"></div><span class="cld" style="top:40px">☁️</span><span class="cld" style="top:100px;animation-delay:-16s">☁️</span><h3 style="position:absolute;left:0;right:0;top:0;margin:14px 0">Puzzle Jar Plaza</h3>';
-[['🌳',6,380],['🌲',88,470],['🌳',90,650],['🌲',4,880],['🌳',92,1040],['🌲',46,1230],['🌳',8,1370],['🌸',60,420],['🌷',30,600],['🍄',70,1160]].forEach(([e,x,y])=>{const s=document.createElement('span');s.className='tree';s.style.left=x+'%';s.style.top=y+'px';s.textContent=e;z.appendChild(s)});
-[['🚶‍♀️',420,26,0],['🧑‍🦱',760,30,-9],['🚶',1190,34,-15],['🐕',1330,24,-5],['🕊️',70,20,0],['🐦',130,26,-9],['🦋',560,30,-4]].forEach(([e,y,d,dl],i)=>{const s=document.createElement('span');s.className='wk'+(i%2?' rv':'');s.style.top=y+'px';s.style.animationDuration=d+'s';s.style.animationDelay=dl+'s';s.textContent=e;z.appendChild(s)});
-const fo=document.createElement('div');fo.className='fnt';fo.style.top='540px';fo.textContent='⛲';z.appendChild(fo);
-Object.entries(ROOMS).forEach(([k,r])=>{const b=document.createElement('button');b.className='bld';b.style.left=r.x+'%';b.style.top=r.y+'px';b.innerHTML=bldSvg(k,r)+'<span>'+r.n+'</span>';b.onclick=()=>openRoom(k);z.appendChild(b)});
-if(!nick){nick=mkNick();save()}const tr=tier().t,a=document.createElement('div');a.className='avt';a.style.top='1290px';a.innerHTML='<i>🦊</i>'+nick+'<br>'+tr[0]+(country?' '+flag(country):'');z.appendChild(a);$('pinfo').textContent='Welcome, '+nick+'! Walk the path and tap a building to step inside.'}
+const ROOMS={arena:{n:'Duel Arena',e:'🏟️',a:'#8a1f45',b:'#ff6b6b',m:'arena',t:'Two players, one puzzle, first to finish wins. Every finished jar drops fog on your rival.',f:['Live 1v1 duels with a skill rating','Fog and clear-window power-ups','Rematch in one tap'],x:22,y:200},cafe:{n:'Duo Café',e:'☕',a:'#6b4226',b:'#e0a96d',m:'cafe',t:'Race a friend on the same board, or take turns solving one together.',f:['Needs two phones online','Quick-chat reactions, no voice needed','Rematch in one tap'],x:78,y:330},club:{n:'Club House',e:'🏠',a:'#1f5a3a',b:'#6fcf6a',m:'club',t:'Your friends, your chat, your weekly goal. Clubs climb their own ranking.',f:['Club chat and goals','Shared hard board','Club rank and badge'],x:20,y:740},shop:{n:'Shop',e:'🛍️',a:'#6a2a9a',b:'#ff7ad9',m:'shop',t:'Themes and liquid styles you can see in every game.',f:[],x:80,y:930},ghost:{n:'Ghost Track',e:'👻',a:'#1a0f3a',b:'#6a4cff',m:'ghost',t:'Race a recording of your best run. Beat your ghost to earn spooky badges.',f:[],x:24,y:1120}};
 function setTab(t){const pl=t==='plaza';$('plaza').classList.toggle('on',pl);$('pinfo').style.display=pl?'block':'none';$('mapScroll').style.display=pl?'none':'';document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));if(pl)buildPlaza()}
 function openRoom(k){const r=ROOMS[k],b=$('rbody'),R=$('room');R.style.background='linear-gradient(180deg,'+r.b+','+r.a+')';setMood(r.m);let h='<div class="hero">'+r.e+'</div><h2>'+r.n+'</h2><div class="rp">'+r.t+'</div>'+r.f.map(x=>'<div class="rp">• '+x+'</div>').join('');
 if(k==='cafe')h+='<div class="rp">Jam corner: tap the keys</div><div class="keys">'+MD.cafe.S.map((f,i)=>'<button data-f="'+f+'">'+'CDEGACDE'[i]+'</button>').join('')+'</div>';
-if(k==='cafe')h+='<div class="rp">Two phones, one puzzle. Caller sees colours, Mover moves blind.</div><div id="mpbox"></div>';if(k==='arena')h+='<div><span class="slot">🦊</span><span class="slot">+</span><span class="slot">+</span><span class="slot">+</span></div><div class="rp">Waiting for players. Online rooms open soon.</div>';
+if(k==='cafe')h+='<div class="rp">Race a friend or team up. Same board, two phones.</div><div id="mpbox"></div>';if(k==='arena')h+='<div><span class="slot">🦊</span><span class="slot">+</span><span class="slot">+</span><span class="slot">+</span></div><div class="rp">Waiting for players. Online rooms open soon.</div>';
 if(k==='shop')h+='<div class="rp">🪙 '+coins+' coins</div><button class="chip" id="shopBtn" style="border:0;color:#fff;font:800 16px Nunito,system-ui,sans-serif;padding:12px 20px;margin-top:8px;cursor:pointer">Open themes</button>';
 if(k==='ghost'){const e=Object.entries(bests).slice(0,8);h+='<div class="rp">Your best runs</div>'+(e.length?e.map(([l,m])=>'<div class="rp">Level '+l+': '+m+' moves</div>').join(''):'<div class="rp">Win a level to record your first ghost.</div>')}
 b.innerHTML=h;if(k==='cafe')mpMount();b.querySelectorAll('.keys button').forEach(x=>x.onclick=()=>tone(+x.dataset.f,.9,'triangle'));const sb=$('shopBtn');if(sb)sb.onclick=()=>$('set').classList.add('on');R.classList.add('on');R.scrollTop=0}
@@ -437,7 +430,7 @@ if(k==='arena')s+='<ellipse cx="59" cy="62" rx="54" ry="34" fill="#8e97a8"/><ell
 else{if(k==='club')s+='<rect x="84" y="14" width="10" height="24" fill="#8a4a2a"/>';s+='<rect x="14" y="44" width="90" height="54" rx="4" fill="'+w+'"/><polygon points="6,48 59,10 112,48" fill="'+rf+'"/><rect x="50" y="68" width="18" height="30" rx="9" fill="#5b3a1e"/>';[24,76].forEach(x=>{s+='<rect x="'+x+'" y="56" width="18" height="18" rx="3" fill="'+lit+'"/><path d="M'+(x+9)+' 56V74M'+x+' 65H'+(x+18)+'" stroke="rgba(0,0,0,.35)" stroke-width="2"/>'});
 if(k==='shop')s+='<path d="M14 44h90v10q-7.5 8-15 0q-7.5 8-15 0q-7.5 8-15 0q-7.5 8-15 0q-7.5 8-15 0q-7.5 8-15 0z" fill="#ff5a8a"/>';s+='<text x="59" y="36" font-size="22" text-anchor="middle">'+(k==='cafe'?'☕':k==='ghost'?'👻':k==='shop'?'🛍️':'')+'</text>'}
 return s+'</svg>'+(k==='club'?'<b class="smk">○</b>':'')}
-/* ===== Caller & Mover multiplayer (Stage 1) ===== */
+/* ===== Duo multiplayer ===== */
 const FBC={apiKey:"AIzaSyBkUbSfCDIy1GgTsqOw20ZQez39kHhq6b4",authDomain:"puzzle-jar.firebaseapp.com",databaseURL:"https://puzzle-jar-default-rtdb.europe-west1.firebasedatabase.app",projectId:"puzzle-jar",appId:"1:832494483687:web:08db1efbfd214aa94c8a42"};
 let FDB=null,FUID=null,M=null; /* M = active room session */
 async function mpInit(){
@@ -449,95 +442,9 @@ async function mpInit(){
 const mpCanMove=(J,a,b)=>a!==b&&a>=0&&b>=0&&a<J.length&&b<J.length&&J[a].length&&J[b].length<CAP&&(!J[b].length||J[b][J[b].length-1]===J[a][J[a].length-1]);
 function mpPour(J,a,b){const A=J[a],B=J[b],n=Math.min(chunk(A),CAP-B.length),c=A[A.length-1];for(let i=0;i<n;i++){A.pop();B.push(c)}}
 const mpWon=J=>J.every(j=>!j.length||(j.length===CAP&&j.every(v=>v===j[0])));
-function mpGen(){let J,t=0;const n=5;do{const p=[];for(let c=0;c<n;c++)for(let i=0;i<CAP;i++)p.push(c);rnd=mul(Date.now()+t);shuffle(p);J=[];for(let j=0;j<n;j++)J.push(p.slice(j*CAP,j*CAP+CAP));J.push([],[]);t++}while((J.some(full)||!solvable(J))&&t<40);return J}
 const mpCode=()=>{const A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let s='';for(let i=0;i<5;i++)s+=A[Math.floor(Math.random()*A.length)];return s};
-function mpScreen(){let s=$('mp');if(!s){s=document.createElement('div');s.id='mp';s.innerHTML='<div id="mph"><button id="mpx">‹ Leave</button><b id="mpt"></b><span id="mps"></span></div><div id="mpm"></div><div id="mpboard"></div>';document.body.appendChild(s);$('mpx').onclick=mpLeave}return s}
-function pStatus(){if(M.net==='re')return '🟠 You are reconnecting…';if(M.pst==='left')return '⚪ Partner left the game';
-  if(M.pst==='re')return Date.now()-(M.goneAt||0)>25000?'🔴 Partner disconnected — room held':'🟠 Partner reconnecting…';
-  if(M.pst==='away')return '🟡 Partner is away';if(M.pst==='online')return Date.now()-(M.pSeen||0)>45000?'🟠 Partner network issues':'🟢 Partner online';
-  if(M.pub&&!M.partner){const s=Math.floor((Date.now()-(M.scanT0||Date.now()))/1000);return s<8?'🔎 Searching…':s<30?'🔎 Still looking…':'🔎 Still looking… (share the code if you have one)';}return '○ waiting for partner…'}
-function mpDraw(){if(!$('mpboard'))return;if(M.mode==='tt')return ttDraw();
-  const J=M.role==='caller'?M.jars:(M.won&&M.reveal?M.reveal:M.lens.map(n=>Array(n).fill(-1)));
-  const bd=$('mpboard');bd.innerHTML='';document.documentElement.style.setProperty('--cols',J.length<=5?J.length:Math.ceil(J.length/2));
-  J.forEach((j,i)=>{const d=document.createElement('div');d.className='jar'+(i===M.sel?' sel':'');d.setAttribute('aria-label',M.role==='mover'?'Jar '+(i+1)+': '+j.length+' hidden cards. Colours are hidden.':jarLabel(j,i));
-    j.forEach(c=>{const l=document.createElement('div');l.className='layer';l.style.background=c<0?'#6b7a99':COLORS[c];l.textContent=c<0?'?':((cb||cvd!=='off')?SYM[c]:'');if(c>=0&&cvd!=='off')l.style.backgroundImage=TEX[c];d.appendChild(l)});
-    if(M.role==='mover'&&!M.won)d.onclick=()=>mpTap(i);else d.style.cursor='default';{const n=document.createElement('span');n.className='jn';n.textContent=i+1;d.appendChild(n)}bd.appendChild(d)});
-  $('mpt').textContent=(M.role==='caller'?'📣 Caller':'🖐 Mover')+' · '+M.code;
-  $('mps').textContent=pStatus()
-  if(M.won){const secs=M.t0?Math.round((Date.now()-M.t0)/1000):null;const tstr=secs!=null?(secs<60?secs+'s':Math.floor(secs/60)+'m '+secs%60+'s'):'';$('mpm').innerHTML='<b>🎉 Solved together in '+M.moves+' moves'+(tstr?' · '+tstr:'')+'!</b><div>The real colours are revealed for both of you.</div><button class="mpb" id="cmr">Play again</button> <button class="mpb" id="cmt">Choose another game</button>';$('cmr').onclick=()=>mpNext('cm');$('cmt').onclick=()=>{mpNext(M.mode==='cm'?'tt':'cm')}}
-  else $('mpm').textContent=M.msg||(M.role==='caller'?'Call the moves. You cannot touch the jars.':'You cannot see the colours. Listen to your Caller.');
-}
-function mpTap(i){if(M.won)return;if(M.sel<0){if(M.lens[i]){M.sel=i}}else{if(M.sel!==i)M.mref.child('moves').push({from:M.sel,to:i,t:Date.now()});M.sel=-1}tone(520,.08,'sine');mpDraw()}
-function mpListen(){
-  const R=FDB.ref('rooms/'+M.code),_ch=R.child.bind(R);R.child=p=>{const r=_ch(p),_on=r.on.bind(r);r.on=(e,f)=>{(M.offs=M.offs||[]).push([r,f,e]);return _on(e,f)};return r};
-  const PR=FDB.ref('rooms/'+M.code+'/presence/'+FUID),TS=firebase.database.ServerValue.TIMESTAMP,setP=st=>PR.set({s:st,t:TS});M.PR=PR;M.net='ok';
-  M.cH=sn=>{if(!M)return;if(sn.val()){M.net='ok';PR.onDisconnect().remove().then(()=>setP(document.hidden?'away':'online'))}else M.net='re';if($('mp'))mpDraw()};FDB.ref('.info/connected').on('value',M.cH);
-  M.hb=setInterval(()=>{if(M&&!document.hidden&&M.net==='ok')PR.update({t:TS}).catch(()=>{});if(M&&$('mp'))mpDraw()},8000);
-  M.vis=()=>{if(M&&M.net==='ok')PR.update({s:document.hidden?'away':'online',t:TS}).catch(()=>{})};document.addEventListener('visibilitychange',M.vis);
-  M.mref=R;
-  R.child('presence').on('value',s=>{if(!M)return;const v=s.val()||{},o=Object.keys(v).find(u=>u!==FUID),pv=o?v[o]:null,st=pv===true?'online':pv&&pv.s;M.partner=!!o&&st!=='left';if(M.role==='caller'&&M.pub&&o&&!M.lobbyGone){M.lobbyGone=1;FDB.ref('lobby/'+M.code).remove().catch(()=>{});toast('🎉 Match found!')}M.pSeen=Date.now();if(o){M.had=1;M.goneAt=0;M.pst=st==='left'?'left':st==='away'?'away':'online'}else if(M.had){M.pst='re';M.goneAt=M.goneAt||Date.now()}else M.pst='wait';if(M.role&&$('mp'))mpDraw()});
-  R.child('gm').on('value',sn=>{const g=sn.val();if(!g||!M)return;if(M.gmN===undefined){M.gmN=g.n;if(g.mode!==(M.mode||'cm'))mpSwitch(g.mode);return}if(g.n!==M.gmN){M.gmN=g.n;mpSwitch(g.mode)}});
-  if(M.role==='caller')R.child('next').on('value',async sn=>{const v=sn.val();if(!v||M.nbusy)return;M.nbusy=1;try{const md=v.mode==='tt'?'tt':'cm',n=(M.gmN||0)+1;
-    if(md==='tt'){await R.child('tt/state').set(ttNew(M.code,(M.S&&M.S.turn==='caller')?'mover':'caller'));await R.child('tt/prop').remove();await R.child('tt/ans').remove()}
-    else{M.jars=mpGen();M.moves=0;M.won=false;M.msg='';await R.child('moves').remove();await mpPush()}
-    await R.child('gm').set({mode:md,n});await R.child('next').remove()}catch(e){toast('Error: '+e.message)}M.nbusy=0});
-  if(M.mode==='tt'){ttListen(R);return}
-  if(M.role==='caller'){
-    R.child('moves').orderByKey().on('child_added',async s=>{
-      const m=s.val();s.ref.remove();if(!m||M.won)return;
-      if(!mpCanMove(M.jars,m.from,m.to)){M.msg='That move is not allowed.';await mpPush();return}
-      mpPour(M.jars,m.from,m.to);M.moves++;M.msg='';if(mpWon(M.jars))M.won=true;await mpPush();tone(300,.2,'sine')});
-  }else R.child('view').on('value',s=>{const v=s.val();if(!v)return;M.lens=v.lens;M.moves=v.moves||0;M.won=!!v.won;M.reveal=v.reveal?JSON.parse(v.reveal):null;M.msg=v.msg||'';M.sel=-1;mpDraw();if(M.won)confetti()});
-}
 
-/* ===== v11 Trust Test: same board, different colour views, shared trust chances ===== */
-let MODE='cm',mpCh=4;
-const ttView=(c,K,role)=>role==='caller'?c:(c+K)%5;
-function ttNew(code,turn){const J=mpGen();return{jars:JSON.stringify(J),moves:0,chances:mpCh,max:mpCh,turn:turn||'caller',won:false,lost:false,msg:'',seq:1,K:1+(code.charCodeAt(0)%4)}}
-function ttListen(R){M.offs=M.offs||[];const on=(path,fn)=>{const r=R.child(path);r.on('value',fn);M.offs.push([r,fn])};
-  on('tt/state',s=>{M.S=s.val();ttDraw();const S=M.S;if(S&&(S.won||S.lost)){if(!M.fx){M.fx=1;S.won?confetti():tone(200,.4,'triangle')}}else M.fx=0});
-  on('tt/prop',s=>{M.prop=s.val();M.sel=-1;ttDraw()});
-  on('tt/say',s=>{const v=s.val();if(v&&v.by!==FUID&&v.t!==M.lastSay){M.lastSay=v.t;toast('💬 '+v.txt)}});
-  if(M.role==='caller'){on('tt/ans',ttProcess);on('tt/rematch',async s=>{if(!s.val()||!M.S)return;const n=ttNew(M.code,M.S.turn==='caller'?'mover':'caller');await M.mref.child('tt/state').set(n);await M.mref.child('tt/prop').remove();await M.mref.child('tt/ans').remove();await M.mref.child('tt/rematch').remove()})}}
-async function ttProcess(s){const a=s.val();if(!a||M.busy||!M.S||M.S.won||M.S.lost||!M.prop)return;M.busy=1;
-  try{const S={...M.S},p=M.prop,pr=p.by===FUID?'caller':'mover';let msg='';
-    if(pr!==S.turn||a.by===p.by){M.busy=0;return}
-    const J=JSON.parse(S.jars);
-    if(!a.ok){S.chances--;msg='Move rejected — a trust chance was used.'}
-    else if(!mpCanMove(J,p.from,p.to)){S.chances--;msg='That move was not allowed — a trust chance was used.'}
-    else{mpPour(J,p.from,p.to);S.jars=JSON.stringify(J);S.moves++;S.turn=S.turn==='caller'?'mover':'caller';if(mpWon(J))S.won=true}
-    if(S.chances<=0&&!S.won)S.lost=true;S.msg=msg;S.seq++;
-    await M.mref.child('tt/state').set(S);await M.mref.child('tt/prop').remove();await M.mref.child('tt/ans').remove()}catch(e){toast('Error: '+e.message)}M.busy=0}
-function ttTap(i){const S=M.S;if(!S||S.won||S.lost||S.turn!==M.role||M.prop)return;const J=JSON.parse(S.jars);
-  if(M.sel<0){if(J[i].length)M.sel=i}else{if(M.sel!==i)M.mref.child('tt/prop').set({from:M.sel,to:i,by:FUID});M.sel=-1}tone(520,.08,'sine');ttDraw()}
-function ttDraw(){const S=M.S;if(!S||!$('mpboard'))return;const J=JSON.parse(S.jars),bd=$('mpboard'),me=M.role,mine=S.turn===me;
-  bd.innerHTML='';document.documentElement.style.setProperty('--cols',J.length<=5?J.length:Math.ceil(J.length/2));
-  J.forEach((j,i)=>{const d=document.createElement('div');d.className='jar'+(i===M.sel?' sel':'');d.setAttribute('aria-label','Jar '+(i+1));
-    j.forEach(c=>{const v=S.won?c:ttView(c,S.K,me),l=document.createElement('div');l.className='layer';l.style.background=COLORS[v];l.textContent=(cb||cvd!=='off')?SYM[v]:'';if(cvd!=='off')l.style.backgroundImage=TEX[v];d.appendChild(l)});
-    d.onclick=()=>ttTap(i);const n=document.createElement('span');n.className='jn';n.textContent=i+1;d.appendChild(n);bd.appendChild(d)});
-  $('mpt').textContent='🧪 Trust Test · '+M.code;
-  $('mps').textContent=pStatus()
-  const hearts='❤️'.repeat(Math.max(0,S.chances))+'🖤'.repeat(Math.max(0,S.max-S.chances)),p=M.prop;let h='<div style="font-size:20px">'+hearts+'</div><div>'+S.chances+' TRUST CHANCE'+(S.chances===1?'':'S')+' REMAINING · '+S.moves+' moves</div>';
-  if(S.msg)h+='<div style="color:#ffb3b3">'+S.msg+'</div>';
-  if(S.won)h+='<b>🎉 You solved it together in '+S.moves+' moves!</b><div>The real colours are revealed for both of you.</div>';else if(S.lost)h+='<b>💔 Out of trust chances.</b>';
-  else if(p){if(p.by===FUID)h+='<div>Waiting for your partner to confirm Jar '+(p.from+1)+' → Jar '+(p.to+1)+'…</div><button class="mpb" id="ttw">Withdraw</button>';
-    else h+='<div>Partner proposes: <b>Jar '+(p.from+1)+' → Jar '+(p.to+1)+'</b>. Do the colours match what you see?</div><button class="mpb" id="tty">✔ Confirm</button> <button class="mpb" id="ttn">✖ Reject</button>'}
-  else h+='<div>'+(mine?'👉 Your turn: tap the jar to move FROM, then the jar to move TO. Your colours differ from your partner\'s — talk it through!':'⏳ Partner is choosing a move…')+'</div>';
-  if(S.won||S.lost)h+='<button class="mpb" id="ttr">Play again</button> <button class="mpb" id="ttsw">Switch to Caller &amp; Mover</button>';
-  h+='<div style="margin-top:6px">'+['Wait!','Your turn','I disagree','Good move!','Try another jar'].map(t=>'<button class="gh ttq">'+t+'</button>').join(' ')+'</div>';
-  $('mpm').innerHTML=h;const w=(id,fn)=>{const e=$(id);if(e)e.onclick=fn};
-  w('ttw',()=>M.mref.child('tt/prop').remove());w('tty',()=>M.mref.child('tt/ans').set({ok:true,by:FUID}));w('ttn',()=>M.mref.child('tt/ans').set({ok:false,by:FUID}));w('ttsw',()=>mpNext('cm'));w('ttr',()=>M.mref.child('tt/rematch').set({by:FUID,t:Date.now()}));
-  $('mpm').querySelectorAll('.ttq').forEach(b=>b.onclick=()=>M.mref.child('tt/say').set({by:FUID,txt:b.textContent,t:Date.now()}))}
-function mpNext(mode){M.mref.child('next').set({mode,by:FUID,t:Date.now()})}
-function mpDetach(){clearInterval(M.hb);clearInterval(M.scan);document.removeEventListener('visibilitychange',M.vis);(M.offs||[]).forEach(([r,f,e])=>r.off(e||'value',f));M.offs=[];try{FDB.ref('.info/connected').off('value',M.cH);M.mref.off()}catch(e){}}
-function mpSwitch(mode){const o=M;mpDetach();M={role:o.role,code:o.code,mode:mode==='tt'?'tt':'cm',mref:o.mref,PR:o.PR,sel:-1,had:o.had,pst:o.pst,pSeen:o.pSeen,pub:0,gmN:o.gmN,net:'ok',offs:[],lens:[],moves:0,jars:o.jars,t0:Date.now()};
-  if(M.mode==='cm'&&M.role==='caller'){const R=M.mref;R.child('moves').remove().catch(()=>{})}mpListen();toast(M.mode==='tt'?'🧪 Trust Test — same room':'🧩 Caller & Mover — same room')}
-async function mpGrab(code,r){const t=await FDB.ref('rooms/'+code+'/mover').transaction(v=>v===null?FUID:undefined);if(!t.committed)return false;
-  const old=M;if(old&&old.pub){mpDetach();try{FDB.ref('lobby/'+old.code).remove();FDB.ref('rooms/'+old.code).remove()}catch(e){}}
-  M={role:'mover',code,lens:(r.view||{}).lens||[],moves:0,sel:-1};if(r.tt)M.mode='tt';M.mref=FDB.ref('rooms/'+code);mpListen();mpOpen();toast('🎉 Match found!');return true}
-async function mpScan(){if(!M||!M.pub||M.partner||M.scanBusy)return;if(Date.now()-M.scanT0>120000){mpLeave();return toast('No players found right now. Invite a friend or try again later.')}
-  M.scanBusy=1;try{const sn=await FDB.ref('lobby').orderByChild('t').limitToLast(20).get(),now=Date.now(),md=M.mode==='tt'?'tt':'cm',list=[];sn.forEach(c=>{const v=c.val();if(M&&c.key<M.code&&(v.m||'cm')===md&&(!v.t||now-v.t<300000))list.push(c.key)});
-    for(const code of list){if(!M||M.partner)break;const rs=await FDB.ref('rooms/'+code).get();if(!rs.exists())continue;const r=rs.val();if(r.caller===FUID||r.mover)continue;if(await mpGrab(code,r))break}}catch(e){}if(M){M.scanBusy=0;mpDraw()}}
+/* ===== Duo helpers ===== */
 
 /* ===== v11 Social: player card, friends, messages, invites, one inbox ===== */
 const sEsc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),TSV=()=>firebase.database.ServerValue.TIMESTAMP,pk=(a,b)=>[a,b].sort().join('_');
@@ -566,7 +473,7 @@ function socAct(a,k,id){const x=SOC.inbox.find(i=>i.k===k),rm=()=>FDB.ref('inbox
   if(a==='del')rm();
   else if(a==='chat'&&x)socChat(x.from,x.name);
   else if(a==='acc'&&x){FDB.ref('friends/'+FUID+'/'+x.from).set({name:x.name||'Player',t:TSV(),state:'ok'}).then(()=>FDB.ref('inbox/'+x.from+'/fra_'+FUID).set({type:'fra',from:FUID,name:nick||'Player',t:TSV()})).then(()=>{rm();toast('You are now friends')}).catch(()=>toast('Could not accept — try again'))}
-  else if(a==='join'&&x){rm();closeSoc();mpJoin(x.code)}
+  else if(a==='join'&&x){rm();closeSoc();PJDuo.join(x.code)}
   else if(a==='fm'){const f=SOC.friends[id];socChat(id,f&&f.name)}
   else if(a==='fi'){const f=SOC.friends[id];closeSoc();socInvite({id,name:f&&f.name})}}
 async function socSearch(){const q=$('sq').value.trim(),r=$('sres');if(q.length<2){r.innerHTML='<p class="rp">Type at least 2 letters.</p>';return}r.textContent='Searching…';
@@ -579,7 +486,7 @@ function socChat(id,name){socInit();SOC.chat={id,name:name||'Player'};const m=so
   $('csd').onclick=()=>send($('cin').value);$('cin').onkeydown=e=>{if(e.key==='Enter')send($('cin').value)};m.querySelectorAll('.chq .sb').forEach(b=>b.onclick=()=>send(b.textContent));
   const box=$('chm');SOC.cq=FDB.ref('dm/'+pk(FUID,id)).orderByChild('t').limitToLast(30);SOC.cl=SOC.cq.on('child_added',sn=>{const v=sn.val(),d=document.createElement('div');d.className='cm '+(v.from===FUID?'me':'');d.textContent=v.text;box.appendChild(d);box.scrollTop=box.scrollHeight});
   FDB.ref('inbox/'+FUID+'/msg_'+id).remove().catch(()=>{})}
-async function socInvite(p){try{await socInit();await mpCreate(false);if(!M||!M.code)return;await FDB.ref('inbox/'+p.id+'/inv_'+FUID).set({type:'inv',from:FUID,name:nick||'Player',code:M.code,mode:MODE,t:TSV()});toast('Invite sent — you are waiting in room '+M.code)}catch(e){toast('Could not send invite: '+e.message)}}
+async function socInvite(p){try{await socInit();await PJDuo.inviteTo(p)}catch(e){toast('Could not send invite: '+e.message)}}
 async function openCard(p){let m=$('pcard');if(!m){m=document.createElement('div');m.id='pcard';m.className='sovl';m.onclick=e=>{if(e.target===m)m.classList.remove('on')};document.body.appendChild(m)}socInit();
   const me=p.id===FUID,fr=SOC.friends[p.id];
   m.innerHTML='<div class="mc scard"><button class="xbtn" id="pcx">✕</button><div style="font-size:46px;position:relative;display:inline-block">'+avOf(p.name)+'<span id="pcdot" class="odot"></span></div><h2 style="margin:4px 0">'+sEsc(p.name||'Player')+'</h2><div class="rp">'+(p.country?flag(p.country)+' ':'')+'Level '+(p.level||0)+(p.stars!=null?' · '+p.stars+'★':'')+(p.rank?' · Rank #'+p.rank:'')+'</div><div class="sbtns">'+(me?'<p class="rp">This is you</p>':'<button class="mpb" id="pcm">💬 Message</button><button class="mpb" id="pci">🎮 Invite to play</button><button class="mpb" id="pcf"'+(fr?' disabled':'')+'>'+(fr?(fr.state==='ok'?'✓ Friends':'⏳ Requested'):'➕ Add friend')+'</button>')+'</div></div>';
@@ -589,31 +496,6 @@ async function openCard(p){let m=$('pcard');if(!m){m=document.createElement('div
   isOnline(p.id).then(o=>{const d=$('pcdot');if(d)d.classList.toggle('on',o)})}
 (function(){const st=document.createElement('style');st.textContent='.sovl{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:14px}.sovl.on{display:flex}.sovl .mc{position:relative;padding-top:50px;max-height:88vh;display:flex;flex-direction:column;gap:8px;text-align:left}.scard{text-align:center!important;align-items:center}.xbtn{position:absolute;top:8px;right:8px;width:38px;height:38px;border-radius:50%;border:0;background:#ffffff26;color:#fff;font-size:20px;font-weight:800;cursor:pointer}.slist,.chm{overflow:auto;min-height:60px;display:flex;flex-direction:column;gap:6px}.srow{display:flex;align-items:center;gap:8px;background:#ffffff14;border-radius:12px;padding:8px}.sic{font-size:26px}.stx{flex:1;min-width:0;display:flex;flex-direction:column}.stx b,.stx small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.stx small{opacity:.7}.sb{border:0;border-radius:10px;padding:8px 12px;background:#5b8cff;color:#fff;font-weight:800;cursor:pointer}.sb.g{background:#ffffff26}.ssr{display:flex;gap:6px}.ssr input{flex:1;min-width:0;padding:10px;border-radius:10px;border:0;font-size:15px}.chh{display:flex;gap:8px;align-items:center}.chm{height:38vh;background:#0003;border-radius:12px;padding:8px}.cm{background:#ffffff1f;border-radius:12px;padding:6px 10px;max-width:80%;align-self:flex-start;word-break:break-word}.cm.me{background:#5b8cff;align-self:flex-end}.chq{display:flex;gap:6px;justify-content:center}.sbtns{display:flex;flex-direction:column;gap:8px;width:100%}.odot{position:absolute;right:-2px;bottom:2px;width:14px;height:14px;border-radius:50%;background:#6b7a99;border:2px solid #1d2b5a}.odot.on{background:#3fcf7a}#bell{position:relative}#bell.dot::after{content:"";position:absolute;top:4px;right:4px;width:10px;height:10px;border-radius:50%;background:#ff5a5a}';document.head.appendChild(st);
   const b=document.createElement('button');b.id='bell';b.className='icon';b.setAttribute('aria-label','Inbox');b.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M8 9.5h8M8 12.5h5"/></svg>';b.setAttribute('aria-label','Messages');b.onclick=()=>openSoc('in');const mt=$('mapTop');if(mt)mt.appendChild(b);setTimeout(socInit,2500)})();
-async function mpPush(){M.seq=(Number(M.seq)||0)+1;await FDB.ref('secrets/'+M.code).set({jars:JSON.stringify(M.jars)});await M.mref.child('view').set({lens:M.jars.map(j=>j.length),moves:Number(M.moves)||0,won:!!M.won,reveal:M.won?JSON.stringify(M.jars):'',msg:String(M.msg||''),seq:Number(M.seq)||0});mpDraw()}
-function mpOpen(){const mm=$('mpmod');if(mm)mm.classList.remove('on');mpScreen().classList.add('on');$('room').classList.remove('on');mpDraw()}
-async function mpCreate(pub){pub=pub===true;
-  try{await mpInit();let code,ok=false;
-    for(let i=0;i<8&&!ok;i++){code=mpCode();const r=await FDB.ref('rooms/'+code+'/caller').transaction(v=>v===null?FUID:undefined);ok=r.committed}
-    if(!ok)throw new Error('Could not reserve a room code.');
-    M={role:'caller',code,jars:mpGen(),moves:0,seq:0,sel:-1,msg:''};M.mref=FDB.ref('rooms/'+code);
-    if(MODE==='tt'){M.mode='tt';await M.mref.child('tt/state').set(ttNew(code))}else{await FDB.ref('secrets/'+code).set({jars:JSON.stringify(M.jars)});await mpPush()}if(pub){M.pub=1;const L=FDB.ref('lobby/'+code);await L.set({t:firebase.database.ServerValue.TIMESTAMP,m:MODE});L.onDisconnect().remove()}mpListen();mpOpen();if(pub){M.scanT0=Date.now();M.scan=setInterval(mpScan,3000)}toast(pub?'Searching…':'Room '+code+' — share this code. No one free yet — wait or share.')
-  }catch(e){toast('Error: '+e.message)}}
-async function mpJoin(code){
-  try{await mpInit();code=(code||'').trim().toUpperCase();if(code.length!==5)return toast('Enter the 5-character code');
-    const rs=await FDB.ref('rooms/'+code).get();if(!rs.exists())return toast('Room not found');const r=rs.val();
-    if(r.caller===FUID&&r.tt){M={role:'caller',mode:'tt',code,sel:-1};M.mref=FDB.ref('rooms/'+code);mpListen();mpOpen();return toast('Reconnected as host')}
-    if(r.caller===FUID){const sec=await FDB.ref('secrets/'+code).get();M={role:'caller',code,jars:JSON.parse(sec.val().jars),moves:(r.view||{}).moves||0,sel:-1,won:!!(r.view||{}).won};M.mref=FDB.ref('rooms/'+code);mpListen();mpOpen();return toast('Reconnected as Caller')}
-    if(r.mover!==FUID){const t=await FDB.ref('rooms/'+code+'/mover').transaction(v=>v===null?FUID:undefined);if(!t.committed)return toast('Room is full')}
-    M={role:'mover',code,lens:(r.view||{}).lens||[],moves:0,sel:-1};if(r.tt)M.mode='tt';M.mref=FDB.ref('rooms/'+code);mpListen();mpOpen();toast(r.tt?'Joined Trust Test':'Joined as Mover')
-  }catch(e){toast('Error: '+e.message)}}
-async function mpQuick(){
-  const b=$('mpdo');if(b){b.disabled=true;b.textContent='Searching…'}
-  try{await mpInit();const sn=await FDB.ref('lobby').orderByChild('t').limitToLast(10).get(),now=Date.now(),list=[];sn.forEach(c=>{const v=c.val(),t=v.t;if((v.m||'cm')===MODE&&(!t||now-t<300000))list.push(c.key)});
-    for(const code of list.reverse()){const rs=await FDB.ref('rooms/'+code).get();if(!rs.exists())continue;const r=rs.val();if(r.caller===FUID||r.mover)continue;
-      if(await mpGrab(code,r))return}
-    await mpCreate(true)
-  }catch(e){toast('Error: '+e.message);if(b){b.disabled=false;b.textContent='Quick Match'}}}
-function mpLeave(){if(M&&M.mref){M.mref.off();clearInterval(M.hb);clearInterval(M.scan);(M.offs||[]).forEach(([r,f,e])=>r.off(e||'value',f));document.removeEventListener('visibilitychange',M.vis);if(M.pub)FDB.ref('lobby/'+M.code).remove().catch(()=>{});try{FDB.ref('.info/connected').off('value',M.cH);M.PR.onDisconnect().cancel();M.PR.set({s:'left',t:firebase.database.ServerValue.TIMESTAMP})}catch(e){}}M=null;$('mp').classList.remove('on')}
 
 const PZIMG='';
 /* ===== Public leaderboard (no sign-in screens; anonymous auth is automatic) ===== */
@@ -631,10 +513,6 @@ async function loadLb(){const m=$('lbmsg'),ol=$('lbl');m.textContent='Loading…
     ol.querySelectorAll('.lbdot').forEach(d=>{isOnline(d.dataset.id).then(o=>{if(o)d.classList.add('on')})})
   }catch(e){m.textContent='Could not load ranks ('+(e.code||e.message||'error')+'). If this says PERMISSION_DENIED, publish the latest firebase_rules.json.'}}
 
-async function mpStatsOld(){let g=$('pst');if(!g){g=document.createElement('div');g.id='pst';$('px').after(g)}
-  const {t,n}=tier(),pr=n?Math.min(100,Math.round((totalStars-t[1])/(n[1]-t[1])*100)):100,bg=BADGES().filter(x=>x[2]).length;
-  g.innerHTML='<div class="sg">'+[['🏆','Levels cleared',Math.max(0,maxLv-1)],['⭐','Stars',totalStars],['✨','XP',xp],['🔥','Day streak',streak],['📅','Dailies',dailies],['🏅','Badges',bg+'/12']].map(([e,l,v])=>'<div><b>'+e+' '+v+'</b><span>'+l+'</span></div>').join('')+'</div><div class="bar"><u style="width:'+pr+'%"></u></div><div class="rp" id="prk">Global rank: …</div>';
-  try{await mpInit();const sc=Math.max(0,maxLv-1)*1000+Math.min(999,totalStars|0),s=await FDB.ref('leaderboard').orderByChild('score').startAt(sc+1).limitToFirst(999).get();$('prk').textContent='🌍 Global rank: #'+(s.numChildren()+1)}catch(e){$('prk').textContent=''}}
 /* ===== Dynamic music: calm classic <-> energetic, follows gameplay ===== */
 let dyBar=0,dyN=null;
 function dyHat(t,v){if(!dyN){dyN=ac.createBuffer(1,ac.sampleRate*.1,ac.sampleRate);const d=dyN.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}const s=ac.createBufferSource(),g=ac.createGain(),f=ac.createBiquadFilter();f.type='highpass';f.frequency.value=7000;s.buffer=dyN;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+.06);s.connect(f);f.connect(g);g.connect(mg);s.start(t)}
@@ -679,32 +557,8 @@ function pzLoop(now){const P=$('plaza');if(!P.classList.contains('on')){PZS.on=f
   if(PZS.zoom){const z=PZS.zoom,a=Math.min(1,(now-z.t0)/550),e=a*a*(3-2*a);c.x=z.f.x+(z.x-z.f.x)*e;c.y=z.f.y+(z.y-z.f.y)*e;c.z=z.f.z+(2.4-z.f.z)*e;if(a>=1){PZS.zoom=null;openRoom(z.k)}}
   else{if(p.path.length&&now-PZS.lastDrag>2500){c.x+=(p.x-c.x)*Math.min(1,dt*3);c.y+=(p.y-c.y)*Math.min(1,dt*3)}if(c.z>1.001)c.z+=(1-c.z)*Math.min(1,dt*6)}
   pzDraw(now)}
-function buildPlaza(){const P=$('plaza');
-  if(!$('pc')){const cv=document.createElement('canvas');cv.id='pc';P.appendChild(cv);PZS.img=new Image();PZS.img.src=PZIMG;
-    const mk=(e,n,spd,npc)=>({e,x:PN[n][0],y:PN[n][1],node:n,path:[],spd,npc,w:Math.random()*3,sz:npc?22:26});
-    PZS.pl=mk('🦊','S',85,false);PZS.pl.sz=30;PZS.spr=[mk('🚶‍♀️','K',38,1),mk('🧑‍🦱','M',34,1),mk('🚶','C',36,1),mk('🐕','H',46,1),mk('🐈','I2',40,1),PZS.pl];
-    PZS.birds=[{e:'🐦',x:60,y:120,sp:20},{e:'🐦',x:320,y:170,sp:14},{e:'🦋',x:150,y:640,sp:8},{e:'🦋',x:420,y:900,sp:6}];
-    cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);PZS.drag={x:e.clientX,y:e.clientY,cx:PZS.cam.x,cy:PZS.cam.y,m:false}});
-    cv.addEventListener('pointermove',e=>{const d=PZS.drag;if(!d||PZS.zoom)return;const dx=e.clientX-d.x,dy=e.clientY-d.y;if(Math.hypot(dx,dy)>6)d.m=true;if(d.m){const k=PS*PZS.cam.z;PZS.cam.x=d.cx-dx/k;PZS.cam.y=d.cy-dy/k;PZS.lastDrag=performance.now()}});
-    const up=e=>{const d=PZS.drag;PZS.drag=null;if(d&&!d.m&&e.type==='pointerup'){const r=cv.getBoundingClientRect();pzTap(e.clientX-r.left,e.clientY-r.top,r.width,r.height)}};
-    cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up)}
-  if(!nick){nick=mkNick();save()}PZS.pl.label=nick+' · '+tier().t[0];$('pinfo').textContent='Welcome, '+nick+'! Drag to look around. Tap the path to walk, tap a building to enter.';
-  if(!PZS.on){PZS.on=true;PZS.last=performance.now();requestAnimationFrame(pzLoop)}}
 /* ===== Single clean lobby modal (keyboard-safe) ===== */
-function mpMount(){const b=$('mpbox');if(!b)return;b.innerHTML='<button class="mpb" id="mpgo">Play with a friend</button>';$('mpgo').onclick=mpModal}
-function modeRow(){return '<div class="seg" id="mpmode"><button data-g="cm">🧩 Caller &amp; Mover</button><button data-g="tt">🧪 Trust Test</button></div><p class="rp" id="mpdesc"></p><div class="seg" id="mpch"><button data-c="3">3 ❤️</button><button data-c="4">4 ❤️</button><button data-c="6">6 ❤️</button></div>'}
-function bindMode(){const D={cm:'One player sees the colours, the other moves blind. Talk it out!',tt:'You both see the SAME puzzle, but your colours are different. Propose, confirm, and share a limited number of trust chances.'};
-  const up=()=>{document.querySelectorAll('#mpmode button').forEach(b=>b.classList.toggle('on',b.dataset.g===MODE));document.querySelectorAll('#mpch button').forEach(b=>b.classList.toggle('on',+b.dataset.c===mpCh));$('mpch').style.display=MODE==='tt'?'':'none';$('mpdesc').textContent=D[MODE]};
-  document.querySelectorAll('#mpmode button').forEach(b=>b.onclick=()=>{MODE=b.dataset.g;up()});document.querySelectorAll('#mpch button').forEach(b=>b.onclick=()=>{mpCh=+b.dataset.c;up()});up()}
-function mpModal(){let m=$('mpmod');if(!m){m=document.createElement('div');m.id='mpmod';m.innerHTML='<div class="mc"><h2>Play together</h2><button id="mpcl" aria-label="Close">✕</button><div class="seg"><button data-m="q" class="on">⚡ Quick</button><button data-m="c">🔒 Private</button><button data-m="j">🔑 Join</button></div><div id="mpbody"></div></div>';document.body.appendChild(m);
-  const vv=window.visualViewport,fit=()=>m.style.setProperty('--vvh',(vv?vv.height:innerHeight)+'px');if(vv){vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit)}fit();
-  $('mpcl').onclick=()=>m.classList.remove('on');m.onclick=e=>{if(e.target===m)m.classList.remove('on')};
-  const show=w=>{m.querySelectorAll('.seg button').forEach(x=>x.classList.toggle('on',x.dataset.m===w));const bd=$('mpbody');
-    if(w==='q'){bd.innerHTML='<p class="rp">Find a player instantly, no code needed. You join an open room, or open one and wait. Only public rooms are matched; private rooms never appear.</p>'+modeRow()+'<button class="mpb" id="mpdo">Quick Match</button>';bindMode();$('mpdo').onclick=mpQuick}
-    else if(w==='c'){bd.innerHTML='<p class="rp">Private room: you become the <b>Caller</b> and see the colours. Share the code only with a friend.</p>'+modeRow()+'<button class="mpb" id="mpdo">Create private room</button>';bindMode();$('mpdo').onclick=()=>mpCreate(false)}
-    else{bd.innerHTML='<p class="rp">Enter the 5-character code. You become the <b>Mover</b>.</p><input id="mpi" maxlength="5" placeholder="CODE" autocapitalize="characters" autocomplete="off"><br><button class="mpb" id="mpdo">Join room</button>';const i=$('mpi');i.onfocus=()=>setTimeout(()=>i.scrollIntoView({block:'center',behavior:'smooth'}),250);$('mpdo').onclick=()=>mpJoin(i.value)}};
-  m.querySelectorAll('.seg button').forEach(x=>x.onclick=()=>show(x.dataset.m));m._show=show}
-  m._show('q');m.classList.add('on')}
+function mpMount(){const b=$('mpbox');if(!b)return;b.innerHTML='<button class="mpb" id="mpgo">Play with a friend</button>';$('mpgo').onclick=()=>PJDuo.open()}
 document.querySelectorAll('#lbtab button').forEach(b=>b.onclick=()=>{lbScope=b.dataset.s;openLb()});
 
 /* ===== THE SHELF: chapters of jars; liquid fills as you earn stars ===== */
@@ -721,9 +575,7 @@ function buildMap(){const inner=$('mapInner');inner.style.height='auto';inner.in
     inner.appendChild(c)}
   $('mcoins').textContent='🪙 '+coins;$('mdaily').textContent='📅 Daily'+(lastDay===dayIdx()?' ✔':'')+(streak?' 🔥'+streak:'');
   requestAnimationFrame(()=>{const cu=inner.querySelector('.sj.cur');if(cu)cu.scrollIntoView({block:'center'})})}
-/* ===== Duo tab (Caller & Mover) replaces the city ===== */
-function buildPlaza(){const z=$('pz');z.className='duo';const live=/^https:/.test(location.protocol)&&!/claude/i.test(location.hostname);
-  z.innerHTML='<div class="dc"><div class="dh">🤝</div><h2>Caller & Mover</h2><p>One of you sees the colours. The other moves blind. Talk to solve it together.</p><button class="mpb" id="duoGo">Play with a friend</button>'+(live?'':'<p class="dn">Online play needs the game opened from its own web address, not inside Claude.</p>')+'</div>';$('duoGo').onclick=mpModal}
+/* ===== Duo tab (Duo) replaces the city ===== */
 /* ===== Escalating timer ===== */
 let tLeft=0,tTot=1,tLast=Date.now(),tSec=-1,TURG=false,tickOn=localStorage.getItem('pf_tick')!=='0';
 const secsFor=()=>{const L=daily?30:level,mood=daily?1:{start:1,easy:1.3,normal:1,tense:.9,hard:.8,boss:.85}[moodOf(L)],spm=Math.max(3.1,5.4-Math.min(L,50)*.046);return Math.max(25,Math.round((par+2)*spm*mood))};
@@ -732,7 +584,7 @@ function clkDraw(){const k=$('clk');if(!k)return;const s=Math.ceil(tLeft),p=Math
 const clk=document.createElement('button');clk.id='clk';clk.setAttribute('aria-label','Timer. Tap to toggle tick sound');$('lvl').after(clk);
 clk.onclick=()=>{tickOn=!tickOn;if(tickOn){tone(1000,.06,'sine');tone(1500,.06,'sine',.12)}try{localStorage.setItem('pf_tick',tickOn?'1':'0')}catch(e){}clkDraw();toast(tickOn?'Timer ticking on':'Timer ticking off')};
 setInterval(()=>{const now=Date.now(),dt=Math.min(1000,now-tLast);tLast=now;
-  const paused=won||document.hidden||!$('map').classList.contains('off')||$('set').classList.contains('on')||$('win').classList.contains('on')||($('mp')&&$('mp').classList.contains('on'));
+  const paused=won||document.hidden||!$('map').classList.contains('off')||$('set').classList.contains('on')||$('win').classList.contains('on')||($('da')&&$('da').classList.contains('on'));
   if(paused||tLeft<=0)return;tLeft=Math.max(0,tLeft-dt/1000);TURG=tLeft/tTot<.25;const s=Math.ceil(tLeft);
   if(s!==tSec){tSec=s;clkDraw();if(tickOn&&s<=15&&s>0)tone(s<=5?1500:1000,.05,'sine')}
   if(tLeft<=0){clkDraw();if(level>100||daily){won=true;toast('⏰ Time is up! Restarting…');tone(180,.5,'triangle');buzz(80);setTimeout(start,1500)}else toast('⏱ Time is up. No penalty yet, keep going!')}},250);
@@ -839,7 +691,7 @@ const PALS={"deut": ["#f22424", "#2424f2", "#6ddcf2", "#404040", "#5050b2", "#f2
 let cvd=localStorage.getItem('pf_cvd');if(!CVDN[cvd])cvd='off';
 function applyCvd(){COLORS.splice(0,12,...(cvd==='off'?BASEPAL:PALS[cvd]))}applyCvd();
 const cvdTxt=()=>{$('cvdb').textContent='Colour vision: '+CVDN[cvd]};cvdTxt();
-$('cvdb').onclick=()=>{const k=Object.keys(CVDN);cvd=k[(k.indexOf(cvd)+1)%k.length];try{localStorage.setItem('pf_cvd',cvd)}catch(e){}applyCvd();cvdTxt();render();if(M&&$('mp')&&$('mp').classList.contains('on'))mpDraw()};
+$('cvdb').onclick=()=>{const k=Object.keys(CVDN);cvd=k[(k.indexOf(cvd)+1)%k.length];try{localStorage.setItem('pf_cvd',cvd)}catch(e){}applyCvd();cvdTxt();render();};
 function jarLabel(j,i){if(!j.length)return 'Jar '+(i+1)+': empty';const p=[];let k=0;while(k<j.length){let m=k;while(m<j.length&&((j[m]>=100)===(j[k]>=100))&&(j[k]>=100||j[m]===j[k]))m++;p.push((m-k)+' '+(j[k]>=100?'hidden':NAMES[j[k]])+' card'+(m-k>1?'s':''));k=m}const t=j[j.length-1];return 'Jar '+(i+1)+': '+p.join(', ')+'. Top card is '+(t>=100?'hidden':NAMES[t])+'.'}
 let PQ3='',NEARCHK=false,TUT=null,almostShown=false;
 function fitBoard(){const bd=$('board'),R=document.documentElement,n=jars.length;if(!bd||!n)return;
@@ -958,7 +810,7 @@ win=function(){const wasD=daily,d0=lastDay,tot=Date.now()-GT0,P=PRACTICE,fast=tL
 function shareChallenge(){const u=location.href.split('#')[0],url=u+'#ch='+level+'.'+moves,txt='I cleared Puzzle Jar level '+level+' in '+moves+' moves. Beat me!';
   if(!/^https:/.test(location.protocol)||/localhost|127\.|192\.168\.|^10\.|claude/i.test(location.hostname)){toast('Put the game online first so friends can open the link');return}
   if(navigator.share)navigator.share({title:'Puzzle Jar challenge',text:txt,url}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(txt+' '+url).then(()=>toast('Challenge copied'))}
-{const a=document.createElement('button');a.className='opt';a.id='chal';a.textContent='⚔ Challenge a friend';a.onclick=shareChallenge;const d=document.createElement('button');d.className='opt';d.id='duow';d.textContent='🤝 Play with a friend';d.onclick=mpModal;$('shareWin').after(a,d)}
+{const a=document.createElement('button');a.className='opt';a.id='chal';a.textContent='⚔ Challenge a friend';a.onclick=shareChallenge;const d=document.createElement('button');d.className='opt';d.id='duow';d.textContent='🤝 Play with a friend';d.onclick=()=>PJDuo.open();$('shareWin').after(a,d)}
 {const m=location.hash.match(/#ch=(\d+)\.(\d+)/);if(m){CHAL={L:+m[1],t:+m[2]};setTimeout(()=>{toast('⚔ Challenge: beat '+CHAL.t+' moves on level '+CHAL.L);practice(CHAL.L)},500)}}
 
 if(maxLv>=5)openMap();
@@ -1078,7 +930,7 @@ async function join(code){code=String(code||'').toUpperCase().trim();if(!/^[A-Z0
 function leave(keep){if(!D)return;const d=D;D=null;clearInterval(tick);clearInterval(d.scan);try{d.R.off();FDB.ref('.info/connected').off('value',d.cH);d.R.child('pr/'+FUID).onDisconnect().cancel();d.R.child('pr/'+FUID).set({s:'off',t:TS()});if(d.pubL)FDB.ref('duolobby/'+d.code).remove()}catch(e){}if(!keep){$('da').classList.remove('on');if(window.buildPlaza&&$('pz').classList.contains('hub'))buildPlaza()}}
 function remember(code,mode){REC.g=[{c:code,m:mode,t:Date.now()}].concat(REC.g.filter(x=>x.c!==code&&Date.now()-x.t<48*36e5)).slice(0,8);saveRec()}
 function enter(code,role,pub){leave(true);const R=FDB.ref('duo/'+code);D={code,role,R,v:{},sel:-1,pub:!!pub,pubL:!!pub};
- D.cH=s=>{if(s.val()===true){const P=R.child('pr/'+FUID);P.onDisconnect().set({s:'off',t:TS()});P.set({s:'on',t:TS()})}};FDB.ref('.info/connected').on('value',D.cH);
+ D.cH=s=>{D.net=s.val()===true;if(!D.net)toast('Connection lost. Reconnecting…');if(s.val()===true){const P=R.child('pr/'+FUID);P.onDisconnect().set({s:'off',t:TS()});P.set({s:'on',t:TS()})}};FDB.ref('.info/connected').on('value',D.cH);
  R.child('nm/'+FUID).set(String(nick).slice(0,20)).catch(()=>{});R.child('rdy/'+FUID).set(true).catch(()=>{});
  R.on('value',s=>{if(!D||D.R!==R)return;if(!s.exists()){toast('This game no longer exists.');leave();return}D.v=s.val();onData()},e=>{toast('Connection problem: '+e.message)});
  $('da').classList.add('on');tick=setInterval(onTick,250);
@@ -1092,36 +944,45 @@ async function scan(){if(!D||!D.pub||D.v.g||!D.lt)return;try{const sn=await FDB.
 async function invite(mode){try{const code=await create(mode,SIZE);remember(code,mode);enter(code,'h',false)}catch(e){toast('Error: '+e.message)}}
 /* ---------- state ---------- */
 const opp=v=>v.h===FUID?v.g:v.h,oname=v=>(v.nm&&v.nm[opp(v)])||'Friend',mname=v=>(v.nm&&v.nm[FUID])||nick;
+const VC={};
+function check(v,r){try{const E=String(r.log||'').split(',').filter(Boolean);if(E.length!==r.mv||E.length<4)return false;const J=gen(v.sd,v.n);let prev=0;const iv=[];
+ for(const e of E){const m=/^(\d+)>(\d+)@(\d+)@(\d+)$/.exec(e);if(!m)return false;const a=+m[1],b=+m[2],t1=+m[3],t2=+m[4];if(!mpCanMove(J,a,b)||t1<prev+40||t2<t1+60)return false;mpPour(J,a,b);if(prev>0)iv.push(t2-prev);prev=t2}
+ if(!mpWon(J))return false;const avg=iv.reduce((x,y)=>x+y,0)/Math.max(1,iv.length);if(avg<220)return false;
+ if(iv.length>=8){const sd=Math.sqrt(iv.reduce((s,x)=>s+(x-avg)*(x-avg),0)/iv.length);if(sd/avg<.08)return false}
+ return Math.abs((r.fin-v.go-3500)-prev)<=3500}catch(e){return false}}
+function verify(v,u){const r=v.res&&v.res[u];if(!r)return null;if(v.vd&&v.vd[u]!=null)return v.vd[u]===1;const k=v.sd+u+r.fin;if(VC[k]==null)VC[k]=check(v,r);return VC[k]}
+const anyValid=v=>Object.keys(v.res||{}).some(u=>verify(v,u)===true);
 function phase(v){if(!v.g)return 'wait';if(v.m==='co'){if(!v.st)return 'prep';return v.st.won?'done':'play'}
- if(!v.go)return 'prep';if(v.ff||(v.res&&Object.keys(v.res).length))return 'done';return nowS()<v.go+3500?'count':'play'}
-function winner(v){if(v.ff)return v.ff;let b=null;Object.entries(v.res||{}).forEach(([u,r])=>{if(!b||r.fin<b[1])b=[u,r.fin]});return b&&b[0]}
+ if(!v.go)return 'prep';if(v.ff||anyValid(v))return 'done';return nowS()<v.go+3500?'count':'play'}
+function winner(v){if(v.ff)return v.ff;let b=null;Object.entries(v.res||{}).forEach(([u,r])=>{if(verify(v,u)===true&&(!b||r.fin<b[1]))b=[u,r.fin]});return b&&b[0]}
 function onData(){const v=D.v;remember(D.code,v.m||'race');
  if(v.nx&&!D.nxd&&D.role==='g'){D.nxd=1;toast('Rematch ready!');const c=v.nx;return join(c)}
  if(v.g&&D.pubL){D.pubL=0;D.pub=0;FDB.ref('duolobby/'+D.code).remove().catch(()=>{});toast('Opponent found!')}
- if(v.m==='race'){if(!D.J&&v.sd!=null){D.J=gen(v.sd,v.n);D.log=[];D.mv=0}
+ if(v.m==='race'){if(!D.J&&v.sd!=null){D.J=gen(v.sd,v.n);D.log=[];D.mv=0;try{(JSON.parse(localStorage.getItem('pf_rl_'+D.code))||[]).forEach(e=>{const m=/^(\d+)>(\d+)@/.exec(e);if(m&&mpCanMove(D.J,+m[1],+m[2])){mpPour(D.J,+m[1],+m[2]);D.log.push(e);D.mv++}})}catch(e){}}
   if(D.role==='h'&&v.g&&!v.go&&v.rdy&&v.rdy[v.h]&&v.rdy[v.g]&&!D.goSent){D.goSent=1;D.R.child('go').set(TS()).catch(()=>{D.goSent=0})}}
  if(v.m==='co'&&D.role==='h'&&v.g&&!v.st&&!D.stSent){D.stSent=1;D.R.child('st').set({j:JSON.stringify(gen(v.sd,v.n)),mv:0,turn:v.h,lf:3,seq:1}).catch(()=>{D.stSent=0})}
  if(D.role==='h'&&v.rq&&v.g&&v.rq[v.h]&&v.rq[v.g]&&!D.rmk){D.rmk=1;rematch()}
  const ph=phase(v);if(ph==='done'&&!D.rw){D.rw=1;finish(v)}
  if(v.say&&v.say[opp(v)]&&v.say[opp(v)].t!==D.lastSay){D.lastSay=v.say[opp(v)].t;D.bub=nowS()}
  draw()}
-function finish(v){if(v.m==='race'){const w=winner(v);if(w===FUID){REC.w++;reward(30,'Race won!');burst()}else{REC.l++;reward(10,'Good race!')}}
+function finish(v){if(v.m==='race'){const w=winner(v),o=opp(v),H=REC.h=REC.h||{},h=H[o]=H[o]||{n:oname(v),w:0,l:0};h.n=oname(v);try{localStorage.removeItem('pf_rl_'+D.code)}catch(e){}
+  if(w===FUID){REC.w++;h.w++;reward(30,'Race won!');burst();navigator.vibrate&&navigator.vibrate([60,40,60]);const r=v.res[FUID];if(r&&verify(v,FUID)){const t=r.fin-v.go-3500;REC.b=REC.b||{};const z=v.z||'m';if(!REC.b[z]||t<REC.b[z]){REC.b[z]=t;D.pb=1}}}else{REC.l++;h.l++;reward(10,'Good race!')}}
  else{REC.c++;const st=stars(v.st.mv,v.n);reward(20+st*10,'Solved together!');burst()}saveRec()}
 const stars=(mv,n)=>mv<=n*3+4?3:mv<=n*5?2:1;
 async function rematch(){const v=D.v,old=D.R;try{const code=await create(v.m,v.z||'m');await old.child('nx').set(code);remember(code,v.m);enter(code,'h',false)}catch(e){toast('Rematch failed: '+e.message);D&&(D.rmk=0)}}
 function onTick(){if(!D)return;const v=D.v,ph=phase(v);
  if(ph!==D.lph){D.lph=ph;draw();return}
- if(ph==='count'){const e=$('da-c');if(e){const s=Math.ceil((v.go+3500-nowS())/1000);e.textContent=s>0?s:'GO!'}}
+ if(ph==='count'){const e=$('da-c');if(e){const s=Math.ceil((v.go+3500-nowS())/1000);if(s!==D.cdn){D.cdn=s;try{tone(s>0?440:880,.12,'square');navigator.vibrate&&navigator.vibrate(s>0?20:80)}catch(x){}}e.textContent=s>0?s:'GO!'}}
  if(ph==='play'&&v.m==='race'){const e=$('da-t');if(e)e.textContent=fmt(nowS()-v.go-3500);const o=v.pr&&v.pr[opp(v)];if(o&&o.s==='off'&&!D.offAt)D.offAt=Date.now();if(o&&o.s==='on')D.offAt=0;if(D.offAt&&Date.now()-D.offAt>40000&&!D.cl){D.cl=1;draw()}}
  if(D.bub&&nowS()-D.bub>6000){D.bub=0;draw()}
  if(ph==='wait'&&D.pub){const e=$('da-w');if(e)e.textContent=Math.floor((Date.now()-(D.t0||Date.now()))/1000)+'s'}}
 /* ---------- actions ---------- */
 function say(k){if(Date.now()-(D.sayAt||0)<900)return;D.sayAt=Date.now();D.R.child('say/'+FUID).set({k,t:TS()}).catch(()=>{});toast('You: '+CHAT[k])}
 function tap(i){const v=D.v,ph=phase(v);if(ph!=='play')return;
- if(v.m==='race'){const J=D.J;if(D.sel<0){if(J[i].length)D.sel=i;draw();return}const a=D.sel;D.sel=-1;
-  if(a!==i&&mpCanMove(J,a,i)){mpPour(J,a,i);D.log.push(a+'>'+i);D.mv++;try{tone(520+D.mv%7*40,.08,'sine')}catch(e){}clearTimeout(D.pt);D.pt=setTimeout(()=>D.R.child('prog/'+FUID).set({c:doneJ(J),mv:D.mv}).catch(()=>{}),350);
-   if(mpWon(J)){clearTimeout(D.pt);D.R.child('prog/'+FUID).set({c:J.length,mv:D.mv}).catch(()=>{});D.R.child('res/'+FUID).set({fin:TS(),mv:D.mv,log:D.log.join(',').slice(0,3000)}).catch(e=>toast('Result not saved: '+e.message))}}
-  else if(a!==i&&J[i].length)D.sel=i;draw();return}
+ if(v.m==='race'){const J=D.J;const T0=v.go+3500;if(D.sel<0){if(J[i].length){D.sel=i;D.selT=nowS()-T0}draw();return}const a=D.sel;D.sel=-1;
+  if(a!==i&&mpCanMove(J,a,i)){mpPour(J,a,i);D.log.push(a+'>'+i+'@'+D.selT+'@'+(nowS()-T0));D.mv++;try{localStorage.setItem('pf_rl_'+D.code,JSON.stringify(D.log));navigator.vibrate&&navigator.vibrate(12)}catch(e){}try{tone(520+D.mv%7*40,.08,'sine')}catch(e){}clearTimeout(D.pt);D.pt=setTimeout(()=>D.R.child('prog/'+FUID).set({c:doneJ(J),mv:D.mv}).catch(()=>{}),350);
+   if(mpWon(J)){clearTimeout(D.pt);D.R.child('prog/'+FUID).set({c:J.length,mv:D.mv}).catch(()=>{});D.R.child('res/'+FUID).set({fin:TS(),mv:D.mv,log:D.log.join(',')}).catch(e=>toast('Result not saved: '+e.message))}}
+  else if(a!==i&&J[i].length){D.sel=i;D.selT=nowS()-T0}draw();return}
  const st=v.st;if(st.turn!==FUID)return toast("It's "+oname(v)+"'s turn. Send a nudge below!");
  const J=JSON.parse(st.j);if(D.sel<0){if(J[i].length)D.sel=i;draw();return}const a=D.sel;D.sel=-1;
  if(a!==i&&mpCanMove(J,a,i)){mpPour(J,a,i);const lf=st.lf-1,w=mpWon(J);co({j:JSON.stringify(J),mv:st.mv+1,turn:(lf<=0&&!w)?opp(v):FUID,lf:(lf<=0&&!w)?3:Math.max(0,lf),seq:st.seq+1,won:w})}
@@ -1137,6 +998,7 @@ function act(a,d){if(!D&&a!=='x')return;const v=D.v;
  if(a==='pass'){const st=v.st;if(st.turn===FUID)co({j:st.j,mv:st.mv,turn:opp(v),lf:3,seq:st.seq+1});return}
  if(a==='reset'){const st=v.st;if(st.turn===FUID)co({j:JSON.stringify(gen(v.sd,v.n)),mv:0,turn:FUID,lf:3,seq:st.seq+1});else toast('Only the player whose turn it is can reset.');return}
  if(a==='rst'&&v.m==='race'){D.J=gen(v.sd,v.n);D.log=[];D.mv=0;D.sel=-1;draw();return}
+ if(a==='shr'){const w=winner(v)===FUID,r=v.res&&v.res[FUID];const t=v.m==='race'?(w?'I beat '+oname(v)+(r?' in '+fmt(r.fin-v.go-3500):'')+' on Puzzle Jar!':oname(v)+' beat me on Puzzle Jar. Rematch?'):'We solved a Puzzle Jar co-op board in '+v.st.mv+' moves!';const u=location.href.split('#')[0];if(navigator.share)navigator.share({title:'Puzzle Jar',text:t,url:u}).catch(()=>{});else copy(t+' '+u,'Copied ✓');return}
  if(a==='claim'){D.R.child('ff').set(FUID).catch(e=>toast('Could not claim: '+e.message));return}
  if(a==='rm'){D.R.child('rq/'+FUID).set(true).then(()=>toast('Waiting for '+oname(v)+' to accept the rematch…'));return}
  if(a==='cancel'){leave();return}}
@@ -1162,13 +1024,14 @@ function draw(){if(!D)return;const v=D.v,ph=phase(v),M=MODE[v.m||'race'],b=$('da
    h='<div class="da-card"><div class="da-big">'+(me?'🏆':'🏁')+'</div><h2>'+(me?'You won!':esc(oname(v))+' won')+'</h2><p>'+(v.ff?'Won by forfeit.':'First to sort the board takes it.')+'</p></div>'
     +[[FUID,mname(v)],[opp(v),oname(v)]].map(([u,n])=>vsRow(n,rs[u]?rs[u].mv+' moves':(v.ff?'left the race':'did not finish'),rs[u]?fmt(rs[u].fin-st):'–',u===w)).join('')}
   else{const s=stars(v.st.mv,v.n);h='<div class="da-card"><div class="da-big">'+'⭐'.repeat(s)+'</div><h2>Solved together!</h2><p>You and '+esc(oname(v))+' solved it in <b>'+v.st.mv+'</b> moves.</p></div>'}
-  const rq=v.rq||{};h+='<div class="da-row" style="max-width:420px"><button class="pb" data-a="rm"'+(rq[FUID]?' disabled':'')+'>'+(rq[FUID]?'Waiting…':'Rematch')+'</button><button class="gb" data-a="back">Back to Duo</button></div>'+(rq[opp(v)]&&!rq[FUID]?'<div class="da-chip">'+esc(oname(v))+' wants a rematch!</div>':'')+chatHTML()}
+  const hh=v.m==='race'&&REC.h&&REC.h[opp(v)],bad=Object.keys(v.res||{}).filter(u=>verify(v,u)===false);if(hh)h+='<div class="da-chip">Rivalry vs '+esc(oname(v))+': '+hh.w+' – '+hh.l+'</div>';if(D.pb)h+='<div class="da-chip live">🏅 New personal best!</div>';if(bad.length)h+='<div class="da-chip">⚠ '+(bad[0]===FUID?'Your':esc(oname(v))+"'s")+' finish could not be verified and was ignored.</div>';
+  const rq=v.rq||{};h+='<div class="da-row" style="max-width:420px"><button class="pb" data-a="rm"'+(rq[FUID]?' disabled':'')+'>'+(rq[FUID]?'Waiting…':'Rematch')+'</button><button class="gb" data-a="back">Back to Duo</button></div><button class="gb" data-a="shr" style="width:100%;max-width:420px">Share result</button>'+(rq[opp(v)]&&!rq[FUID]?'<div class="da-chip">'+esc(oname(v))+' wants a rematch!</div>':'')+chatHTML()}
  b.innerHTML=h;$('dah').innerHTML=head}
 function buildDa(){if($('da'))return;const d=document.createElement('div');d.id='da';d.innerHTML='<div id="dah"></div><div id="dab"></div>';document.body.appendChild(d);
  d.addEventListener('click',e=>{const j=e.target.closest('.dj');if(j&&D)return tap(+j.dataset.i);const a=e.target.closest('[data-a]');if(a&&D)act(a.dataset.a,a.dataset)})}
 /* ---------- hub (the Duo tab) ---------- */
 window.buildPlaza=function(){buildDa();const z=$('pz');z.className='duo hub';const live=/^https:/.test(location.protocol)&&!/claude/i.test(location.hostname);
- z.innerHTML='<div class="dh2"><div><h2>Duo Arena</h2><small>Play with a friend or a stranger. No voice needed.</small></div><div class="rec"><span><b>'+REC.w+'-'+REC.l+'</b>Races</span><span><b>'+REC.c+'</b>Co-ops</span></div></div>'
+ z.innerHTML='<div class="dh2"><div><h2>Duo Arena</h2><small>Race or team up. No voice needed.</small></div></div><div class="rec"><span><b>'+REC.w+'-'+REC.l+'</b>Races</span><span><b>'+REC.c+'</b>Co-ops</span><span><b>'+(REC.b&&REC.b[SIZE]?fmt(REC.b[SIZE]):'–')+'</b>Best '+SZ[SIZE][0]+'</span></div>'
  +'<div class="dsz" role="group" aria-label="Board size">'+Object.entries(SZ).map(([k,x])=>'<button data-z="'+k+'" class="'+(k===SIZE?'on':'')+'">'+x[0]+'</button>').join('')+'</div>'
  +['race','co'].map(m=>'<div class="dm '+m+'"><h3>'+MODE[m].ic+' '+MODE[m].nm+'</h3><p>'+MODE[m].ds+'</p><div class="ro"><button class="pb" data-q="'+m+'">Find a player</button><button class="gb" data-i="'+m+'">Invite a friend</button></div></div>').join('')
  +'<div class="jn2"><input id="dcode" maxlength="5" placeholder="Have a code?" autocomplete="off" aria-label="Game code"><button class="pb" id="dgo">Join</button></div><div class="yg" id="dgm"></div>'
@@ -1187,7 +1050,9 @@ async function myGames(){const box=$('dgm');if(!box||!REC.g.length)return;try{aw
 /* ---------- invite links ---------- */
 function route(){const m=location.hash.match(/#duo=([A-Za-z0-9]{5})/);if(!m)return;const c=m[1].toUpperCase();try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}buildDa();setTimeout(()=>join(c),300)}
 window.addEventListener('hashchange',route);setTimeout(route,1500);buildDa();
-window.PJDuo={join};
+async function inviteTo(p){const mode='race';await init();const code=await create(mode,SIZE);remember(code,mode);enter(code,'h',false);await FDB.ref('inbox/'+p.id+'/inv_'+FUID).set({type:'inv',from:FUID,name:nick||'Player',code,mode,t:firebase.database.ServerValue.TIMESTAMP});toast('Invite sent to '+(p.name||'your friend')+'. Share the link too if they are offline.')}
+function open(){try{const r=$('room');if(r)r.classList.remove('on');openMap();setTab('plaza')}catch(e){}}
+window.PJDuo={join,inviteTo,open};
 })();
 </script>
 
