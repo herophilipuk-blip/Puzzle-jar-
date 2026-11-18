@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><style id="pj-boot-css">html{background:#14224f}#pjsplash{position:fixed;inset:0;z-index:99999;background:radial-gradient(120% 80% at 50% 30%,#2a3a8c,#14224f 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;font:900 30px Nunito,system-ui,sans-serif;letter-spacing:.5px;transition:opacity .35s}#pjsplash.off{opacity:0;pointer-events:none}#pjsplash svg{width:92px;height:92px;animation:pjsp 1.2s ease-in-out infinite alternate}@keyframes pjsp{to{transform:translateY(-6px) scale(1.04)}}</style>
+<meta charset="utf-8"><style id="pj-boot-css">html{background:#d9ecff}
+#pjsplash{position:fixed;inset:0;z-index:99999;background:radial-gradient(90% 55% at 50% 20%,#fff 0,rgba(255,255,255,0) 65%),linear-gradient(180deg,#d9ecff,#bff2e8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:#15324d;font:900 40px Nunito,system-ui,sans-serif;letter-spacing:.3px;transition:opacity .45s ease,transform .45s ease}
+#pjsplash.off{opacity:0;transform:scale(1.04);pointer-events:none}
+.pjs-jars{display:flex;align-items:flex-end;gap:16px;height:178px;padding-top:8px}
+.pjs-jars i{display:flex;flex-direction:column-reverse;gap:4px;box-sizing:border-box;width:62px;padding:5px;border:4px solid rgba(21,50,77,.34);border-top-color:rgba(21,50,77,.16);border-radius:10px 10px 34px 34px;background:linear-gradient(90deg,rgba(255,255,255,.75),rgba(255,255,255,.2) 45%,rgba(255,255,255,.5));box-shadow:0 12px 26px rgba(21,50,77,.13);animation:pjsf 2.4s ease-in-out infinite alternate;will-change:transform}
+.pjs-jars i:nth-child(1){height:122px}.pjs-jars i:nth-child(2){height:156px;animation-delay:-.8s}.pjs-jars i:nth-child(3){height:122px;animation-delay:-1.6s}
+.pjs-jars b{display:block;height:26px;flex:none;border-radius:9px;background:var(--c);box-shadow:inset 0 -4px 0 rgba(0,0,0,.15),inset 0 3px 0 rgba(255,255,255,.38);animation:pjsd 3.8s cubic-bezier(.3,1.35,.5,1) infinite both;animation-delay:calc(var(--d)*.32s);will-change:transform,opacity}
+.pjs-jars b.s{background:repeating-linear-gradient(135deg,rgba(255,255,255,.34) 0 4px,transparent 4px 9px),var(--c)}
+@keyframes pjsf{to{transform:translateY(-9px)}}
+@keyframes pjsd{0%{transform:translateY(-200px);opacity:0}10%{opacity:1}22%,80%{transform:translateY(0);opacity:1}92%,100%{transform:translateY(0);opacity:0}}
+.pjs-name{text-shadow:0 2px 0 #fff}
+.pjs-bar{width:176px;height:8px;border-radius:8px;background:rgba(21,50,77,.12);overflow:hidden}
+.pjs-bar u{display:block;width:45%;height:100%;border-radius:8px;background:linear-gradient(90deg,#2AA3FF,#00D9C0,#52E04A);animation:pjsb 1.3s ease-in-out infinite}
+@keyframes pjsb{from{transform:translateX(-110%)}to{transform:translateX(260%)}}
+.pjs-sub{font:800 14px Nunito,system-ui,sans-serif;color:rgba(21,50,77,.62);margin-top:-8px}
+@media(prefers-reduced-motion:reduce){#pjsplash *{animation:none!important}}</style>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Puzzle Jar</title><meta name="description" content="Sort the colours. Race your friends. Free colour-sorting puzzle."><meta name="theme-color" content="#1a2556"><link rel="manifest" href="manifest.webmanifest"><script src="pj-config.js"></script><script src="lang/index.js"></script><script>(function(){if(!window.PJL||!PJL.detect){window.PJL={langs:[{c:"en",n:"English",dir:"ltr"}],byCode:function(c){return c==="en"?this.langs[0]:null},detect:function(){return"en"}}}var c=PJL.detect(),l=PJL.byCode(c);PJL.code=(l||c==="xx")?c:"en";c=PJL.code;if(c!=="en"&&c!=="xx"){document.write('<script src="lang/'+c+'.js"><\/script>')}var h=document.documentElement;h.lang=c==="xx"?"en":c;if(l&&l.dir==="rtl")h.dir="rtl"})()</script><script>window.pjK=function(n){n=+n||0;if(n>=1e6)return (n/1e6).toFixed(n>=1e7?0:1).replace(/\.0$/,'')+'M';if(n>=1e5)return Math.round(n/1e3)+'K';return String(n)};window.pjErr=function(e,pre){var c=String((e&&(e.code||e.name))||''),m=String((e&&e.message)||e||''),t=c+' '+m,w;
 if(!navigator.onLine||/network|Failed to fetch|offline|timeout|unavailable/i.test(t))w='No internet connection. Check your data or Wi-Fi and try again.';
@@ -16,10 +31,15 @@ else w='Something went wrong. Please try again.';
 return (pre?pre+'. ':'')+w};
 window.pjVolGain=function(){var i=+(localStorage.getItem('pf_vol')||1);return [1.7,2.5,3.6][i]||2.5};
 window.pjHot=function(){return false};window.pjTwistInit=function(){};window.pjTwistTick=function(){};window.pjTwMusic=function(){};window.TW=null</script><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Puzzle Jar"><meta property="og:type" content="website"><meta property="og:title" content="Puzzle Jar: sort the colours, beat your friends"><meta property="og:description" content="Free colour-sorting puzzle with real-time races, tournaments and daily challenges."><meta property="og:image" content="https://philipuk-blip.github.io/og2.png"><meta property="og:url" content="https://philipuk-blip.github.io/"><meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://www.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://www.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" media="print" onload="this.media='all'">
 
 
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check-compat.js" async></script>
+<script>(function(){var B='https://www.gstatic.com/firebasejs/10.12.2/firebase-',p=null;
+function ld(n){return new Promise(function(r){var s=document.createElement('script');s.src=B+n+'-compat.js';s.onload=s.onerror=function(){r()};document.head.appendChild(s)})}
+function go(){return ld('app').then(function(){return Promise.all([ld('auth'),ld('database')])}).then(function(){ld('app-check')})}
+window.pjFBReady=function(){if(window.firebase&&firebase.database)return Promise.resolve();if(!p)p=go();return Promise.race([p,new Promise(function(r){setTimeout(r,12000)})])};
+function warm(){window.pjFBReady()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(warm,1200)});else setTimeout(warm,1200)})()</script>
 <meta name="description" content="Puzzle Jar: sort the colours, beat the clock, and race or team up with a friend."><meta property="og:title" content="Puzzle Jar - colour sorting puzzle"><meta property="og:description" content="Beat the clock, climb the shelves, and race or team up with a friend."><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 
 
@@ -131,7 +151,7 @@ var st=document.createElement('style');st.id='pj-av-css';st.textContent=css;docu
 })();
 </script></head>
 <body>
-<div id="pjsplash" aria-hidden="true"><svg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><defs><clipPath id='cs'><path d='M20 15h24v4c6 3 9 8 9 15v18a7 7 0 0 1-7 7H18a7 7 0 0 1-7-7V34c0-7 3-12 9-15z'/></clipPath></defs><rect x='17' y='5' width='30' height='10' rx='3.5' fill='#b8c4dc'/><g clip-path='url(#cs)'><rect x='8' y='14' width='48' height='50' fill='#e8f6ff' fill-opacity='.55'/><rect x='8' y='50' width='48' height='14' fill='#ff5d7a'/><rect x='8' y='40' width='48' height='10' fill='#ffd23f'/><rect x='8' y='30' width='48' height='10' fill='#37d4a0'/></g><path d='M20 15h24v4c6 3 9 8 9 15v18a7 7 0 0 1-7 7H18a7 7 0 0 1-7-7V34c0-7 3-12 9-15z' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/><path d='M19 30v18' stroke='white' stroke-opacity='.8' stroke-width='3' stroke-linecap='round'/></svg><span>Puzzle Jar</span></div>
+<div id="pjsplash" aria-hidden="true"><div class="pjs-jars"><i><b style="--c:#FF3B4E;--d:0"></b><b style="--c:#FF3B4E;--d:1"></b><b style="--c:#FF3B4E;--d:2"></b></i><i><b class="s" style="--c:#2AA3FF;--d:0"></b><b class="s" style="--c:#00D9C0;--d:1"></b><b class="s" style="--c:#52E04A;--d:2"></b><b style="--c:#FFE12E;--d:3"></b></i><i><b style="--c:#FF8A00;--d:0"></b><b style="--c:#FF8A00;--d:1"></b><b class="s" style="--c:#FFE12E;--d:2"></b></i></div><div class="pjs-name">Puzzle Jar</div><div class="pjs-bar"><u></u></div><div class="pjs-sub">Sorting the colours…</div></div>
 <header>
   <h1>Puzzle Jar</h1>
   <div class="meta">
@@ -256,7 +276,7 @@ function tap(i){
   if(can(sel,i)){
     const from=sel;sel=-1;pour(from,i);if(!isWon())pjTwistTick();render();
     if(isWon())return setTimeout(win,240);if(limit&&moves>=limit){toast('Out of moves! Restarting…');return setTimeout(start,1200)}
-    if(!anyMove())toast('No moves left. Try Undo or ＋ Jar.');else if(jars.length<=6&&solveCached(jars,30,LOCKS,CONTRACT)===null)toast('Dead end: undo, or add a ＋ Jar.');
+    if(!anyMove())toast('No moves left. Try Undo or ＋ Jar.');else if(jars.length<=6&&solveCached(jars,30,LOCKS,CONTRACT,window.OB&&window.OB.gt)===null)toast('Dead end: undo, or add a ＋ Jar.');
   }else{
     tone(150,.12,'square');buzz(15);
     if(jars[i].length&&!full(jars[i]))sel=i;else sel=-1;
@@ -291,7 +311,7 @@ $('extra').onclick=()=>{
 };
 $('hint').onclick=()=>{
   if(hints<=0||won)return;
-  const sv=solveCached(jars,80,LOCKS,CONTRACT);if(!sv||!sv.path.length){toast(sv===null?'Dead end. Undo, or add a ＋ Jar.':sv?'Already solved!':'Too complex to read in time. Try Undo.');return}
+  const sv=solveCached(jars,80,LOCKS,CONTRACT,window.OB&&window.OB.gt);if(!sv||!sv.path.length){toast(sv===null?'Dead end. Undo, or add a ＋ Jar.':sv?'Already solved!':'Too complex to read in time. Try Undo.');return}
   const best={a:sv.path[0][0],b:sv.path[0][1]};
   hints--;hintPair=[best.a,best.b];sel=-1;tone(700,.12,'sine');render();
 };
@@ -371,7 +391,7 @@ const FBC={apiKey:"AIzaSyBkUbSfCDIy1GgTsqOw20ZQez39kHhq6b4",authDomain:"puzzle-j
 let FDB=null,FUID=null,M=null; /* M = active room session */
 async function mpInit(){
   if(FUID)return true;
-  if(typeof firebase==='undefined')throw new Error(navigator.onLine?'Can\u2019t reach the game server right now. Please try again in a moment.':'No internet connection. Check your data or Wi-Fi and try again.');
+  if(typeof firebase==='undefined'&&window.pjFBReady)await window.pjFBReady();if(typeof firebase==='undefined')throw new Error(navigator.onLine?'Can\u2019t reach the game server right now. Please try again in a moment.':'No internet connection. Check your data or Wi-Fi and try again.');
   if(!firebase.apps.length){firebase.initializeApp(FBC);try{if(window.PJ_APPCHECK_KEY&&firebase.appCheck)firebase.appCheck().activate(window.PJ_APPCHECK_KEY,true)}catch(e){}}
   let c;try{c=await firebase.auth().signInAnonymously()}catch(e){throw new Error(pjErr(e))}FUID=c.user.uid;FDB=firebase.database();return true;
 }
@@ -595,16 +615,16 @@ function openProf(){openProfV3();nameEditor()}
 function pjRun(A){let k=1;while(k<A.length&&A[A.length-1-k]===A[A.length-1])k++;return k}
 function pjKey(S){return S.map(j=>j.join('.')).sort().join('|')}
 let _sbK='',_sbV=null;
-function solveCached(S,ms,locks,ct){const k=S.map(j=>j.join(',')).join('|')+'#'+ms+'#'+JSON.stringify(locks||0)+JSON.stringify(ct||0);if(k===_sbK)return _sbV;const r=solveBoard(S,ms,locks,ct);_sbK=k;_sbV=r;return r}
-function solveBoard(S0,ms,locks,ct){const T=Date.now(),st=S0.map(j=>j.map(x=>x%100)),LK=locks&&locks.length?locks:null,CT=ct&&ct.length?ct:null;let nodes=0,over=false,path=[],TT;
+function solveCached(S,ms,locks,ct,gt){const k=S.map(j=>j.join(',')).join('|')+'#'+ms+'#'+JSON.stringify(locks||0)+JSON.stringify(ct||0)+JSON.stringify(gt||0);if(k===_sbK)return _sbV;const r=solveBoard(S,ms,locks,ct,gt);_sbK=k;_sbV=r;return r}
+function solveBoard(S0,ms,locks,ct,gt){const T=Date.now(),st=S0.map(j=>j.map(x=>x%100)),LK=locks&&locks.length?locks:null,CT=ct&&ct.length?ct:null,GT=gt||null;let nodes=0,over=false,path=[],TT;
   const sealed=(S,i)=>LK&&LK.some(l=>l.j===i&&!S.some(j=>j.length===CAP&&j.every(v=>v===l.k)));
   const done=S=>S.every(j=>!j.length||(j.length===CAP&&j.every(v=>v===j[0])));
   const hh=S=>{let h=0;const bot={};for(const j of S){for(let i=1;i<j.length;i++)if(j[i]!==j[i-1])h++;if(j.length)bot[j[0]]=(bot[j[0]]||0)+1}for(const c in bot)h+=bot[c]-1;return h};
   const dfs=(S,g,bd)=>{const f=g+hh(S);if(f>bd)return f;if(done(S))return true;if((++nodes&1023)===0&&Date.now()-T>ms){over=true;return Infinity}
-    const k=LK?S.map(j=>j.join('.')).join('|'):pjKey(S),p=TT.get(k);if(p!==undefined&&p<=g)return Infinity;TT.set(k,g);
+    const k=(LK||GT)?S.map(j=>j.join('.')).join('|'):pjKey(S),p=TT.get(k);if(p!==undefined&&p<=g)return Infinity;TT.set(k,g);
     let mn=Infinity;const mv=[];
     for(let a=0;a<S.length;a++){const A=S[a];if(!A.length||sealed(S,a))continue;const c=A[A.length-1],un=A.every(v=>v===c);if(un&&A.length===CAP)continue;
-      for(let b=0;b<S.length;b++){if(a===b||sealed(S,b))continue;const B=S[b];if(B.length>=CAP||(B.length&&B[B.length-1]!==c))continue;if(un&&!B.length)continue;
+      for(let b=0;b<S.length;b++){if(a===b||sealed(S,b))continue;const B=S[b];if(B.length>=CAP||(B.length&&B[B.length-1]!==c))continue;if(un&&!B.length)continue;if(GT&&b===GT.i&&!B.length&&c!==GT.k)continue;
         const n=Math.min(pjRun(A),CAP-B.length);if(CT&&B.length+n===CAP&&B.every(v=>v===c)){const ix=CT.indexOf(c);if(ix>0&&!CT.slice(0,ix).every(x=>S.some(j=>j.length===CAP&&j.every(v=>v===x))))continue}mv.push([a,b,n,(B.length+n===CAP&&B.every(v=>v===c))?0:(A.length===n?1:2)])}}
     mv.sort((x,y)=>x[3]-y[3]);
     for(const [a,b,n] of mv){const N=S.map(j=>j.slice());for(let i=0;i<n;i++)N[b].push(N[a].pop());path.push([a,b]);const r=dfs(N,g+1,bd);if(r===true)return true;path.pop();if(over)return Infinity;if(r<mn)mn=r}
@@ -686,7 +706,7 @@ tap=function(i){if(TUT){const m=TUT.m;if((sel===-1&&i!==m[0])||(sel!==-1&&i!==m[
   if(sel!==-1&&i!==sel&&canBase(sel,i)){const m=contractMsg(sel,i);if(m){toast(m);buzz(20);return}}
   NEARCHK=true;_tap(i);NEARCHK=false;
   if(TUT&&moves>=1){TUT=null;hintPair=null;toast('Tap a jar, then tap another to move the top cards.');render()}
-  if(!won&&jars.length&&jars.length<=6){const r=solveCached(jars,20,LOCKS,CONTRACT);if(r&&r.par>0&&r.par<=2&&!almostShown){almostShown=true;toast('✨ Almost there: '+r.par+' move'+(r.par>1?'s':'')+' left')}}};
+  if(!won&&jars.length&&jars.length<=6){const r=solveCached(jars,20,LOCKS,CONTRACT,window.OB&&window.OB.gt);if(r&&r.par>0&&r.par<=2&&!almostShown){almostShown=true;toast('✨ Almost there: '+r.par+' move'+(r.par>1?'s':'')+' left')}}};
 
 function practice(L){PRACTICE={L,level,maxLv,coins,totalStars,xp,streak,lastDay,dailies,bests:JSON.stringify(bests),lst:JSON.stringify(lst)};daily=false;level=L;coins=Math.max(coins,100);$('set').classList.remove('on');closeMap();start()}
 function endPractice(){const P=PRACTICE;level=P.level;maxLv=P.maxLv;coins=P.coins;totalStars=P.totalStars;xp=P.xp;streak=P.streak;lastDay=P.lastDay;dailies=P.dailies;bests=JSON.parse(P.bests);lst=JSON.parse(P.lst);PRACTICE=null;save()}
@@ -810,7 +830,7 @@ try{const L=level,ok=!daily&&!(typeof PRACTICE!=='undefined'&&PRACTICE)&&L>=14&&
 if(ok){const tier=Math.max(0,(L-14)/45|0),ne=jars.map((j,i)=>j.length?i:-1).filter(i=>i>=0),msg=[];
 if(L%7===3||(L>=60&&L%11===6)){const n=Math.min(3,1+tier,ne.length-1),fz=[];for(let k=0;k<n;k++){const c=ne[(L*3+k*5)%ne.length];if(!fz.includes(c))fz.push(c)}OB.fz=fz;OB.th=5+Math.min(6,(L/25)|0);msg.push('❄ '+fz.length+' frozen jar'+(fz.length>1?'s':'')+': thaw after '+OB.th+' moves.')}
 if(L>=22&&L%9===5||(L>=90&&L%13===4)){OB.qk=1;OB.qp=Math.max(5,8-((L/60)|0));msg.push('🌋 Earthquake every '+OB.qp+' moves.')}
-const ei=jars.findIndex(j=>!j.length);if(ei>=0&&(L>=30&&L%8===2||(L>=70&&L%6===1)||(L>=120&&L%4===0))){const src=jars.find(j=>j.length);OB.gt={i:ei,k:src[0]%100};msg.push('🎯 Gate jar: the empty marked jar only accepts its colour.')}
+const ei=jars.findIndex(j=>!j.length);if(ei>=0&&(L>=30&&L%8===2||(L>=70&&L%6===1)||(L>=120&&L%4===0))){const src=jars.find(j=>j.length);OB.gt={i:ei,k:src[0]%100};if(!solveBoard(jars,300,LOCKS,CONTRACT,OB.gt))OB.gt=null;if(OB.gt)msg.push('🎯 Gate jar: the empty marked jar only accepts its colour.')}
 if(msg.length)setTimeout(()=>toast(msg.join(' ')),700)}}catch(e){}return r};
 const oc=window.can;let chk=false,fc={k:'',v:false};
 function freeMove(){const k=hist.length+'|'+moves;if(fc.k===k)return fc.v;chk=true;let f=false;try{for(let x=0;x<jars.length&&!f;x++)if(!OB.fz.includes(x))for(let y=0;y<jars.length;y++)if(!OB.fz.includes(y)&&oc(x,y)){f=true;break}}finally{chk=false}fc={k,v:f};return f}
@@ -961,19 +981,3 @@ async function quick(mode,any){if(!guard())return;const my=++mmTok,qT0=Date.now(
   for(const [,code,v] of c){if(my!==mmTok)return;if(await tryClaim(code)){PJAV.note(v.n,v.a,v.u);enter(code,'g');if(D){D.q=1;qWatch()}if(my!==mmTok)leave();return}}
   if(my!==mmTok)return;
   const code=await create(mode,SIZE);if(my!==mmTok){try{FDB.ref('duo/'+code).remove()}catch(e){}return}
-  enter(code,'h',true);const d0=D;d0.want=mode;d0.any=!!any;d0.qp=1;d0.t0=qT0;d0.lt=await lobbyPut(code,mode,SIZE);
-  if(my!==mmTok||D!==d0){try{FDB.ref('duolobby/'+code).remove()}catch(e){}return}
-  qWatch();scan()}catch(e){if(my===mmTok)fail(friendlyErr(e))}}
-async function scan(){const my=D;if(!my||!my.pub||(my.v&&my.v.g)||!my.lt||my.scn)return;my.scn=1;
- try{const sn=await TOo(FDB.ref('duolobby').orderByChild('t').endAt(my.lt).limitToLast(10).get(),4000),now=nowS(),c=[];
-  sn.forEach(x=>{const v=x.val();if(v&&x.key!==my.code&&v.u!==FUID&&MODE[v.m]&&fresh(v,now)&&(my.any||v.m===my.want)&&(v.t<my.lt||(v.t===my.lt&&x.key<my.code)))c.push([v.t,x.key,v])});
-  if(!c.length||D!==my||(my.v&&my.v.g))return;c.sort((a,b)=>a[0]-b[0]);{const L=await Promise.all(c.map(x=>alive(x[1],x[2])));for(let i=c.length-1;i>=0;i--)if(!L[i])c.splice(i,1)}if(!c.length||D!==my||(my.v&&my.v.g))return;
-  try{await FDB.ref('duolobby/'+my.code).remove()}catch(e){}
-  let taken=false;try{taken=(await FDB.ref('duo/'+my.code+'/g').get()).exists()}catch(e){taken=true}
-  if(taken||D!==my)return;
-  for(const [,code,v] of c){if(D!==my)return;if(await tryClaim(code)){PJAV.note(v.n,v.a,v.u);leave(true);enter(code,'g');if(D){D.q=1;qWatch()}return}}
-  if(D===my&&!(my.v&&my.v.g))await lobbyPut(my.code,my.v.m||my.want,my.v.z||SIZE,my.lt)}catch(e){}finally{my.scn=0}}
-async function botGo(code,m,z){const d=D;try{d.scn=0;await scan();if(D!==d||(D&&D.v&&D.v.g))return}catch(e){}try{await FDB.ref('duolobby/'+code).remove();const g=await FDB.ref('duo/'+code+'/g').get();if(g.exists()){if(D===d)D.qpg=1;return}}catch(e){}if(!D||D!==d||(D.v&&D.v.g))return;leave(true);enterBot(m,z)}
-/* ---- Quick Play: finds a real player first; if nobody is online it starts a clearly labelled practice bot whose skill adapts to you ---- */
-function localRef(v){const setP=(p,x)=>{const k=p.split('/');let o=v;for(let i=0;i<k.length-1;i++)o=o[k[i]]=o[k[i]]||{};o[k[k.length-1]]=x};
- const fix=x=>JSON.parse(JSON.stringify(x,(k,val)=>val&&typeof val==='object'&&val['.sv']==='timestamp'?nowS():val));
