@@ -148,10 +148,6 @@ document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&
 var css='.avi{display:block;width:100%;height:100%;border-radius:50%;background-color:#a9bbd0;background-position:center;background-size:cover;background-repeat:no-repeat;box-sizing:border-box}';
 Object.keys(DATA).forEach(function(k){if(DATA[k].length>8)css+='.av-'+k+'{background-image:url("'+DATA[k]+'")}'});
 var st=document.createElement('style');st.id='pj-av-css';st.textContent=css;document.head.appendChild(st);
-P.img=function(){if(P.img.d)return;P.img.d=1;var q=document.createElement('script');q.src='pj-avatars.js';q.async=true;
- q.onload=function(){try{var I=window.PJ_AVIMG||{},c='';Object.keys(I).forEach(function(k){DATA[k]=I[k];c+='.av-'+k+'{background-image:url("'+I[k]+'")}'});var e=document.createElement('style');e.id='pj-av-img';e.textContent=c;document.head.appendChild(e)}catch(x){}};
- document.head.appendChild(q)};
-window.addEventListener('load',function(){setTimeout(P.img,300)});setTimeout(P.img,8000);
 })();
 </script></head>
 <body>
@@ -159,13 +155,16 @@ window.addEventListener('load',function(){setTimeout(P.img,300)});setTimeout(P.i
 window.addEventListener('error',function(e){try{var t=e.target;if(t&&t!==window&&(t.src||t.href)){if(!/gstatic|googleapis|pj-config|lang\/|manifest|icon-/.test(String(t.src||t.href)))E.push('file failed: '+String(t.src||t.href).split('/').slice(-2).join('/'))}else E.push(String(e.message||'error').slice(0,90)+' ['+String(e.filename||'').split('/').pop()+':'+(e.lineno||'')+']')}catch(x){}},true);
 window.addEventListener('unhandledrejection',function(e){try{E.push('promise: '+String(e.reason&&e.reason.message||e.reason).slice(0,90))}catch(x){}});
 function gone(s){s.classList.add('off');setTimeout(function(){if(s.parentNode)s.parentNode.removeChild(s)},450)}
-setTimeout(function(){var s=document.getElementById('pjsplash');if(!s)return;
- if(window.__pjBoot){gone(s);return}
- var m=s.querySelector('.pjs-sub');if(!m)return;m.textContent='Slow connection. Still downloading\u2026 ';
+var T0=Date.now(),shown=0;
+var iv=setInterval(function(){var s=document.getElementById('pjsplash');if(!s){clearInterval(iv);return}
+ if(window.__pjBoot)return;var t=Date.now()-T0,real=E.length&&t>5000,slow=t>45000;
+ if(shown||!(real||slow))return;shown=1;
+ var m=s.querySelector('.pjs-sub');if(!m)return;
+ m.textContent=real?'Something went wrong while starting. ':'Taking longer than usual. ';
  var b=document.createElement('button');b.textContent='Reload';b.style.cssText='font:800 14px Nunito,system-ui,sans-serif;padding:8px 16px;border-radius:12px;border:0;background:#2AA3FF;color:#fff';
  b.onclick=function(){location.reload()};m.appendChild(b);
  var d=document.createElement('div');d.style.cssText='font:600 11px monospace;max-width:300px;margin-top:10px;text-align:center;word-break:break-word';
- d.textContent=(E.length?E.slice(0,4).join(' | '):'Waiting for the game file to finish downloading.')+' | online='+navigator.onLine;m.appendChild(d)},7000);
+ d.textContent=real?E.slice(0,3).join(' | '):'Slow connection. The game is still downloading.';m.appendChild(d)},1000);
 setTimeout(function(){var s=document.getElementById('pjsplash');if(s&&window.__pjBoot)gone(s)},12000)})()</script>
 <header>
   <h1>Puzzle Jar</h1>
@@ -2955,5 +2954,3 @@ window.render=function(){var v=r0.apply(this,arguments);
 addEventListener('resize',function(){try{render()}catch(e){}});
 })();
 </script>
-</body>
-</html>
