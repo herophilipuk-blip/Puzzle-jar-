@@ -151,7 +151,18 @@ var st=document.createElement('style');st.id='pj-av-css';st.textContent=css;docu
 })();
 </script></head>
 <body>
-<div id="pjsplash" aria-hidden="true"><div class="pjs-jars"><i><b style="--c:#FF3B4E;--d:0"></b><b style="--c:#FF3B4E;--d:1"></b><b style="--c:#FF3B4E;--d:2"></b></i><i><b class="s" style="--c:#2AA3FF;--d:0"></b><b class="s" style="--c:#00D9C0;--d:1"></b><b class="s" style="--c:#52E04A;--d:2"></b><b style="--c:#FFE12E;--d:3"></b></i><i><b style="--c:#FF8A00;--d:0"></b><b style="--c:#FF8A00;--d:1"></b><b class="s" style="--c:#FFE12E;--d:2"></b></i></div><div class="pjs-name">Puzzle Jar</div><div class="pjs-bar"><u></u></div><div class="pjs-sub">Sorting the colours…</div></div>
+<div id="pjsplash" aria-hidden="true"><div class="pjs-jars"><i><b style="--c:#FF3B4E;--d:0"></b><b style="--c:#FF3B4E;--d:1"></b><b style="--c:#FF3B4E;--d:2"></b></i><i><b class="s" style="--c:#2AA3FF;--d:0"></b><b class="s" style="--c:#00D9C0;--d:1"></b><b class="s" style="--c:#52E04A;--d:2"></b><b style="--c:#FFE12E;--d:3"></b></i><i><b style="--c:#FF8A00;--d:0"></b><b style="--c:#FF8A00;--d:1"></b><b class="s" style="--c:#FFE12E;--d:2"></b></i></div><div class="pjs-name">Puzzle Jar</div><div class="pjs-bar"><u></u></div><div class="pjs-sub">Sorting the colours…</div></div><script>(function(){var E=window.__pjErr=[];
+window.addEventListener('error',function(e){try{var t=e.target;if(t&&t!==window&&(t.src||t.href)){if(!/gstatic|googleapis|pj-config|lang\/|manifest|icon-/.test(String(t.src||t.href)))E.push('file failed: '+String(t.src||t.href).split('/').slice(-2).join('/'))}else E.push(String(e.message||'error').slice(0,90)+' ['+String(e.filename||'').split('/').pop()+':'+(e.lineno||'')+']')}catch(x){}},true);
+window.addEventListener('unhandledrejection',function(e){try{E.push('promise: '+String(e.reason&&e.reason.message||e.reason).slice(0,90))}catch(x){}});
+function gone(s){s.classList.add('off');setTimeout(function(){if(s.parentNode)s.parentNode.removeChild(s)},450)}
+setTimeout(function(){var s=document.getElementById('pjsplash');if(!s)return;
+ if(window.__pjBoot){gone(s);return}
+ var m=s.querySelector('.pjs-sub');if(!m)return;m.textContent='Still loading. ';
+ var b=document.createElement('button');b.textContent='Reload';b.style.cssText='font:800 14px Nunito,system-ui,sans-serif;padding:8px 16px;border-radius:12px;border:0;background:#2AA3FF;color:#fff';
+ b.onclick=function(){location.reload()};m.appendChild(b);
+ var d=document.createElement('div');d.style.cssText='font:600 11px monospace;max-width:300px;margin-top:10px;text-align:center;word-break:break-word';
+ d.textContent=(E.length?E.slice(0,4).join(' | '):'The page download did not finish (no errors).')+' | online='+navigator.onLine;m.appendChild(d)},7000);
+setTimeout(function(){var s=document.getElementById('pjsplash');if(s&&window.__pjBoot)gone(s)},12000)})()</script>
 <header>
   <h1>Puzzle Jar</h1>
   <div class="meta">
@@ -969,15 +980,3 @@ const warm=()=>{if(warm.b||typeof mpInit!=='function')return;warm.b=1;mpInit().t
 window.PJDuoWarm=warm;setTimeout(warm,500);
 async function lobbyPut(code,m,z,t){const L=FDB.ref('duolobby/'+code),tt=t||nowS();L.onDisconnect().remove();await L.set({t:tt,hb:nowS(),m,z,n:String(nick).slice(0,20),u:FUID,a:PJAV.mine()});return tt}
 let mmTok=0;
-const friendlyErr=e=>{const m=String(e&&e.message||e||'');return /network|offline|timeout|unavailable/i.test(m)?'No connection. Check your internet and try again.':'Could not connect. Please try again.'};
-async function tryClaim(code){try{const t=await FDB.ref('duo/'+code+'/g').transaction(v=>v===null?FUID:undefined);return !!(t&&t.committed)}catch(e){return false}}
-async function lobbyCands(any,mode){const sn=await TOo(FDB.ref('duolobby').orderByChild('t').limitToLast(30).get(),5000),now=nowS(),c=[];sn.forEach(x=>{const v=x.val();if(v&&v.u!==FUID&&MODE[v.m]&&fresh(v,now)&&(any||v.m===mode))c.push([v.t,x.key,v])});c.sort((a,b)=>a[0]-b[0]);const L=await Promise.all(c.map(x=>alive(x[1],x[2])));return c.filter((x,i)=>L[i])}
-/* if the other player vanishes before the game starts, quietly find someone else */
-function qWatch(){const d=D;if(!d||d.qw)return;d.qw=setInterval(()=>{if(D!==d){clearInterval(d.qw);return}const v=d.v;if(!v||!v.g||d.bot||d.tid)return;if(v.go){clearInterval(d.qw);return}
- const o=v.pr&&v.pr[opp(v)];if(!o||o.s==='off'){d.gt=d.gt||Date.now();if(Date.now()-d.gt>4000){clearInterval(d.qw);const m=d.want||v.m;toast('Your opponent left. Finding another player…');leave(true);quick(m,true)}}else d.gt=0},800)}
-async function quick(mode,any){if(!guard())return;const my=++mmTok,qT0=Date.now();SIZE=autoSize();pending('Finding a player…');
- try{await init();if(my!==mmTok)return;
-  const c=await lobbyCands(any,mode);
-  for(const [,code,v] of c){if(my!==mmTok)return;if(await tryClaim(code)){PJAV.note(v.n,v.a,v.u);enter(code,'g');if(D){D.q=1;qWatch()}if(my!==mmTok)leave();return}}
-  if(my!==mmTok)return;
-  const code=await create(mode,SIZE);if(my!==mmTok){try{FDB.ref('duo/'+code).remove()}catch(e){}return}
